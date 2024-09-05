@@ -1,22 +1,29 @@
+You can modify your `README.md` file to include details about the newly uploaded file that models the cinematic and dynamic systems using PVW, Linear Graphs, and Lagrange methods.
+
+Here’s an updated version of the `README.md` that incorporates this new file:
+
+---
+
 # Mechatronics Maple Project
 
 ## Overview
 
-This repository contains the source files, examples, and documentation for a Maple project focused on mechatronics. The project explores various aspects of mechatronics, including the modeling, analysis, and simulation of mechanical, electrical, and control systems using Maple.
+This repository contains the source files, examples, and documentation for a Maple project focused on mechatronics. The project models and analyzes mechatronic systems using various methods such as PVW (Principle of Virtual Work), Linear Graphs, and Lagrangian mechanics. It also includes cinematic and dynamic analysis of a 2D mechatronics system.
 
 ## Repository Structure
 
 The repository is organized into the following directories:
 
 - **`src/`**: Contains the main Maple worksheets and source code files.
-  - `Homework1_StefanoTonini.mw`: The main Maple worksheet for the project.
+  - `Homework1_StefanoTonini.mw`: A worksheet focusing on mechatronic system modeling.
+  - `Homework2_StefanoTonini.mw`: A worksheet modeling the cinematic and dynamic systems of a 2D mechatronics system using PVW, Linear Graphs, and Lagrange mechanics.
   
 - **`docs/`**: Documentation related to the project, including reports, references, and instructions.
   - `project_report.pdf`: A detailed report of the project’s objectives, methods, and results.
   
 - **`examples/`**: Example files that demonstrate specific functionalities or concepts from the project.
-  - `example1.mw`: An example Maple worksheet illustrating a specific analysis.
-  
+  - `example1.mw`: An example Maple worksheet illustrating specific analytical processes.
+
 ## Getting Started
 
 ### Prerequisites
@@ -35,7 +42,9 @@ To work with the files in this repository, you need to have Maple installed on y
    cd mechatronics-maple-project/src
    ```
    
-3. Open the `Homework1_StefanoTonini.mw` file in Maple to start exploring the project.
+3. Open any of the `.mw` files in Maple:
+   - `Homework1_StefanoTonini.mw` for system modeling.
+   - `Homework2_StefanoTonini.mw` for cinematic and dynamic analysis using PVW, Linear Graph, and Lagrange.
 
 ### Running Examples
 
@@ -54,15 +63,17 @@ To run any of the example worksheets:
 
 The main objective of this project is to demonstrate the application of Maple in solving complex problems in mechatronics, including:
 
-- **Modeling**: Creating mathematical models of mechanical and electrical systems.
+- **System Modeling**: Creating mathematical models of mechanical and electrical systems.
 - **Simulation**: Simulating the behavior of these systems under various conditions.
 - **Analysis**: Performing analytical tasks such as stability analysis and system optimization.
+- **Cinematic and Dynamic Analysis**: Using PVW, Linear Graphs, and Lagrangian mechanics to model a 2D mechatronic system.
 
 ### Features
 
 - **System Modeling**: Models for various mechanical and electrical components.
 - **Control Systems**: Design and analysis of control systems within a mechatronic context.
 - **Simulation Tools**: Tools for simulating dynamic systems in Maple.
+- **Cinematic and Dynamic Analysis**: Detailed modeling using the Principle of Virtual Work (PVW), Linear Graphs, and Lagrange mechanics.
 
 ## Documentation
 
@@ -88,3 +99,7 @@ This project is licensed under the MIT License - see the [LICENSE](LICENSE) file
 ## Contact
 
 If you have any questions or need further information, feel free to contact me.
+
+---
+
+This `README.md` now reflects the addition of the new file, providing clarity on its purpose and instructions for using it within the project.
