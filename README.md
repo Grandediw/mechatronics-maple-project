@@ -1,9 +1,3 @@
-You can modify your `README.md` file to include details about the newly uploaded file that models the cinematic and dynamic systems using PVW, Linear Graphs, and Lagrange methods.
-
-Here’s an updated version of the `README.md` that incorporates this new file:
-
----
-
 # Mechatronics Maple Project
 
 ## Overview
