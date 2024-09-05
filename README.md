@@ -86,14 +86,7 @@ Contributions to this project are welcome. If you find a bug or have a suggestio
 5. Push to the branch (`git push origin feature-branch`).
 6. Open a pull request.
 
-## License
-
-This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
 
 ## Contact
 
 If you have any questions or need further information, feel free to contact me.
-
----
-
-This `README.md` now reflects the addition of the new file, providing clarity on its purpose and instructions for using it within the project.
