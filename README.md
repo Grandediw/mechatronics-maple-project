@@ -15,9 +15,6 @@ The repository is organized into the following directories:
 - **`docs/`**: Documentation related to the project, including reports, references, and instructions.
   - `project_report.pdf`: A detailed report of the project’s objectives, methods, and results.
   
-- **`examples/`**: Example files that demonstrate specific functionalities or concepts from the project.
-  - `example1.mw`: An example Maple worksheet illustrating specific analytical processes.
-
 ## Getting Started
 
 ### Prerequisites
