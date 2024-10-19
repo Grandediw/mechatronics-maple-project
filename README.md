@@ -41,9 +41,9 @@ To work with the files in this repository, you need to have Maple installed on y
 
 To run any of the example worksheets:
 
-1. Navigate to the `Exercises/` directory:
+1. Navigate to the `Exercise/` directory:
    ```bash
-   cd ../Exercises
+   cd ../Exercise
    ```
    
 2. Open the desired `.mw` file in Maple and follow the instructions within the worksheet.
