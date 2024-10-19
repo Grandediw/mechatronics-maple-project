@@ -1,0 +1,107 @@
+<html>
+<head>
+<meta http-equiv="content-type" content="text/html; charset=utf-8">
+<title>Homework2_StefanoTonini2484139.html</title>
+<!-- Created by Maple 2024.0, Mac OS X -->
+</head>
+<dl style="margin-left:40px"><a name="MapleAutoBookmark12" />
+<p align="left"><font color="#ff9900" size="3" face="DejaVu Sans"><strong><em>Kinematic Numerical Solution</em></strong></font>&nbsp;</p>
+<p align="left"><font color="#000000" size="3" face="DejaVu Sans">This section aims at finding the numerical solutions of the mechanical system for given values of the independent variables.
+<br>Then the movement of the mechanical system is displayed and also the values of the dipendent variables (theta2,theta3) are plotted. </font>&nbsp;</p>
+<p align="left"><table>
+<tr>
+<td valign="top" align="center"><font color="#2f48a8" size="3" face="DejaVu Sans Mono"><strong>&gt; </strong></font></td>
+<td valign="top"><font color="#2f48a8" size="3" face="DejaVu Sans Mono"><strong>x2y := {seq(qD_vars[i]=op(0,qD_vars[i]),i=1..nops(qD_vars))};
+<br>y2x := map(x-&gt;rhs(x)=lhs(x),x2y);
+<br>yy &nbsp;:= map(lhs,y2x);</td>
+</tr>
+</table></strong></font>&nbsp;</p>
+<p align="center"><table width='100%'>
+<tr>
+<td valign="top" align="center"><font color="#0000ff" size="3" face="Times New Roman"><img src="images/Homework2_StefanoTonini248413_98.gif" width="207" height="25" alt="Typesetting:-mprintslash([x2y := {theta__2(t) = theta__2, theta__3(t) = theta__3}], [{theta__2(t) = theta__2, theta__3(t) = theta__3}])" align="center" border="0"></td>
+</tr></font>&nbsp;</p>
+<p align="center"><tr>
+<td valign="top" align="center"><font color="#0000ff" size="3" face="Times New Roman"><img src="images/Homework2_StefanoTonini248413_99.gif" width="207" height="25" alt="Typesetting:-mprintslash([y2x := {theta__2 = theta__2(t), theta__3 = theta__3(t)}], [{theta__2 = theta__2(t), theta__3 = theta__3(t)}])" align="center" border="0"></td>
+</tr></font>&nbsp;</p>
+<p align="center"><tr>
+<td valign="top" align="center"><font color="#0000ff" size="3" face="Times New Roman"><img src="images/Homework2_StefanoTonini248413_100.gif" width="103" height="25" alt="Typesetting:-mprintslash([yy := {theta__2, theta__3}], [{theta__2, theta__3}])" align="center" border="0"></td>
+<td width='5%' align='center'>(4.1.2.1)</td>
+</tr>
+</table></font>&nbsp;</p>
+<p align="left"><table>
+<tr>
+<td valign="top" align="center"><font color="#2f48a8" size="3" face="DejaVu Sans Mono"><strong>&gt; </strong></font></td>
+<td valign="top"><font color="#2f48a8" size="3" face="DejaVu Sans Mono"><strong>NPTS &nbsp;&nbsp;:= 100:
+<br>qI_vec := [seq(s__2(t) = 0.002+0.08/NPTS*i,i=0..NPTS),seq(s__3(t) = 0.002+0.28/NPTS*i,i=0..NPTS),seq(theta__1(t) = -0.04-1.5/NPTS*i,i=0..NPTS)]: </strong></font><font color="#993366" size="3" face="DejaVu Sans Mono"><strong># vector of independent variable's values</td>
+</tr>
+</table></strong></font>&nbsp;</p>
+<p align="left"><table>
+<tr>
+<td valign="top" align="center"><font color="#2f48a8" size="3" face="DejaVu Sans Mono"><strong>&gt; </strong></font></td>
+<td valign="top"><font color="#2f48a8" size="3" face="DejaVu Sans Mono"><strong>sol_kine_num := Array(1..NPTS+1,[]): </strong></font><font color="#993366" size="3" face="DejaVu Sans Mono"><strong># vector to store the solution
+<br>
+<br>#first solution
+<br></strong></font><font color="#2f48a8" size="3" face="DejaVu Sans Mono"><strong>sol_kine_num[1] := subs( y2x, fsolve(convert(subs(data,qI_vec[1],qI_vec[102],qI_vec[204],theta__2(t)=theta__2,theta__3(t)=theta__3,x2y, Phi),set),yy, {theta__2 = -Pi/2..Pi/2,theta__3 = -Pi/2..Pi/2}) ):
+<br>
+<br></strong></font><font color="#993366" size="3" face="DejaVu Sans Mono"><strong>#cycle over the vector of positions of independent variables and store di solution</strong></font><font color="#2f48a8" size="3" face="DejaVu Sans Mono"><strong>
+<br>for k from 2 to NPTS do
+<br> &nbsp;sol_kine_num[k] := subs( y2x, fsolve(convert(subs(data,qI_vec[k],qI_vec[101+k],qI_vec[203+k],theta__2(t)=theta__2,theta__3(t)=theta__3,x2y, Phi),set),
+<br> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;subs(x2y,sol_kine_num[k-1]), 
+<br> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{theta__2 = &nbsp;-Pi/2..Pi/2,theta__3 = &nbsp;-Pi/2..Pi/2} &nbsp;# add the ranges to search the solution
+<br> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;) 
+<br> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;);
+<br>
+<br>end do:</td>
+</tr>
+</table></strong></font>&nbsp;</p>
+<p align="left"><table>
+<tr>
+<td valign="top" align="center"><font color="#2f48a8" size="3" face="DejaVu Sans Mono"><strong>&gt; </strong></font></td>
+<td valign="top"><font color="#2f48a8" size="3" face="DejaVu Sans Mono"><strong>anim_draw_mech_k := proc(data, sol_kine, dof::list, k)
+<br> &nbsp;draw_mech(data, sol_kine[k], [dof[k],dof[k+101],dof[k+204]]);
+<br>end proc:
+<br>
+<br>animate(anim_draw_mech_k,[data,sol_kine_num, qI_vec,K],
+<br> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;K=[seq(k,k=1..(NPTS-1))],
+<br> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;size=[800,400],
+<br> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;view=[-1.5..2,0.5..-1.5],
+<br> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;title = "Movement of the mechanical system")</td>
+</tr>
+</table></strong></font>&nbsp;</p>
+<p align="center"><table width='100%'>
+<tr>
+<td valign="top" align="center"><font color="#000000" size="3" face="Times New Roman"><img src="images/Homework2_StefanoTonini248413_101.gif" width="728" height="364" alt="Plot_2d" align="center" border="0"></td>
+<td width='5%' align='center'></td>
+</tr>
+</table></font>&nbsp;</p>
+<p align="left"><font color="#000000" size="3" face="DejaVu Sans">Plot the values found for the dipendent variables</font>&nbsp;</p>
+<p align="left"><table>
+<tr>
+<td valign="top" align="center"><font color="#2f48a8" size="3" face="DejaVu Sans Mono"><strong>&gt; </strong></font></td>
+<td valign="top"><font color="#2f48a8" size="3" face="DejaVu Sans Mono"><strong>pointplot([seq(k,k=1..99)],[seq(subs(sol_kine_num[k],theta__2(t)*180/Pi),k=1..99)],
+<br> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;connect = true, 
+<br> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;color &nbsp;&nbsp;= c_set[1],
+<br> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;labels &nbsp;= ["Time (s)", typeset(theta2, " (deg)") ],
+<br> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;title = Theta__2,
+<br> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;size &nbsp;&nbsp;&nbsp;= [800,300] );
+<br>pointplot([seq(k,k=1..99)],[seq(subs(sol_kine_num[k],theta__3(t)*180/Pi),k=1..99)],
+<br> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;connect = true, 
+<br> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;color &nbsp;&nbsp;= c_set[1],
+<br> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;labels &nbsp;= ["Time (s)", typeset(theta3, " (deg)") ],
+<br> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;title = Theta__3,
+<br> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;size &nbsp;&nbsp;&nbsp;= [800,300] );
+<br></td>
+</tr>
+</table></strong></font>&nbsp;</p>
+<p align="center"><table width='100%'>
+<tr>
+<td valign="top" align="center"><font color="#000000" size="3" face="Times New Roman"><img src="images/Homework2_StefanoTonini248413_102.gif" width="728" height="273" alt="Plot_2d" align="center" border="0"></td>
+</tr></font>&nbsp;</p>
+<p align="center"><tr>
+<td valign="top" align="center"><font color="#000000" size="3" face="Times New Roman"><img src="images/Homework2_StefanoTonini248413_103.gif" width="728" height="273" alt="Plot_2d" align="center" border="0"></td>
+<td width='5%' align='center'></td>
+</tr>
+</table></font>&nbsp;</p>
+</dl>
+
+</html>

@@ -1,0 +1,233 @@
+<html>
+<head>
+<meta http-equiv="content-type" content="text/html; charset=utf-8">
+<title>Homework2_StefanoTonini2484134.html</title>
+<!-- Created by Maple 2024.0, Mac OS X -->
+</head>
+<dl style="margin-left:40px"><a name="MapleAutoBookmark7" />
+<p align="left"><font color="#c00000" size="5" face="DejaVu Sans"><strong>Kinematics</strong></font>&nbsp;</p>
+<p align="left"><font color="#ff9900" size="3" face="DejaVu Sans"><strong><em>Linear Graph</em></strong></font>&nbsp;</p>
+<p align="left"><font color="#000000" size="3" face="Times New Roman"><img src="images/Homework2_StefanoTonini248413_17.gif" width="489" height="316" alt="Image" align="center" border="0"></font>&nbsp;</p>
+<p align="left"><font color="#000000" size="3" face="DejaVu Sans">Revolute joint</font>&nbsp;</p>
+<p align="left"><table>
+<tr>
+<td valign="top" align="center"><font color="#2f48a8" size="3" face="DejaVu Sans Mono"><strong>&gt; </strong></font></td>
+<td valign="top"><font color="#2f48a8" size="3" face="DejaVu Sans Mono"><strong>hR := &lt;0,0,0&gt;;</td>
+</tr>
+</table></strong></font>&nbsp;</p>
+<p align="center"><table width='100%'>
+<tr>
+<td valign="top" align="center"><font color="#0000ff" size="3" face="Times New Roman"><img src="images/Homework2_StefanoTonini248413_18.gif" width="94" height="82" alt="rtable(1 .. 3, [0, 0, 0], subtype = Vector[column]); "_noterminate" align="center" border="0"></td>
+<td width='5%' align='center'>(3.1)</td>
+</tr>
+</table></font>&nbsp;</p>
+<p align="left"><font color="#000000" size="3" face="DejaVu Sans">Prismatic joint element</font>&nbsp;</p>
+<p align="left"><table>
+<tr>
+<td valign="top" align="center"><font color="#2f48a8" size="3" face="DejaVu Sans Mono"><strong>&gt; </strong></font></td>
+<td valign="top"><font color="#2f48a8" size="3" face="DejaVu Sans Mono"><strong>hp := s(t)*&lt;1,0,0&gt;;</td>
+</tr>
+</table></strong></font>&nbsp;</p>
+<p align="center"><table width='100%'>
+<tr>
+<td valign="top" align="center"><font color="#0000ff" size="3" face="Times New Roman"><img src="images/Homework2_StefanoTonini248413_19.gif" width="109" height="82" alt="rtable(1 .. 3, [s(t), 0, 0], subtype = Vector[column]); "_noterminate" align="center" border="0"></td>
+<td width='5%' align='center'>(3.2)</td>
+</tr>
+</table></font>&nbsp;</p>
+<p align="left"><font color="#000000" size="3" face="DejaVu Sans">Arm link elements fixed</font>&nbsp;</p>
+<p align="left"><table>
+<tr>
+<td valign="top" align="center"><font color="#2f48a8" size="3" face="DejaVu Sans Mono"><strong>&gt; </strong></font></td>
+<td valign="top"><font color="#2f48a8" size="3" face="DejaVu Sans Mono"><strong>rL__1 := &lt;-L,0,0&gt;;
+<br>rL__2 := &lt;L,0,0&gt;;</td>
+</tr>
+</table></strong></font>&nbsp;</p>
+<p align="center"><table width='100%'>
+<tr>
+<td valign="top" align="center"><font color="#0000ff" size="3" face="Times New Roman"><img src="images/Homework2_StefanoTonini248413_20.gif" width="112" height="82" alt="rtable(1 .. 3, [`+`(`-`(L)), 0, 0], subtype = Vector[column]); "_noterminate" align="center" border="0"></td>
+</tr></font>&nbsp;</p>
+<p align="center"><tr>
+<td valign="top" align="center"><font color="#0000ff" size="3" face="Times New Roman"><img src="images/Homework2_StefanoTonini248413_21.gif" width="96" height="82" alt="Typesetting:-mfenced(Typesetting:-mrow(Typesetting:-mtable(Typesetting:-mtr(Typesetting:-mtd(Typesetting:-mi("L", italic = "true", foreground = "[0,0,0]", readonly = "false", mathvariant = "italic"), ..." align="center" border="0"></td>
+<td width='5%' align='center'>(3.3)</td>
+</tr>
+</table></font>&nbsp;</p>
+<p align="left"><font color="#000000" size="3" face="DejaVu Sans">Arm link element</font>&nbsp;</p>
+<p align="left"><table>
+<tr>
+<td valign="top" align="center"><font color="#2f48a8" size="3" face="DejaVu Sans Mono"><strong>&gt; </strong></font></td>
+<td valign="top"><font color="#2f48a8" size="3" face="DejaVu Sans Mono"><strong>r3 := Rz(theta__3(t)).&lt;-L__s0,0,0&gt;;
+<br></td>
+</tr>
+</table></strong></font>&nbsp;</p>
+<p align="center"><table width='100%'>
+<tr>
+<td valign="top" align="center"><font color="#0000ff" size="3" face="Times New Roman"><img src="images/Homework2_StefanoTonini248413_22.gif" width="188" height="95" alt="rtable(1 .. 3, [`+`(`-`(`*`(cos(theta__3(t)), `*`(L__s0)))), `+`(`-`(`*`(sin(theta__3(t)), `*`(L__s0)))), 0], subtype = Vector[column]); "_noterminate" align="center" border="0"></td>
+<td width='5%' align='center'>(3.4)</td>
+</tr>
+</table></font>&nbsp;</p>
+<p align="left"><font color="#000000" size="3" face="DejaVu Sans">Prismatic joint element</font>&nbsp;</p>
+<p align="left"><table>
+<tr>
+<td valign="top" align="center"><font color="#2f48a8" size="3" face="DejaVu Sans Mono"><strong>&gt; </strong></font></td>
+<td valign="top"><font color="#2f48a8" size="3" face="DejaVu Sans Mono"><strong>hp3 := Rz(theta__3(t)).(s__3(t)*&lt;1,0,0&gt;);</td>
+</tr>
+</table></strong></font>&nbsp;</p>
+<p align="center"><table width='100%'>
+<tr>
+<td valign="top" align="center"><font color="#0000ff" size="3" face="Times New Roman"><img src="images/Homework2_StefanoTonini248413_23.gif" width="196" height="95" alt="rtable(1 .. 3, [`*`(cos(theta__3(t)), `*`(s__3(t))), `*`(sin(theta__3(t)), `*`(s__3(t))), 0], subtype = Vector[column]); "_noterminate" align="center" border="0"></td>
+<td width='5%' align='center'>(3.5)</td>
+</tr>
+</table></font>&nbsp;</p>
+<p align="left"><font color="#000000" size="3" face="DejaVu Sans">Arm link element</font>&nbsp;</p>
+<p align="left"><table>
+<tr>
+<td valign="top" align="center"><font color="#2f48a8" size="3" face="DejaVu Sans Mono"><strong>&gt; </strong></font></td>
+<td valign="top"><font color="#2f48a8" size="3" face="DejaVu Sans Mono"><strong>r1 := Rz(theta__1(t)).&lt;-L__s0,0,0&gt;;</td>
+</tr>
+</table></strong></font>&nbsp;</p>
+<p align="center"><table width='100%'>
+<tr>
+<td valign="top" align="center"><font color="#0000ff" size="3" face="Times New Roman"><img src="images/Homework2_StefanoTonini248413_24.gif" width="188" height="95" alt="rtable(1 .. 3, [`+`(`-`(`*`(cos(theta__1(t)), `*`(L__s0)))), `+`(`-`(`*`(sin(theta__1(t)), `*`(L__s0)))), 0], subtype = Vector[column]); "_noterminate" align="center" border="0"></td>
+<td width='5%' align='center'>(3.6)</td>
+</tr>
+</table></font>&nbsp;</p>
+<p align="left"><font color="#000000" size="3" face="DejaVu Sans">Arm link element</font>&nbsp;</p>
+<p align="left"><table>
+<tr>
+<td valign="top" align="center"><font color="#2f48a8" size="3" face="DejaVu Sans Mono"><strong>&gt; </strong></font></td>
+<td valign="top"><font color="#2f48a8" size="3" face="DejaVu Sans Mono"><strong>r2 := Rz(theta__2(t)).&lt;-L__s0,0,0&gt;;</td>
+</tr>
+</table></strong></font>&nbsp;</p>
+<p align="center"><table width='100%'>
+<tr>
+<td valign="top" align="center"><font color="#0000ff" size="3" face="Times New Roman"><img src="images/Homework2_StefanoTonini248413_25.gif" width="188" height="95" alt="rtable(1 .. 3, [`+`(`-`(`*`(cos(theta__2(t)), `*`(L__s0)))), `+`(`-`(`*`(sin(theta__2(t)), `*`(L__s0)))), 0], subtype = Vector[column]); "_noterminate" align="center" border="0"></td>
+<td width='5%' align='center'>(3.7)</td>
+</tr>
+</table></font>&nbsp;</p>
+<p align="left"><font color="#000000" size="3" face="DejaVu Sans">Prismatic joint element</font>&nbsp;</p>
+<p align="left"><table>
+<tr>
+<td valign="top" align="center"><font color="#2f48a8" size="3" face="DejaVu Sans Mono"><strong>&gt; </strong></font></td>
+<td valign="top"><font color="#2f48a8" size="3" face="DejaVu Sans Mono"><strong>hp2 := Rz(theta__2(t)).(s__2(t)*&lt;1,0,0&gt;);</td>
+</tr>
+</table></strong></font>&nbsp;</p>
+<p align="center"><table width='100%'>
+<tr>
+<td valign="top" align="center"><font color="#0000ff" size="3" face="Times New Roman"><img src="images/Homework2_StefanoTonini248413_26.gif" width="196" height="95" alt="rtable(1 .. 3, [`*`(cos(theta__2(t)), `*`(s__2(t))), `*`(sin(theta__2(t)), `*`(s__2(t))), 0], subtype = Vector[column]); "_noterminate" align="center" border="0"></td>
+<td width='5%' align='center'>(3.8)</td>
+</tr>
+</table></font>&nbsp;</p>
+<p align="left"><font color="#000000" size="3" face="DejaVu Sans">Rotation Matrix 1 </font>&nbsp;</p>
+<p align="left"><table>
+<tr>
+<td valign="top" align="center"><font color="#2f48a8" size="3" face="DejaVu Sans Mono"><strong>&gt; </strong></font></td>
+<td valign="top"><font color="#2f48a8" size="3" face="DejaVu Sans Mono"><strong>Rs__1 := Rz(theta__1(t));
+<br>is_uvec__1 := %[1..3,1]:
+<br>js_uvec__1 := %%[1..3,2]:
+<br>
+<br>is_uvec__1,js_uvec__1;</td>
+</tr>
+</table></strong></font>&nbsp;</p>
+<p align="center"><table width='100%'>
+<tr>
+<td valign="top" align="center"><font color="#0000ff" size="3" face="Times New Roman"><img src="images/Homework2_StefanoTonini248413_27.gif" width="278" height="95" alt="rtable(1 .. 3, 1 .. 3, [[cos(theta__1(t)), `+`(`-`(sin(theta__1(t)))), 0], [sin(theta__1(t)), cos(theta__1(t)), 0], [0, 0, 1]], subtype = Matrix); "_noterminate" align="center" border="0"></td>
+</tr></font>&nbsp;</p>
+<p align="center"><tr>
+<td valign="top" align="center"><font color="#0000ff" size="3" face="Times New Roman"><img src="images/Homework2_StefanoTonini248413_28.gif" width="235" height="95" alt="Typesetting:-mprintslash([Vector(3, {(1) = Typesetting:-mrow(Typesetting:-mi("cos", fontstyle = "normal"), Typesetting:-mo("&ApplyFunction;"), Typesetting:-mfenced(Typesetting:-mrow(Typesetting:-mi("t..." align="center" border="0"></td>
+<td width='5%' align='center'>(3.9)</td>
+</tr>
+</table></font>&nbsp;</p>
+<p align="left"><font color="#000000" size="3" face="DejaVu Sans">Rotation Matrix 2 </font>&nbsp;</p>
+<p align="left"><table>
+<tr>
+<td valign="top" align="center"><font color="#2f48a8" size="3" face="DejaVu Sans Mono"><strong>&gt; </strong></font></td>
+<td valign="top"><font color="#2f48a8" size="3" face="DejaVu Sans Mono"><strong>Rs__2 := Rz(theta__2(t));
+<br>is_uvec__2 := %[1..3,1]:
+<br>js_uvec__2 := %%[1..3,2]:
+<br>
+<br>is_uvec__2,js_uvec__2;
+<br>rs__2 := Rs.&lt;L__s+s__2(t),0,0&gt;:</td>
+</tr>
+</table></strong></font>&nbsp;</p>
+<p align="center"><table width='100%'>
+<tr>
+<td valign="top" align="center"><font color="#0000ff" size="3" face="Times New Roman"><img src="images/Homework2_StefanoTonini248413_29.gif" width="278" height="95" alt="rtable(1 .. 3, 1 .. 3, [[cos(theta__2(t)), `+`(`-`(sin(theta__2(t)))), 0], [sin(theta__2(t)), cos(theta__2(t)), 0], [0, 0, 1]], subtype = Matrix); "_noterminate" align="center" border="0"></td>
+</tr></font>&nbsp;</p>
+<p align="center"><tr>
+<td valign="top" align="center"><font color="#0000ff" size="3" face="Times New Roman"><img src="images/Homework2_StefanoTonini248413_30.gif" width="235" height="95" alt="Typesetting:-mprintslash([Vector(3, {(1) = Typesetting:-mrow(Typesetting:-mi("cos", fontstyle = "normal"), Typesetting:-mo("&ApplyFunction;"), Typesetting:-mfenced(Typesetting:-mrow(Typesetting:-mi("t..." align="center" border="0"></td>
+<td width='5%' align='center'>(3.10)</td>
+</tr>
+</table></font>&nbsp;</p>
+<p align="left"><font color="#000000" size="3" face="DejaVu Sans">Rotation Matrix 3 </font>&nbsp;</p>
+<p align="left"><table>
+<tr>
+<td valign="top" align="center"><font color="#2f48a8" size="3" face="DejaVu Sans Mono"><strong>&gt; </strong></font></td>
+<td valign="top"><font color="#2f48a8" size="3" face="DejaVu Sans Mono"><strong>Rs__3 := Rz(theta__3(t));
+<br>is_uvec__3 := %[1..3,1]:
+<br>js_uvec__3 := %%[1..3,2]:
+<br>
+<br>is_uvec__3,js_uvec__3;
+<br>rs__3 := Rs.&lt;L__s+s__3(t),0,0&gt;:</td>
+</tr>
+</table></strong></font>&nbsp;</p>
+<p align="center"><table width='100%'>
+<tr>
+<td valign="top" align="center"><font color="#0000ff" size="3" face="Times New Roman"><img src="images/Homework2_StefanoTonini248413_31.gif" width="278" height="95" alt="rtable(1 .. 3, 1 .. 3, [[cos(theta__3(t)), `+`(`-`(sin(theta__3(t)))), 0], [sin(theta__3(t)), cos(theta__3(t)), 0], [0, 0, 1]], subtype = Matrix); "_noterminate" align="center" border="0"></td>
+</tr></font>&nbsp;</p>
+<p align="center"><tr>
+<td valign="top" align="center"><font color="#0000ff" size="3" face="Times New Roman"><img src="images/Homework2_StefanoTonini248413_32.gif" width="235" height="95" alt="Typesetting:-mprintslash([Vector(3, {(1) = Typesetting:-mrow(Typesetting:-mi("cos", fontstyle = "normal"), Typesetting:-mo("&ApplyFunction;"), Typesetting:-mfenced(Typesetting:-mrow(Typesetting:-mi("t..." align="center" border="0"></td>
+<td width='5%' align='center'>(3.11)</td>
+</tr>
+</table></font>&nbsp;</p>
+<p align="left"><font color="#000000" size="3" face="DejaVu Sans">There are two circuits &nbsp;(2 rod joint and spring element) to derive the constraint equations</font>&nbsp;</p>
+<p align="left"><font color="#000000" size="3" face="DejaVu Sans">Rod element kinematic and constraint</font>&nbsp;</p>
+<p align="left"><table>
+<tr>
+<td valign="top" align="center"><font color="#2f48a8" size="3" face="DejaVu Sans Mono"><strong>&gt; </strong></font></td>
+<td valign="top"><font color="#2f48a8" size="3" face="DejaVu Sans Mono"><strong>H__rod1 := -(rL__2-r3+hp3+r1); 
+<br>Phi1 := simplify( Transpose(H__rod1).H__rod1-L^2 );</td>
+</tr>
+</table></strong></font>&nbsp;</p>
+<p align="center"><table width='100%'>
+<tr>
+<td valign="top" align="center"><font color="#0000ff" size="3" face="Times New Roman"><img src="images/Homework2_StefanoTonini248413_33.gif" width="471" height="95" alt="rtable(1 .. 3, [`+`(`-`(L), `-`(`*`(cos(theta__3(t)), `*`(L__s0))), `-`(`*`(cos(theta__3(t)), `*`(s__3(t)))), `*`(cos(theta__1(t)), `*`(L__s0))), `+`(`-`(`*`(sin(theta__3(t)), `*`(L__s0))), `-`(`*`(si..." align="center" border="0"></td>
+</tr></font>&nbsp;</p>
+<p align="center"><tr>
+<td valign="top" align="center"><font color="#0000ff" size="3" face="Times New Roman"><img src="images/Homework2_StefanoTonini248413_34.gif" width="728" height="23" alt="Typesetting:-mprintslash([Phi1 := `+`(`*`(`^`(`+`(`-`(L), `-`(`*`(cos(theta__3(t)), `*`(L__s0))), `-`(`*`(cos(theta__3(t)), `*`(s__3(t)))), `*`(cos(theta__1(t)), `*`(L__s0))), 2)), `*`(`^`(`+`(`-`(`*`..." align="center" border="0"></td>
+<td width='5%' align='center'>(3.12)</td>
+</tr>
+</table></font>&nbsp;</p>
+<p align="left"><table>
+<tr>
+<td valign="top" align="center"><font color="#2f48a8" size="3" face="DejaVu Sans Mono"><strong>&gt; </strong></font></td>
+<td valign="top"><font color="#2f48a8" size="3" face="DejaVu Sans Mono"><strong>H__rod2 := rL__1+r1+hp2-r2;
+<br>Phi2 := simplify( Transpose(H__rod2).H__rod2-L^2 );</td>
+</tr>
+</table></strong></font>&nbsp;</p>
+<p align="center"><table width='100%'>
+<tr>
+<td valign="top" align="center"><font color="#0000ff" size="3" face="Times New Roman"><img src="images/Homework2_StefanoTonini248413_35.gif" width="471" height="95" alt="rtable(1 .. 3, [`+`(`-`(L), `-`(`*`(cos(theta__1(t)), `*`(L__s0))), `*`(cos(theta__2(t)), `*`(s__2(t))), `*`(cos(theta__2(t)), `*`(L__s0))), `+`(`-`(`*`(sin(theta__1(t)), `*`(L__s0))), `*`(sin(theta__..." align="center" border="0"></td>
+</tr></font>&nbsp;</p>
+<p align="center"><tr>
+<td valign="top" align="center"><font color="#0000ff" size="3" face="Times New Roman"><img src="images/Homework2_StefanoTonini248413_36.gif" width="728" height="23" alt="Typesetting:-mprintslash([Phi2 := `+`(`*`(`^`(`+`(`-`(L), `-`(`*`(cos(theta__1(t)), `*`(L__s0))), `*`(cos(theta__2(t)), `*`(s__2(t))), `*`(cos(theta__2(t)), `*`(L__s0))), 2)), `*`(`^`(`+`(`-`(`*`(sin(..." align="center" border="0"></td>
+<td width='5%' align='center'>(3.13)</td>
+</tr>
+</table></font>&nbsp;</p>
+<p align="left"><font color="#000000" size="3" face="DejaVu Sans">Overall kinematic elements</font>&nbsp;</p>
+<p align="left"><table>
+<tr>
+<td valign="top" align="center"><font color="#2f48a8" size="3" face="DejaVu Sans Mono"><strong>&gt; </strong></font></td>
+<td valign="top"><font color="#2f48a8" size="3" face="DejaVu Sans Mono"><strong>rL__1,rL__2,r1,r2,r3,hp2,hp3;</td>
+</tr>
+</table></strong></font>&nbsp;</p>
+<p align="center"><table width='100%'>
+<tr>
+<td valign="top" align="center"><font color="#0000ff" size="3" face="Times New Roman"><img src="images/Homework2_StefanoTonini248413_37.gif" width="728" height="84" alt="Typesetting:-mprintslash([Vector(3, {(1) = Typesetting:-mrow(Typesetting:-mo("&uminus0;"), Typesetting:-mi("L")), (2) = Typesetting:-mn("0"), (3) = Typesetting:-mn("0")}), Vector(3, {(1) = Typesetting..." align="center" border="0"></td>
+<td width='5%' align='center'>(3.14)</td>
+</tr>
+</table></font>&nbsp;</p>
+<dl style="margin-left:40px"><a href="Homework2_StefanoTonini2484135.html" target="Content"><p align="left"><font color="#ff6600" size="4" face="DejaVu Sans"><strong>Position and velocity analysis</strong></font>&nbsp;</p>
+</a></dl>
+</dl>
+
+</html>

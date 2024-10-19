@@ -1,0 +1,265 @@
+<html>
+<head>
+<meta http-equiv="content-type" content="text/html; charset=utf-8">
+<title>Homework2_StefanoTonini24841317.html</title>
+<!-- Created by Maple 2024.0, Mac OS X -->
+</head>
+<dl style="margin-left:40px"><a name="MapleAutoBookmark20" />
+<p align="left"><font color="#ff9900" size="3" face="DejaVu Sans"><strong><em>Reduce index by one [2]</em></strong></font>&nbsp;</p>
+<p align="left"><font color="#000000" size="3" face="DejaVu Sans">Differentiate constraint not containing dot variables and save algebraic constraint for projection</font>&nbsp;</p>
+<p align="left"><table>
+<tr>
+<td valign="top" align="center"><font color="#2f48a8" size="3" face="DejaVu Sans Mono"><strong>&gt; </strong></font></td>
+<td valign="top"><font color="#2f48a8" size="3" face="DejaVu Sans Mono"><strong>HIDDEN2 := [op(HIDDEN1), ALG[1],ALG[2]]:&lt;%&gt;;</td>
+</tr>
+</table></strong></font>&nbsp;</p>
+<p align="center"><table width='100%'>
+<tr>
+<td valign="top" align="center"><font color="#0000ff" size="3" face="Times New Roman"><img src="images/Homework2_StefanoTonini248413_293.gif" width="728" height="107" alt="rtable(1 .. 4, [`+`(`*`(`^`(`+`(`-`(L), `-`(`*`(cos(theta__1(t)), `*`(L__s0))), `*`(cos(theta__2(t)), `*`(s__2(t))), `*`(cos(theta__2(t)), `*`(L__s0))), 2)), `*`(`^`(`+`(`-`(`*`(sin(theta__1(t)), `*`(..." align="center" border="0"></td>
+<td width='5%' align='center'>(6.3.2.1)</td>
+</tr>
+</table></font>&nbsp;</p>
+<p align="left"><table>
+<tr>
+<td valign="top" align="center"><font color="#2f48a8" size="3" face="DejaVu Sans Mono"><strong>&gt; </strong></font></td>
+<td valign="top"><font color="#2f48a8" size="3" face="DejaVu Sans Mono"><strong>diff(ALG[1],t);
+<br>diff(ALG[2],t);</td>
+</tr>
+</table></strong></font>&nbsp;</p>
+<p align="center"><table width='100%'>
+<tr>
+<td valign="top" align="center"><font color="#0000ff" size="3" face="Times New Roman"><img src="images/Homework2_StefanoTonini248413_294.gif" width="728" height="30" alt="Typesetting:-mprintslash([`+`(`*`(2, `*`(`+`(`*`(diff(theta__1(t), t), `*`(sin(theta__1(t)), `*`(L__s0))), `-`(`*`(diff(theta__2(t), t), `*`(sin(theta__2(t)), `*`(s__2(t))))), `*`(cos(theta__2(t)), `*..." align="center" border="0"><br><img src="images/Homework2_StefanoTonini248413_295.gif" width="728" height="30" alt="Typesetting:-mprintslash([`+`(`*`(2, `*`(`+`(`*`(diff(theta__1(t), t), `*`(sin(theta__1(t)), `*`(L__s0))), `-`(`*`(diff(theta__2(t), t), `*`(sin(theta__2(t)), `*`(s__2(t))))), `*`(cos(theta__2(t)), `*..." align="center" border="0"><br><img src="images/Homework2_StefanoTonini248413_296.gif" width="728" height="30" alt="Typesetting:-mprintslash([`+`(`*`(2, `*`(`+`(`*`(diff(theta__1(t), t), `*`(sin(theta__1(t)), `*`(L__s0))), `-`(`*`(diff(theta__2(t), t), `*`(sin(theta__2(t)), `*`(s__2(t))))), `*`(cos(theta__2(t)), `*..." align="center" border="0"><br><img src="images/Homework2_StefanoTonini248413_297.gif" width="728" height="30" alt="Typesetting:-mprintslash([`+`(`*`(2, `*`(`+`(`*`(diff(theta__1(t), t), `*`(sin(theta__1(t)), `*`(L__s0))), `-`(`*`(diff(theta__2(t), t), `*`(sin(theta__2(t)), `*`(s__2(t))))), `*`(cos(theta__2(t)), `*..." align="center" border="0"><br><img src="images/Homework2_StefanoTonini248413_298.gif" width="728" height="30" alt="Typesetting:-mprintslash([`+`(`*`(2, `*`(`+`(`*`(diff(theta__1(t), t), `*`(sin(theta__1(t)), `*`(L__s0))), `-`(`*`(diff(theta__2(t), t), `*`(sin(theta__2(t)), `*`(s__2(t))))), `*`(cos(theta__2(t)), `*..." align="center" border="0"><br><img src="images/Homework2_StefanoTonini248413_299.gif" width="728" height="30" alt="Typesetting:-mprintslash([`+`(`*`(2, `*`(`+`(`*`(diff(theta__1(t), t), `*`(sin(theta__1(t)), `*`(L__s0))), `-`(`*`(diff(theta__2(t), t), `*`(sin(theta__2(t)), `*`(s__2(t))))), `*`(cos(theta__2(t)), `*..." align="center" border="0"><br><img src="images/Homework2_StefanoTonini248413_300.gif" width="728" height="30" alt="Typesetting:-mprintslash([`+`(`*`(2, `*`(`+`(`*`(diff(theta__1(t), t), `*`(sin(theta__1(t)), `*`(L__s0))), `-`(`*`(diff(theta__2(t), t), `*`(sin(theta__2(t)), `*`(s__2(t))))), `*`(cos(theta__2(t)), `*..." align="center" border="0"><br><img src="images/Homework2_StefanoTonini248413_301.gif" width="728" height="30" alt="Typesetting:-mprintslash([`+`(`*`(2, `*`(`+`(`*`(diff(theta__1(t), t), `*`(sin(theta__1(t)), `*`(L__s0))), `-`(`*`(diff(theta__2(t), t), `*`(sin(theta__2(t)), `*`(s__2(t))))), `*`(cos(theta__2(t)), `*..." align="center" border="0"><br><img src="images/Homework2_StefanoTonini248413_302.gif" width="728" height="30" alt="Typesetting:-mprintslash([`+`(`*`(2, `*`(`+`(`*`(diff(theta__1(t), t), `*`(sin(theta__1(t)), `*`(L__s0))), `-`(`*`(diff(theta__2(t), t), `*`(sin(theta__2(t)), `*`(s__2(t))))), `*`(cos(theta__2(t)), `*..." align="center" border="0"></td>
+</tr></font>&nbsp;</p>
+<p align="center"><tr>
+<td valign="top" align="center"><font color="#0000ff" size="3" face="Times New Roman"><img src="images/Homework2_StefanoTonini248413_303.gif" width="728" height="30" alt="Typesetting:-mprintslash([`+`(`*`(2, `*`(`+`(`*`(diff(theta__3(t), t), `*`(sin(theta__3(t)), `*`(L__s0))), `*`(diff(theta__3(t), t), `*`(sin(theta__3(t)), `*`(s__3(t)))), `-`(`*`(cos(theta__3(t)), `*`..." align="center" border="0"><br><img src="images/Homework2_StefanoTonini248413_304.gif" width="728" height="30" alt="Typesetting:-mprintslash([`+`(`*`(2, `*`(`+`(`*`(diff(theta__3(t), t), `*`(sin(theta__3(t)), `*`(L__s0))), `*`(diff(theta__3(t), t), `*`(sin(theta__3(t)), `*`(s__3(t)))), `-`(`*`(cos(theta__3(t)), `*`..." align="center" border="0"><br><img src="images/Homework2_StefanoTonini248413_305.gif" width="728" height="30" alt="Typesetting:-mprintslash([`+`(`*`(2, `*`(`+`(`*`(diff(theta__3(t), t), `*`(sin(theta__3(t)), `*`(L__s0))), `*`(diff(theta__3(t), t), `*`(sin(theta__3(t)), `*`(s__3(t)))), `-`(`*`(cos(theta__3(t)), `*`..." align="center" border="0"><br><img src="images/Homework2_StefanoTonini248413_306.gif" width="728" height="30" alt="Typesetting:-mprintslash([`+`(`*`(2, `*`(`+`(`*`(diff(theta__3(t), t), `*`(sin(theta__3(t)), `*`(L__s0))), `*`(diff(theta__3(t), t), `*`(sin(theta__3(t)), `*`(s__3(t)))), `-`(`*`(cos(theta__3(t)), `*`..." align="center" border="0"><br><img src="images/Homework2_StefanoTonini248413_307.gif" width="728" height="30" alt="Typesetting:-mprintslash([`+`(`*`(2, `*`(`+`(`*`(diff(theta__3(t), t), `*`(sin(theta__3(t)), `*`(L__s0))), `*`(diff(theta__3(t), t), `*`(sin(theta__3(t)), `*`(s__3(t)))), `-`(`*`(cos(theta__3(t)), `*`..." align="center" border="0"><br><img src="images/Homework2_StefanoTonini248413_308.gif" width="728" height="30" alt="Typesetting:-mprintslash([`+`(`*`(2, `*`(`+`(`*`(diff(theta__3(t), t), `*`(sin(theta__3(t)), `*`(L__s0))), `*`(diff(theta__3(t), t), `*`(sin(theta__3(t)), `*`(s__3(t)))), `-`(`*`(cos(theta__3(t)), `*`..." align="center" border="0"><br><img src="images/Homework2_StefanoTonini248413_309.gif" width="728" height="30" alt="Typesetting:-mprintslash([`+`(`*`(2, `*`(`+`(`*`(diff(theta__3(t), t), `*`(sin(theta__3(t)), `*`(L__s0))), `*`(diff(theta__3(t), t), `*`(sin(theta__3(t)), `*`(s__3(t)))), `-`(`*`(cos(theta__3(t)), `*`..." align="center" border="0"><br><img src="images/Homework2_StefanoTonini248413_310.gif" width="728" height="30" alt="Typesetting:-mprintslash([`+`(`*`(2, `*`(`+`(`*`(diff(theta__3(t), t), `*`(sin(theta__3(t)), `*`(L__s0))), `*`(diff(theta__3(t), t), `*`(sin(theta__3(t)), `*`(s__3(t)))), `-`(`*`(cos(theta__3(t)), `*`..." align="center" border="0"><br><img src="images/Homework2_StefanoTonini248413_311.gif" width="728" height="30" alt="Typesetting:-mprintslash([`+`(`*`(2, `*`(`+`(`*`(diff(theta__3(t), t), `*`(sin(theta__3(t)), `*`(L__s0))), `*`(diff(theta__3(t), t), `*`(sin(theta__3(t)), `*`(s__3(t)))), `-`(`*`(cos(theta__3(t)), `*`..." align="center" border="0"></td>
+<td width='5%' align='center'>(6.3.2.2)</td>
+</tr>
+</table></font>&nbsp;</p>
+<p align="left"><table>
+<tr>
+<td valign="top" align="center"><font color="#2f48a8" size="3" face="DejaVu Sans Mono"><strong>&gt; </strong></font></td>
+<td valign="top"><font color="#2f48a8" size="3" face="DejaVu Sans Mono"><strong>ALG[1] := subs(REMOVE_DOT,subs(SS_DIFF_TO_DOT,diff(ALG[1],t))):
+<br>ALG[2] := subs(REMOVE_DOT,subs(SS_DIFF_TO_DOT,diff(ALG[2],t))):</td>
+</tr>
+</table></strong></font>&nbsp;</p>
+<p align="left"><font color="#000000" size="3" face="DejaVu Sans">Multiplier appears, &nbsp;try to solve for dot variables and lambda.</font>&nbsp;</p>
+<p align="left"><font color="#000000" size="3" face="DejaVu Sans">Use GenerateMatrix for the generation of the linear system.</font>&nbsp;</p>
+<p align="left"><table>
+<tr>
+<td valign="top" align="center"><font color="#2f48a8" size="3" face="DejaVu Sans Mono"><strong>&gt; </strong></font></td>
+<td valign="top"><font color="#2f48a8" size="3" face="DejaVu Sans Mono"><strong>VARS := [x1dot(t),x2dot(t),x3dot(t),x4dot(t),x5dot(t),lambda__1(t),lambda__2(t)];</td>
+</tr>
+</table></strong></font>&nbsp;</p>
+<p align="center"><table width='100%'>
+<tr>
+<td valign="top" align="center"><font color="#0000ff" size="3" face="Times New Roman"><img src="images/Homework2_StefanoTonini248413_312.gif" width="467" height="25" alt="Typesetting:-mprintslash([VARS := [x1dot(t), x2dot(t), x3dot(t), x4dot(t), x5dot(t), lambda__1(t), lambda__2(t)]], [[x1dot(t), x2dot(t), x3dot(t), x4dot(t), x5dot(t), lambda__1(t), lambda__2(t)]])" align="center" border="0"></td>
+<td width='5%' align='center'>(6.3.2.3)</td>
+</tr>
+</table></font>&nbsp;</p>
+<p align="left"><table>
+<tr>
+<td valign="top" align="center"><font color="#2f48a8" size="3" face="DejaVu Sans Mono"><strong>&gt; </strong></font></td>
+<td valign="top"><font color="#2f48a8" size="3" face="DejaVu Sans Mono"><strong>M, R := GenerateMatrix( convert(ALG,list), VARS );</td>
+</tr>
+</table></strong></font>&nbsp;</p>
+<p align="center"><table width='100%'>
+<tr>
+<td valign="top" align="center"><font color="#0000ff" size="3" face="Times New Roman"><img src="images/Homework2_StefanoTonini248413_313.gif" width="728" height="14" alt="Typesetting:-mprintslash([M, R := Matrix(7, 7, {(1, 1) = Typesetting:-mn("0"), (1, 2) = Typesetting:-mn("0"), (1, 3) = Typesetting:-mn("0"), (1, 4) = Typesetting:-mn("0"), (1, 5) = Typesetting:-mn("0"..." align="center" border="0"><br><img src="images/Homework2_StefanoTonini248413_314.gif" width="728" height="246" alt="Typesetting:-mprintslash([M, R := Matrix(7, 7, {(1, 1) = Typesetting:-mn("0"), (1, 2) = Typesetting:-mn("0"), (1, 3) = Typesetting:-mn("0"), (1, 4) = Typesetting:-mn("0"), (1, 5) = Typesetting:-mn("0"..." align="center" border="0"></td>
+<td width='5%' align='center'>(6.3.2.4)</td>
+</tr>
+</table></font>&nbsp;</p>
+<p align="left"><table>
+<tr>
+<td valign="top" align="center"><font color="#2f48a8" size="3" face="DejaVu Sans Mono"><strong>&gt; </strong></font></td>
+<td valign="top"><font color="#2f48a8" size="3" face="DejaVu Sans Mono"><strong>REMOVET := s__2(t) = s__2,
+<br> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;s__3(t) = s__3,
+<br> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;theta__1(t) = theta__1,
+<br> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;theta__2(t) = theta__2,
+<br> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;theta__3(t) = theta__3,
+<br> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;x1(t) = x1,
+<br> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;x2(t) = x2,
+<br> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;x3(t) = x3,
+<br> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;x4(t) = x4,
+<br> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;x5(t) = x5:</td>
+</tr>
+</table></strong></font>&nbsp;</p>
+<p align="left"><table>
+<tr>
+<td valign="top" align="center"><font color="#2f48a8" size="3" face="DejaVu Sans Mono"><strong>&gt; </strong></font></td>
+<td valign="top"><font color="#2f48a8" size="3" face="DejaVu Sans Mono"><strong>Mf := subs(data,REMOVET,M);</td>
+</tr>
+</table></strong></font>&nbsp;</p>
+<p align="center"><table width='100%'>
+<tr>
+<td valign="top" align="center"><font color="#0000ff" size="3" face="Times New Roman"><img src="images/Homework2_StefanoTonini248413_315.gif" width="728" height="14" alt="Typesetting:-mprintslash([Mf := Matrix(7, 7, {(1, 1) = Typesetting:-mn("0"), (1, 2) = Typesetting:-mn("0"), (1, 3) = Typesetting:-mn("0"), (1, 4) = Typesetting:-mn("0"), (1, 5) = Typesetting:-mn("0"),..." align="center" border="0"><br><img src="images/Homework2_StefanoTonini248413_316.gif" width="728" height="230" alt="Typesetting:-mprintslash([Mf := Matrix(7, 7, {(1, 1) = Typesetting:-mn("0"), (1, 2) = Typesetting:-mn("0"), (1, 3) = Typesetting:-mn("0"), (1, 4) = Typesetting:-mn("0"), (1, 5) = Typesetting:-mn("0"),..." align="center" border="0"></td>
+<td width='5%' align='center'>(6.3.2.5)</td>
+</tr>
+</table></font>&nbsp;</p>
+<p align="left"><table>
+<tr>
+<td valign="top" align="center"><font color="#2f48a8" size="3" face="DejaVu Sans Mono"><strong>&gt; </strong></font></td>
+<td valign="top"><font color="#2f48a8" size="3" face="DejaVu Sans Mono"><strong>Rf:=subs(data,REMOVET,R);</td>
+</tr>
+</table></strong></font>&nbsp;</p>
+<p align="center"><table width='100%'>
+<tr>
+<td valign="top" align="center"><font color="#0000ff" size="3" face="Times New Roman"><img src="images/Homework2_StefanoTonini248413_317.gif" width="728" height="14" alt="rtable(1 .. 7, [`+`(`-`(`*`(2, `*`(`^`(`+`(`*`(x3, `*`(sin(theta__1))), `-`(`*`(x4, `*`(sin(theta__2), `*`(s__2)))), `*`(cos(theta__2), `*`(x1)), `-`(`*`(x4, `*`(sin(theta__2))))), 2)))), `-`(`*`(`+`(..." align="center" border="0"><br><img src="images/Homework2_StefanoTonini248413_318.gif" width="728" height="232" alt="rtable(1 .. 7, [`+`(`-`(`*`(2, `*`(`^`(`+`(`*`(x3, `*`(sin(theta__1))), `-`(`*`(x4, `*`(sin(theta__2), `*`(s__2)))), `*`(cos(theta__2), `*`(x1)), `-`(`*`(x4, `*`(sin(theta__2))))), 2)))), `-`(`*`(`+`(..." align="center" border="0"></td>
+<td width='5%' align='center'>(6.3.2.6)</td>
+</tr>
+</table></font>&nbsp;</p>
+<p align="left"><table>
+<tr>
+<td valign="top" align="center"><font color="#2f48a8" size="3" face="DejaVu Sans Mono"><strong>&gt; </strong></font></td>
+<td valign="top"><font color="#2f48a8" size="3" face="DejaVu Sans Mono"><strong>RHS_ODE := proc( Z, t,Mf,Rf ) 
+<br> &nbsp;local g &nbsp;&nbsp;&nbsp;:= 9.81,var,
+<br> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+<br> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+<br> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;MM, RR, SOL;
+<br>
+<br>var := [ &nbsp;s__2 = Z[1],
+<br> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;s__3 = Z[2],
+<br> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;theta__1 = Z[3],
+<br> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;theta__2 = Z[4],
+<br> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;theta__3 = Z[5],
+<br> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;x1= Z[6],
+<br> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;x2= Z[7],
+<br> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;x3= Z[8],
+<br> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;x4= Z[9],
+<br> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;x5= Z[10]];
+<br>
+<br>
+<br>
+<br> SOL := LinearAlgebra[LinearSolve](subs(var, Mf),subs(var, Rf));
+<br> &nbsp;
+<br>Vector[column](10, [ Z[6],Z[7],Z[8], Z[9],Z[10], SOL[1], SOL[2],SOL[3], SOL[4],SOL[5] &nbsp;]);
+<br> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+<br>end proc;</td>
+</tr>
+</table></strong></font>&nbsp;</p>
+<p align="center"><table width='100%'>
+<tr>
+<td valign="top" align="center"><font color="#0000ff" size="3" face="Times New Roman"><img src="images/Homework2_StefanoTonini248413_319.gif" width="728" height="14" alt="Typesetting:-mprintslash([RHS_ODE := proc (Z, t, Mf, Rf) local g, var, MM, RR, SOL; g := 9.81; var := [s__2 = Z[1], s__3 = Z[2], theta__1 = Z[3], theta__2 = Z[4], theta__3 = Z[5], x1 = Z[6], x2 = Z[7]..." align="center" border="0"><br><img src="images/Homework2_StefanoTonini248413_320.gif" width="728" height="14" alt="Typesetting:-mprintslash([RHS_ODE := proc (Z, t, Mf, Rf) local g, var, MM, RR, SOL; g := 9.81; var := [s__2 = Z[1], s__3 = Z[2], theta__1 = Z[3], theta__2 = Z[4], theta__3 = Z[5], x1 = Z[6], x2 = Z[7]..." align="center" border="0"><br><img src="images/Homework2_StefanoTonini248413_321.gif" width="728" height="14" alt="Typesetting:-mprintslash([RHS_ODE := proc (Z, t, Mf, Rf) local g, var, MM, RR, SOL; g := 9.81; var := [s__2 = Z[1], s__3 = Z[2], theta__1 = Z[3], theta__2 = Z[4], theta__3 = Z[5], x1 = Z[6], x2 = Z[7]..." align="center" border="0"><br><img src="images/Homework2_StefanoTonini248413_322.gif" width="728" height="16" alt="Typesetting:-mprintslash([RHS_ODE := proc (Z, t, Mf, Rf) local g, var, MM, RR, SOL; g := 9.81; var := [s__2 = Z[1], s__3 = Z[2], theta__1 = Z[3], theta__2 = Z[4], theta__3 = Z[5], x1 = Z[6], x2 = Z[7]..." align="center" border="0"><br><img src="images/Homework2_StefanoTonini248413_323.gif" width="728" height="14" alt="Typesetting:-mprintslash([RHS_ODE := proc (Z, t, Mf, Rf) local g, var, MM, RR, SOL; g := 9.81; var := [s__2 = Z[1], s__3 = Z[2], theta__1 = Z[3], theta__2 = Z[4], theta__3 = Z[5], x1 = Z[6], x2 = Z[7]..." align="center" border="0"><br><img src="images/Homework2_StefanoTonini248413_324.gif" width="728" height="14" alt="Typesetting:-mprintslash([RHS_ODE := proc (Z, t, Mf, Rf) local g, var, MM, RR, SOL; g := 9.81; var := [s__2 = Z[1], s__3 = Z[2], theta__1 = Z[3], theta__2 = Z[4], theta__3 = Z[5], x1 = Z[6], x2 = Z[7]..." align="center" border="0"><br><img src="images/Homework2_StefanoTonini248413_325.gif" width="728" height="14" alt="Typesetting:-mprintslash([RHS_ODE := proc (Z, t, Mf, Rf) local g, var, MM, RR, SOL; g := 9.81; var := [s__2 = Z[1], s__3 = Z[2], theta__1 = Z[3], theta__2 = Z[4], theta__3 = Z[5], x1 = Z[6], x2 = Z[7]..." align="center" border="0"></td>
+<td width='5%' align='center'>(6.3.2.7)</td>
+</tr>
+</table></font>&nbsp;</p>
+<p align="left"><table>
+<tr>
+<td valign="top" align="center"><font color="#2f48a8" size="3" face="DejaVu Sans Mono"><strong>&gt; </strong></font></td>
+<td valign="top"><font color="#2f48a8" size="3" face="DejaVu Sans Mono"><strong>subs(REMOVET,HIDDEN2);</td>
+</tr>
+</table></strong></font>&nbsp;</p>
+<p align="center"><table width='100%'>
+<tr>
+<td valign="top" align="center"><font color="#0000ff" size="3" face="Times New Roman"><img src="images/Homework2_StefanoTonini248413_326.gif" width="728" height="21" alt="[`+`(`*`(`^`(`+`(`-`(L), `-`(`*`(cos(theta__1), `*`(L__s0))), `*`(cos(theta__2), `*`(s__2)), `*`(cos(theta__2), `*`(L__s0))), 2)), `*`(`^`(`+`(`-`(`*`(sin(theta__1), `*`(L__s0))), `*`(sin(theta__2), `..." align="center" border="0"><br><img src="images/Homework2_StefanoTonini248413_327.gif" width="728" height="21" alt="[`+`(`*`(`^`(`+`(`-`(L), `-`(`*`(cos(theta__1), `*`(L__s0))), `*`(cos(theta__2), `*`(s__2)), `*`(cos(theta__2), `*`(L__s0))), 2)), `*`(`^`(`+`(`-`(`*`(sin(theta__1), `*`(L__s0))), `*`(sin(theta__2), `..." align="center" border="0"><br><img src="images/Homework2_StefanoTonini248413_328.gif" width="728" height="19" alt="[`+`(`*`(`^`(`+`(`-`(L), `-`(`*`(cos(theta__1), `*`(L__s0))), `*`(cos(theta__2), `*`(s__2)), `*`(cos(theta__2), `*`(L__s0))), 2)), `*`(`^`(`+`(`-`(`*`(sin(theta__1), `*`(L__s0))), `*`(sin(theta__2), `..." align="center" border="0"><br><img src="images/Homework2_StefanoTonini248413_329.gif" width="728" height="19" alt="[`+`(`*`(`^`(`+`(`-`(L), `-`(`*`(cos(theta__1), `*`(L__s0))), `*`(cos(theta__2), `*`(s__2)), `*`(cos(theta__2), `*`(L__s0))), 2)), `*`(`^`(`+`(`-`(`*`(sin(theta__1), `*`(L__s0))), `*`(sin(theta__2), `..." align="center" border="0"><br><img src="images/Homework2_StefanoTonini248413_330.gif" width="728" height="19" alt="[`+`(`*`(`^`(`+`(`-`(L), `-`(`*`(cos(theta__1), `*`(L__s0))), `*`(cos(theta__2), `*`(s__2)), `*`(cos(theta__2), `*`(L__s0))), 2)), `*`(`^`(`+`(`-`(`*`(sin(theta__1), `*`(L__s0))), `*`(sin(theta__2), `..." align="center" border="0"></td>
+<td width='5%' align='center'>(6.3.2.8)</td>
+</tr>
+</table></font>&nbsp;</p>
+<p align="left"><table>
+<tr>
+<td valign="top" align="center"><font color="#2f48a8" size="3" face="DejaVu Sans Mono"><strong>&gt; </strong></font></td>
+<td valign="top"><font color="#2f48a8" size="3" face="DejaVu Sans Mono"><strong>PROJECT := proc( Z, t ) # in general DAE coeffs depend on time (not in this case)
+<br> &nbsp;local g := 9.81,
+<br> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;s__2,s__3,theta__1,theta__2, theta__3, x1,x2,x3,x4,x5,
+<br> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;fun, constraints, SOL;
+<br>
+<br>
+<br> &nbsp;fun := (s__2-Z[1])^2+
+<br> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;(s__3-Z[2])^2+
+<br> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;(theta__1-Z[3])^2+
+<br> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;(theta__2-Z[4])^2+
+<br> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;(theta__3-Z[5])^2+
+<br> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;(x1-Z[6])^2+
+<br> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;(x2-Z[7])^2+
+<br> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;(x3-Z[8])^2+
+<br> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;(x4-Z[9])^2+
+<br> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;(x5-Z[10])^2;
+<br>
+<br> &nbsp;constraints := { (-L - cos(theta__1)*L__s0 + cos(theta__2)*s__2 + cos(theta__2)*L__s0)^2 + (-sin(theta__1)*L__s0 + sin(theta__2)*s__2 + sin(theta__2)*L__s0)^2 - L^2=0, (-L - cos(theta__1)*L__s0 + cos(theta__2)*s__2 + cos(theta__2)*L__s0)^2 + (-sin(theta__1)*L__s0 + sin(theta__2)*s__2 + sin(theta__2)*L__s0)^2 - L^2=0, 2*(-1 - cos(theta__3) - cos(theta__3)*s__3 + cos(theta__1))*(x5*sin(theta__3) + x5*sin(theta__3)*s__3 - cos(theta__3)*x2 - x3*sin(theta__1)) + 2*(-sin(theta__3) - sin(theta__3)*s__3 + sin(theta__1))*(-x5*cos(theta__3) - x5*cos(theta__3)*s__3 - sin(theta__3)*x2 + x3*cos(theta__1))=0, 2*(-L - cos(theta__3)*L__s0 - cos(theta__3)*s__3 + cos(theta__1)*L__s0)*(x5*sin(theta__3)*L__s0 + x5*sin(theta__3)*s__3 - cos(theta__3)*x2 - x3*sin(theta__1)*L__s0) + 2*(-sin(theta__3)*L__s0 - sin(theta__3)*s__3 + sin(theta__1)*L__s0)*(-x5*cos(theta__3)*L__s0 - x5*cos(theta__3)*s__3 - sin(theta__3)*x2 + x3*cos(theta__1)*L__s0)=0
+<br>};
+<br> &nbsp;SOL := Optimization[Minimize](
+<br> &nbsp;&nbsp;&nbsp;fun, constraints, initialpoint = {s__2=Z[1],s__3=Z[2],theta__1=Z[3],theta__2=Z[4],theta__3=Z[5],x1=Z[6],x2=Z[7],x3=Z[8],x4=Z[9],x5=Z[10]}
+<br> &nbsp;);
+<br> &nbsp;subs(SOL[2],&lt;s__2,s__3,theta__1,theta__2,theta__3,x1,x2,x3,x4,x5&gt;);
+<br>end proc;</td>
+</tr>
+</table></strong></font>&nbsp;</p>
+<p align="center"><table width='100%'>
+<tr>
+<td valign="top" align="center"><font color="#0000ff" size="3" face="Times New Roman"><img src="images/Homework2_StefanoTonini248413_331.gif" width="728" height="14" alt="Typesetting:-mprintslash([PROJECT := proc (Z, t) local g, s__2, s__3, theta__1, theta__2, theta__3, x1, x2, x3, x4, x5, fun, constraints, SOL; g := 9.81; fun := `+`(`*`(`^`(`+`(s__2, `-`(Z[1])), 2)), ..." align="center" border="0"><br><img src="images/Homework2_StefanoTonini248413_332.gif" width="728" height="16" alt="Typesetting:-mprintslash([PROJECT := proc (Z, t) local g, s__2, s__3, theta__1, theta__2, theta__3, x1, x2, x3, x4, x5, fun, constraints, SOL; g := 9.81; fun := `+`(`*`(`^`(`+`(s__2, `-`(Z[1])), 2)), ..." align="center" border="0"><br><img src="images/Homework2_StefanoTonini248413_333.gif" width="728" height="14" alt="Typesetting:-mprintslash([PROJECT := proc (Z, t) local g, s__2, s__3, theta__1, theta__2, theta__3, x1, x2, x3, x4, x5, fun, constraints, SOL; g := 9.81; fun := `+`(`*`(`^`(`+`(s__2, `-`(Z[1])), 2)), ..." align="center" border="0"><br><img src="images/Homework2_StefanoTonini248413_334.gif" width="728" height="16" alt="Typesetting:-mprintslash([PROJECT := proc (Z, t) local g, s__2, s__3, theta__1, theta__2, theta__3, x1, x2, x3, x4, x5, fun, constraints, SOL; g := 9.81; fun := `+`(`*`(`^`(`+`(s__2, `-`(Z[1])), 2)), ..." align="center" border="0"><br><img src="images/Homework2_StefanoTonini248413_335.gif" width="728" height="14" alt="Typesetting:-mprintslash([PROJECT := proc (Z, t) local g, s__2, s__3, theta__1, theta__2, theta__3, x1, x2, x3, x4, x5, fun, constraints, SOL; g := 9.81; fun := `+`(`*`(`^`(`+`(s__2, `-`(Z[1])), 2)), ..." align="center" border="0"><br><img src="images/Homework2_StefanoTonini248413_336.gif" width="728" height="16" alt="Typesetting:-mprintslash([PROJECT := proc (Z, t) local g, s__2, s__3, theta__1, theta__2, theta__3, x1, x2, x3, x4, x5, fun, constraints, SOL; g := 9.81; fun := `+`(`*`(`^`(`+`(s__2, `-`(Z[1])), 2)), ..." align="center" border="0"><br><img src="images/Homework2_StefanoTonini248413_337.gif" width="728" height="16" alt="Typesetting:-mprintslash([PROJECT := proc (Z, t) local g, s__2, s__3, theta__1, theta__2, theta__3, x1, x2, x3, x4, x5, fun, constraints, SOL; g := 9.81; fun := `+`(`*`(`^`(`+`(s__2, `-`(Z[1])), 2)), ..." align="center" border="0"><br><img src="images/Homework2_StefanoTonini248413_338.gif" width="728" height="16" alt="Typesetting:-mprintslash([PROJECT := proc (Z, t) local g, s__2, s__3, theta__1, theta__2, theta__3, x1, x2, x3, x4, x5, fun, constraints, SOL; g := 9.81; fun := `+`(`*`(`^`(`+`(s__2, `-`(Z[1])), 2)), ..." align="center" border="0"><br><img src="images/Homework2_StefanoTonini248413_339.gif" width="728" height="16" alt="Typesetting:-mprintslash([PROJECT := proc (Z, t) local g, s__2, s__3, theta__1, theta__2, theta__3, x1, x2, x3, x4, x5, fun, constraints, SOL; g := 9.81; fun := `+`(`*`(`^`(`+`(s__2, `-`(Z[1])), 2)), ..." align="center" border="0"><br><img src="images/Homework2_StefanoTonini248413_340.gif" width="728" height="16" alt="Typesetting:-mprintslash([PROJECT := proc (Z, t) local g, s__2, s__3, theta__1, theta__2, theta__3, x1, x2, x3, x4, x5, fun, constraints, SOL; g := 9.81; fun := `+`(`*`(`^`(`+`(s__2, `-`(Z[1])), 2)), ..." align="center" border="0"><br><img src="images/Homework2_StefanoTonini248413_341.gif" width="728" height="16" alt="Typesetting:-mprintslash([PROJECT := proc (Z, t) local g, s__2, s__3, theta__1, theta__2, theta__3, x1, x2, x3, x4, x5, fun, constraints, SOL; g := 9.81; fun := `+`(`*`(`^`(`+`(s__2, `-`(Z[1])), 2)), ..." align="center" border="0"><br><img src="images/Homework2_StefanoTonini248413_342.gif" width="728" height="16" alt="Typesetting:-mprintslash([PROJECT := proc (Z, t) local g, s__2, s__3, theta__1, theta__2, theta__3, x1, x2, x3, x4, x5, fun, constraints, SOL; g := 9.81; fun := `+`(`*`(`^`(`+`(s__2, `-`(Z[1])), 2)), ..." align="center" border="0"><br><img src="images/Homework2_StefanoTonini248413_343.gif" width="728" height="16" alt="Typesetting:-mprintslash([PROJECT := proc (Z, t) local g, s__2, s__3, theta__1, theta__2, theta__3, x1, x2, x3, x4, x5, fun, constraints, SOL; g := 9.81; fun := `+`(`*`(`^`(`+`(s__2, `-`(Z[1])), 2)), ..." align="center" border="0"><br><img src="images/Homework2_StefanoTonini248413_344.gif" width="728" height="16" alt="Typesetting:-mprintslash([PROJECT := proc (Z, t) local g, s__2, s__3, theta__1, theta__2, theta__3, x1, x2, x3, x4, x5, fun, constraints, SOL; g := 9.81; fun := `+`(`*`(`^`(`+`(s__2, `-`(Z[1])), 2)), ..." align="center" border="0"><br><img src="images/Homework2_StefanoTonini248413_345.gif" width="728" height="14" alt="Typesetting:-mprintslash([PROJECT := proc (Z, t) local g, s__2, s__3, theta__1, theta__2, theta__3, x1, x2, x3, x4, x5, fun, constraints, SOL; g := 9.81; fun := `+`(`*`(`^`(`+`(s__2, `-`(Z[1])), 2)), ..." align="center" border="0"></td>
+<td width='5%' align='center'>(6.3.2.9)</td>
+</tr>
+</table></font>&nbsp;</p>
+<p align="left"><table>
+<tr>
+<td valign="top" align="center"><font color="#2f48a8" size="3" face="DejaVu Sans Mono"><strong>&gt; </strong></font></td>
+<td valign="top"><font color="#2f48a8" size="3" face="DejaVu Sans Mono"><strong>ADVANCE := proc( Z_in, t_begin, t_end, dt,Mf,Rf, do_projection := true )
+<br> &nbsp;local Z0, Z1,
+<br> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;t, pc, last_pc := -1,
+<br> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;# output values
+<br> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;T,s2,s3,theta1,theta2, theta3,x1,x2,x3,x4,x5;
+<br>
+<br> &nbsp;# project initial condition
+<br> &nbsp;Z0 := PROJECT( Z_in );
+<br>
+<br> &nbsp;# initialize output list
+<br> &nbsp;T &nbsp;:= [t_begin];
+<br> &nbsp;s2 := [Z0[1]];
+<br> &nbsp;s3 := [Z0[2]];
+<br> &nbsp;theta1 := [Z0[3]];
+<br> &nbsp;theta2 := [Z0[4]];
+<br> &nbsp;theta3 := [Z0[5]];
+<br> &nbsp;x1 := [Z0[6]];
+<br> &nbsp;x2 := [Z0[7]];
+<br> &nbsp;x3 := [Z0[8]];
+<br> &nbsp;x4 := [Z0[9]];
+<br> &nbsp;x5 := [Z0[10]]; 
+<br>
+<br> &nbsp;# advance
+<br> &nbsp;t := t_begin;
+<br> &nbsp;while t &lt; t_end do
+<br> &nbsp;&nbsp;&nbsp;pc := 100*(t-t_begin)/(t_end-t_begin);
+<br> &nbsp;&nbsp;&nbsp;if pc &gt; last_pc+0.5 then
+<br> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;printf("[%g%%] t=%g\r", pc, t );
+<br> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;last_pc := pc;
+<br> &nbsp;&nbsp;&nbsp;end if;
+<br>
+<br> &nbsp;&nbsp;&nbsp;# advance using improved Euler (or Collatz)
+<br> &nbsp;&nbsp;&nbsp;# half forward Euler step
+<br> &nbsp;&nbsp;&nbsp;Z1 := Z0 + (dt/2)*RHS_ODE( Z0, t,Mf,Rf );
+<br> &nbsp;&nbsp;&nbsp;t &nbsp;:= t+dt/2;
+<br> &nbsp;&nbsp;&nbsp;# full iproved step
+<br> &nbsp;&nbsp;&nbsp;Z1 := Z0 + dt*RHS_ODE( Z1, t ,Mf,Rf);
+<br> &nbsp;&nbsp;&nbsp;t &nbsp;:= t+dt/2;
+<br> &nbsp;&nbsp;&nbsp;
+<br> &nbsp;&nbsp;&nbsp;# project step to Z0
+<br> &nbsp;&nbsp;&nbsp;if do_projection then
+<br> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Z0 := PROJECT( Z1, t );
+<br> &nbsp;&nbsp;&nbsp;else
+<br> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Z0 := Z1;
+<br> &nbsp;&nbsp;&nbsp;end if;
+<br> &nbsp;&nbsp;&nbsp;# save solution to listì
+<br> &nbsp;&nbsp;&nbsp;T &nbsp;:= [op(T),t];
+<br> &nbsp;&nbsp;&nbsp;s2 := [op(s2),Z0[1]];
+<br> &nbsp;&nbsp;&nbsp;s3 := [op(s3),Z0[2]];
+<br> &nbsp;&nbsp;&nbsp;theta1 := [op(theta1),Z0[3]];
+<br> &nbsp;&nbsp;&nbsp;theta2 := [op(theta2),Z0[4]];
+<br> &nbsp;&nbsp;&nbsp;theta3 := [op(theta3),Z0[5]];
+<br> &nbsp;&nbsp;&nbsp;x1 := [op(x1),Z0[6]];
+<br> &nbsp;&nbsp;&nbsp;x2 := [op(x2),Z0[7]];
+<br> &nbsp;&nbsp;&nbsp;x3 := [op(x3),Z0[8]];
+<br> &nbsp;&nbsp;&nbsp;x4 := [op(x4),Z0[9]];
+<br> &nbsp;&nbsp;&nbsp;x5 := [op(x5),Z0[10]];
+<br> &nbsp;end;
+<br> &nbsp;table( [ "t" = T,"s__2" = s2, "s__3" = s3, "theta__1" = theta1,"theta__2" = theta2, "theta__3" = theta3,"x1" = x1, "x2" = x2,"x3" = x3, "x4" = x4,"x5" = x5 ]); 
+<br>end proc;</td>
+</tr>
+</table></strong></font>&nbsp;</p>
+<p align="center"><table width='100%'>
+<tr>
+<td valign="top" align="center"><font color="#0000ff" size="3" face="Times New Roman"><img src="images/Homework2_StefanoTonini248413_346.gif" width="728" height="14" alt="Typesetting:-mprintslash([ADVANCE := proc (Z_in, t_begin, t_end, dt, Mf, Rf, do_projection := true) local Z0, Z1, t, pc, last_pc, T, s2, s3, theta1, theta2, theta3, x1, x2, x3, x4, x5; last_pc := -1; ..." align="center" border="0"><br><img src="images/Homework2_StefanoTonini248413_347.gif" width="728" height="16" alt="Typesetting:-mprintslash([ADVANCE := proc (Z_in, t_begin, t_end, dt, Mf, Rf, do_projection := true) local Z0, Z1, t, pc, last_pc, T, s2, s3, theta1, theta2, theta3, x1, x2, x3, x4, x5; last_pc := -1; ..." align="center" border="0"><br><img src="images/Homework2_StefanoTonini248413_348.gif" width="728" height="14" alt="Typesetting:-mprintslash([ADVANCE := proc (Z_in, t_begin, t_end, dt, Mf, Rf, do_projection := true) local Z0, Z1, t, pc, last_pc, T, s2, s3, theta1, theta2, theta3, x1, x2, x3, x4, x5; last_pc := -1; ..." align="center" border="0"><br><img src="images/Homework2_StefanoTonini248413_349.gif" width="728" height="14" alt="Typesetting:-mprintslash([ADVANCE := proc (Z_in, t_begin, t_end, dt, Mf, Rf, do_projection := true) local Z0, Z1, t, pc, last_pc, T, s2, s3, theta1, theta2, theta3, x1, x2, x3, x4, x5; last_pc := -1; ..." align="center" border="0"><br><img src="images/Homework2_StefanoTonini248413_350.gif" width="728" height="14" alt="Typesetting:-mprintslash([ADVANCE := proc (Z_in, t_begin, t_end, dt, Mf, Rf, do_projection := true) local Z0, Z1, t, pc, last_pc, T, s2, s3, theta1, theta2, theta3, x1, x2, x3, x4, x5; last_pc := -1; ..." align="center" border="0"><br><img src="images/Homework2_StefanoTonini248413_351.gif" width="728" height="14" alt="Typesetting:-mprintslash([ADVANCE := proc (Z_in, t_begin, t_end, dt, Mf, Rf, do_projection := true) local Z0, Z1, t, pc, last_pc, T, s2, s3, theta1, theta2, theta3, x1, x2, x3, x4, x5; last_pc := -1; ..." align="center" border="0"><br><img src="images/Homework2_StefanoTonini248413_352.gif" width="728" height="14" alt="Typesetting:-mprintslash([ADVANCE := proc (Z_in, t_begin, t_end, dt, Mf, Rf, do_projection := true) local Z0, Z1, t, pc, last_pc, T, s2, s3, theta1, theta2, theta3, x1, x2, x3, x4, x5; last_pc := -1; ..." align="center" border="0"><br><img src="images/Homework2_StefanoTonini248413_353.gif" width="728" height="16" alt="Typesetting:-mprintslash([ADVANCE := proc (Z_in, t_begin, t_end, dt, Mf, Rf, do_projection := true) local Z0, Z1, t, pc, last_pc, T, s2, s3, theta1, theta2, theta3, x1, x2, x3, x4, x5; last_pc := -1; ..." align="center" border="0"><br><img src="images/Homework2_StefanoTonini248413_354.gif" width="728" height="16" alt="Typesetting:-mprintslash([ADVANCE := proc (Z_in, t_begin, t_end, dt, Mf, Rf, do_projection := true) local Z0, Z1, t, pc, last_pc, T, s2, s3, theta1, theta2, theta3, x1, x2, x3, x4, x5; last_pc := -1; ..." align="center" border="0"><br><img src="images/Homework2_StefanoTonini248413_355.gif" width="728" height="16" alt="Typesetting:-mprintslash([ADVANCE := proc (Z_in, t_begin, t_end, dt, Mf, Rf, do_projection := true) local Z0, Z1, t, pc, last_pc, T, s2, s3, theta1, theta2, theta3, x1, x2, x3, x4, x5; last_pc := -1; ..." align="center" border="0"><br><img src="images/Homework2_StefanoTonini248413_356.gif" width="728" height="14" alt="Typesetting:-mprintslash([ADVANCE := proc (Z_in, t_begin, t_end, dt, Mf, Rf, do_projection := true) local Z0, Z1, t, pc, last_pc, T, s2, s3, theta1, theta2, theta3, x1, x2, x3, x4, x5; last_pc := -1; ..." align="center" border="0"><br><img src="images/Homework2_StefanoTonini248413_357.gif" width="728" height="14" alt="Typesetting:-mprintslash([ADVANCE := proc (Z_in, t_begin, t_end, dt, Mf, Rf, do_projection := true) local Z0, Z1, t, pc, last_pc, T, s2, s3, theta1, theta2, theta3, x1, x2, x3, x4, x5; last_pc := -1; ..." align="center" border="0"><br><img src="images/Homework2_StefanoTonini248413_358.gif" width="728" height="14" alt="Typesetting:-mprintslash([ADVANCE := proc (Z_in, t_begin, t_end, dt, Mf, Rf, do_projection := true) local Z0, Z1, t, pc, last_pc, T, s2, s3, theta1, theta2, theta3, x1, x2, x3, x4, x5; last_pc := -1; ..." align="center" border="0"><br><img src="images/Homework2_StefanoTonini248413_359.gif" width="728" height="14" alt="Typesetting:-mprintslash([ADVANCE := proc (Z_in, t_begin, t_end, dt, Mf, Rf, do_projection := true) local Z0, Z1, t, pc, last_pc, T, s2, s3, theta1, theta2, theta3, x1, x2, x3, x4, x5; last_pc := -1; ..." align="center" border="0"><br><img src="images/Homework2_StefanoTonini248413_360.gif" width="728" height="14" alt="Typesetting:-mprintslash([ADVANCE := proc (Z_in, t_begin, t_end, dt, Mf, Rf, do_projection := true) local Z0, Z1, t, pc, last_pc, T, s2, s3, theta1, theta2, theta3, x1, x2, x3, x4, x5; last_pc := -1; ..." align="center" border="0"><br><img src="images/Homework2_StefanoTonini248413_361.gif" width="728" height="14" alt="Typesetting:-mprintslash([ADVANCE := proc (Z_in, t_begin, t_end, dt, Mf, Rf, do_projection := true) local Z0, Z1, t, pc, last_pc, T, s2, s3, theta1, theta2, theta3, x1, x2, x3, x4, x5; last_pc := -1; ..." align="center" border="0"><br><img src="images/Homework2_StefanoTonini248413_362.gif" width="728" height="14" alt="Typesetting:-mprintslash([ADVANCE := proc (Z_in, t_begin, t_end, dt, Mf, Rf, do_projection := true) local Z0, Z1, t, pc, last_pc, T, s2, s3, theta1, theta2, theta3, x1, x2, x3, x4, x5; last_pc := -1; ..." align="center" border="0"><br><img src="images/Homework2_StefanoTonini248413_363.gif" width="728" height="14" alt="Typesetting:-mprintslash([ADVANCE := proc (Z_in, t_begin, t_end, dt, Mf, Rf, do_projection := true) local Z0, Z1, t, pc, last_pc, T, s2, s3, theta1, theta2, theta3, x1, x2, x3, x4, x5; last_pc := -1; ..." align="center" border="0"><br><img src="images/Homework2_StefanoTonini248413_364.gif" width="728" height="14" alt="Typesetting:-mprintslash([ADVANCE := proc (Z_in, t_begin, t_end, dt, Mf, Rf, do_projection := true) local Z0, Z1, t, pc, last_pc, T, s2, s3, theta1, theta2, theta3, x1, x2, x3, x4, x5; last_pc := -1; ..." align="center" border="0"><br><img src="images/Homework2_StefanoTonini248413_365.gif" width="728" height="14" alt="Typesetting:-mprintslash([ADVANCE := proc (Z_in, t_begin, t_end, dt, Mf, Rf, do_projection := true) local Z0, Z1, t, pc, last_pc, T, s2, s3, theta1, theta2, theta3, x1, x2, x3, x4, x5; last_pc := -1; ..." align="center" border="0"><br><img src="images/Homework2_StefanoTonini248413_366.gif" width="728" height="14" alt="Typesetting:-mprintslash([ADVANCE := proc (Z_in, t_begin, t_end, dt, Mf, Rf, do_projection := true) local Z0, Z1, t, pc, last_pc, T, s2, s3, theta1, theta2, theta3, x1, x2, x3, x4, x5; last_pc := -1; ..." align="center" border="0"><br><img src="images/Homework2_StefanoTonini248413_367.gif" width="728" height="14" alt="Typesetting:-mprintslash([ADVANCE := proc (Z_in, t_begin, t_end, dt, Mf, Rf, do_projection := true) local Z0, Z1, t, pc, last_pc, T, s2, s3, theta1, theta2, theta3, x1, x2, x3, x4, x5; last_pc := -1; ..." align="center" border="0"><br><img src="images/Homework2_StefanoTonini248413_368.gif" width="728" height="14" alt="Typesetting:-mprintslash([ADVANCE := proc (Z_in, t_begin, t_end, dt, Mf, Rf, do_projection := true) local Z0, Z1, t, pc, last_pc, T, s2, s3, theta1, theta2, theta3, x1, x2, x3, x4, x5; last_pc := -1; ..." align="center" border="0"><br><img src="images/Homework2_StefanoTonini248413_369.gif" width="728" height="14" alt="Typesetting:-mprintslash([ADVANCE := proc (Z_in, t_begin, t_end, dt, Mf, Rf, do_projection := true) local Z0, Z1, t, pc, last_pc, T, s2, s3, theta1, theta2, theta3, x1, x2, x3, x4, x5; last_pc := -1; ..." align="center" border="0"><br><img src="images/Homework2_StefanoTonini248413_370.gif" width="728" height="14" alt="Typesetting:-mprintslash([ADVANCE := proc (Z_in, t_begin, t_end, dt, Mf, Rf, do_projection := true) local Z0, Z1, t, pc, last_pc, T, s2, s3, theta1, theta2, theta3, x1, x2, x3, x4, x5; last_pc := -1; ..." align="center" border="0"><br><img src="images/Homework2_StefanoTonini248413_371.gif" width="728" height="14" alt="Typesetting:-mprintslash([ADVANCE := proc (Z_in, t_begin, t_end, dt, Mf, Rf, do_projection := true) local Z0, Z1, t, pc, last_pc, T, s2, s3, theta1, theta2, theta3, x1, x2, x3, x4, x5; last_pc := -1; ..." align="center" border="0"><br><img src="images/Homework2_StefanoTonini248413_372.gif" width="728" height="16" alt="Typesetting:-mprintslash([ADVANCE := proc (Z_in, t_begin, t_end, dt, Mf, Rf, do_projection := true) local Z0, Z1, t, pc, last_pc, T, s2, s3, theta1, theta2, theta3, x1, x2, x3, x4, x5; last_pc := -1; ..." align="center" border="0"><br><img src="images/Homework2_StefanoTonini248413_373.gif" width="728" height="16" alt="Typesetting:-mprintslash([ADVANCE := proc (Z_in, t_begin, t_end, dt, Mf, Rf, do_projection := true) local Z0, Z1, t, pc, last_pc, T, s2, s3, theta1, theta2, theta3, x1, x2, x3, x4, x5; last_pc := -1; ..." align="center" border="0"><br><img src="images/Homework2_StefanoTonini248413_374.gif" width="728" height="16" alt="Typesetting:-mprintslash([ADVANCE := proc (Z_in, t_begin, t_end, dt, Mf, Rf, do_projection := true) local Z0, Z1, t, pc, last_pc, T, s2, s3, theta1, theta2, theta3, x1, x2, x3, x4, x5; last_pc := -1; ..." align="center" border="0"><br><img src="images/Homework2_StefanoTonini248413_375.gif" width="728" height="14" alt="Typesetting:-mprintslash([ADVANCE := proc (Z_in, t_begin, t_end, dt, Mf, Rf, do_projection := true) local Z0, Z1, t, pc, last_pc, T, s2, s3, theta1, theta2, theta3, x1, x2, x3, x4, x5; last_pc := -1; ..." align="center" border="0"><br><img src="images/Homework2_StefanoTonini248413_376.gif" width="728" height="14" alt="Typesetting:-mprintslash([ADVANCE := proc (Z_in, t_begin, t_end, dt, Mf, Rf, do_projection := true) local Z0, Z1, t, pc, last_pc, T, s2, s3, theta1, theta2, theta3, x1, x2, x3, x4, x5; last_pc := -1; ..." align="center" border="0"><br><img src="images/Homework2_StefanoTonini248413_377.gif" width="728" height="14" alt="Typesetting:-mprintslash([ADVANCE := proc (Z_in, t_begin, t_end, dt, Mf, Rf, do_projection := true) local Z0, Z1, t, pc, last_pc, T, s2, s3, theta1, theta2, theta3, x1, x2, x3, x4, x5; last_pc := -1; ..." align="center" border="0"><br><img src="images/Homework2_StefanoTonini248413_378.gif" width="728" height="14" alt="Typesetting:-mprintslash([ADVANCE := proc (Z_in, t_begin, t_end, dt, Mf, Rf, do_projection := true) local Z0, Z1, t, pc, last_pc, T, s2, s3, theta1, theta2, theta3, x1, x2, x3, x4, x5; last_pc := -1; ..." align="center" border="0"><br><img src="images/Homework2_StefanoTonini248413_379.gif" width="728" height="14" alt="Typesetting:-mprintslash([ADVANCE := proc (Z_in, t_begin, t_end, dt, Mf, Rf, do_projection := true) local Z0, Z1, t, pc, last_pc, T, s2, s3, theta1, theta2, theta3, x1, x2, x3, x4, x5; last_pc := -1; ..." align="center" border="0"><br><img src="images/Homework2_StefanoTonini248413_380.gif" width="728" height="14" alt="Typesetting:-mprintslash([ADVANCE := proc (Z_in, t_begin, t_end, dt, Mf, Rf, do_projection := true) local Z0, Z1, t, pc, last_pc, T, s2, s3, theta1, theta2, theta3, x1, x2, x3, x4, x5; last_pc := -1; ..." align="center" border="0"><br><img src="images/Homework2_StefanoTonini248413_381.gif" width="728" height="16" alt="Typesetting:-mprintslash([ADVANCE := proc (Z_in, t_begin, t_end, dt, Mf, Rf, do_projection := true) local Z0, Z1, t, pc, last_pc, T, s2, s3, theta1, theta2, theta3, x1, x2, x3, x4, x5; last_pc := -1; ..." align="center" border="0"><br><img src="images/Homework2_StefanoTonini248413_382.gif" width="728" height="14" alt="Typesetting:-mprintslash([ADVANCE := proc (Z_in, t_begin, t_end, dt, Mf, Rf, do_projection := true) local Z0, Z1, t, pc, last_pc, T, s2, s3, theta1, theta2, theta3, x1, x2, x3, x4, x5; last_pc := -1; ..." align="center" border="0"></td>
+<td width='5%' align='center'>(6.3.2.10)</td>
+</tr>
+</table></font>&nbsp;</p>
+</dl>
+
+</html>

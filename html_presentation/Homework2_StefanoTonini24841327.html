@@ -1,0 +1,175 @@
+<html>
+<head>
+<meta http-equiv="content-type" content="text/html; charset=utf-8">
+<title>Homework2_StefanoTonini24841327.html</title>
+<!-- Created by Maple 2024.0, Mac OS X -->
+</head>
+<dl style="margin-left:40px"><a name="MapleAutoBookmark30" />
+<p align="left"><font color="#ff6600" size="4" face="DejaVu Sans"><strong>Result comparison</strong></font>&nbsp;</p>
+<p align="left"><font color="#000000" size="3" face="DejaVu Sans">This section aims at finding the best values of mass and damping by evaluating the plot in the different scenario &nbsp;</font>&nbsp;</p>
+<p align="left"><table>
+<tr>
+<td valign="top" align="center"><font color="#2f48a8" size="3" face="DejaVu Sans Mono"><strong>&gt; </strong></font></td>
+<td valign="top"><font color="#2f48a8" size="3" face="DejaVu Sans Mono"><strong>TF:=3:</td>
+</tr>
+</table></strong></font>&nbsp;</p>
+<p align="left"><font color="#000000" size="3" face="DejaVu Sans">Plot the modulus of the acceleration of mass G4 in the 5 different scenarios</font>&nbsp;</p>
+<p align="left"><table>
+<tr>
+<td valign="top" align="center"><font color="#2f48a8" size="3" face="DejaVu Sans Mono"><strong>&gt; </strong></font></td>
+<td valign="top"><font color="#2f48a8" size="3" face="DejaVu Sans Mono"><strong>display(odeplot(sol_dae__opt,subs(data,[t,sqrt(diff(G4[1],t,t)^2+diff(G4[2],t,t)^2)]),t=0..TF,
+<br> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;labels = ["time (s)", m/s^2],title &nbsp;= "Acceleration of G4"),
+<br>odeplot(sol_dae__opt2,subs(data,[t,sqrt(diff(G4[1],t,t)^2+diff(G4[2],t,t)^2)]),t=0..TF,
+<br> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;labels = ["time (s)", m/s^2]),
+<br>odeplot(sol_dae__opt3,subs(data,[t,sqrt(diff(G4[1],t,t)^2+diff(G4[2],t,t)^2)]),t=0..TF,
+<br> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;labels = ["time (s)", m/s^2],title &nbsp;= "Acceleration of G4"),
+<br>odeplot(sol_dae__opt4,subs(data,[t,sqrt(diff(G4[1],t,t)^2+diff(G4[2],t,t)^2)]),t=0..TF,
+<br> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;labels = ["time (s)", m/s^2]),
+<br>odeplot(sol_dae__opt5,subs(data,[t,sqrt(diff(G4[1],t,t)^2+diff(G4[2],t,t)^2)]),t=0..TF,
+<br> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;labels = ["time (s)", m/s^2]),
+<br>color=["Red","Orange","Yellow","green","Blue"],legend=["m4=1 Cs4=10 ","m4=10 Cs4=10 ","m4=10 Cs4=100 ","m4=100 Cs4=100 ","m4=1 Cs4=1 "],size=[800,500]);</td>
+</tr>
+</table></strong></font>&nbsp;</p>
+<p align="center"><table width='100%'>
+<tr>
+<td valign="top" align="center"><font color="#000000" size="3" face="Times New Roman"><img src="images/Homework2_StefanoTonini248413_493.gif" width="728" height="455" alt="Plot_2d" align="center" border="0"></td>
+<td width='5%' align='center'></td>
+</tr>
+</table></font>&nbsp;</p>
+<p align="left"><font color="#000000" size="3" face="DejaVu Sans">From the previous plot it appears clearly that the configuration with m4=100 and Cs4=100 is the most unstable one.</font>&nbsp;</p>
+<p align="left"><font color="#000000" size="3" face="DejaVu Sans">Also the blue one (m4=1 and Cs4=1) and the orange one (m4=10 and Cs4=10) appear not be optimal.</font>&nbsp;</p>
+<p align="left"><font color="#000000" size="3" face="DejaVu Sans">The red configuration and the yellow configuration look the most stable ones.</font>&nbsp;</p>
+<p align="left"><font color="#000000" size="3" face="DejaVu Sans"></font>&nbsp;</p>
+<p align="left"><font color="#000000" size="3" face="DejaVu Sans">Plot the modulus of the acceleration of mass G1 in the 5 different scenarios</font>&nbsp;</p>
+<p align="left"><table>
+<tr>
+<td valign="top" align="center"><font color="#2f48a8" size="3" face="DejaVu Sans Mono"><strong>&gt; </strong></font></td>
+<td valign="top"><font color="#2f48a8" size="3" face="DejaVu Sans Mono"><strong>display(odeplot(sol_dae__opt,subs(data,[t,sqrt(diff(G1[1],t,t)^2+diff(G1[2],t,t)^2)]),t=0..TF,
+<br> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;labels = ["time (s)", m/s^2]),
+<br>odeplot(sol_dae__opt2,subs(data,[t,sqrt(diff(G1[1],t,t)^2+diff(G1[2],t,t)^2)]),t=0..TF,
+<br> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;labels = ["time (s)", m/s^2]),
+<br>odeplot(sol_dae__opt3,subs(data,[t,sqrt(diff(G1[1],t,t)^2+diff(G1[2],t,t)^2)]),t=0..TF,
+<br> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;labels = ["time (s)", m/s^2]),
+<br>odeplot( sol_dae__opt4,subs(data,[t,sqrt(diff(G1[1],t,t)^2+diff(G1[2],t,t)^2)]),t=0..TF,
+<br> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;labels = ["time (s)", m/s^2]),
+<br>odeplot(sol_dae__opt5,subs(data,[t,sqrt(diff(G1[1],t,t)^2+diff(G1[2],t,t)^2)]),t=0..TF,
+<br> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;labels = ["time (s)", m/s^2],title &nbsp;= "Acceleration of G1"),
+<br>color=["Red","Orange","Yellow","green","Blue"],legend=["m4=1 Cs4=10 ","m4=10 Cs4=10 ","m4=10 Cs4=100 ","m4=100 Cs4=100 ","m4=1 Cs4=1 "],labels = ["time (s)", m/s^2],size=[800,600]);</td>
+</tr>
+</table></strong></font>&nbsp;</p>
+<p align="center"><table width='100%'>
+<tr>
+<td valign="top" align="center"><font color="#000000" size="3" face="Times New Roman"><img src="images/Homework2_StefanoTonini248413_494.gif" width="728" height="546" alt="Plot_2d" align="center" border="0"></td>
+<td width='5%' align='center'></td>
+</tr>
+</table></font>&nbsp;</p>
+<p align="left"><font color="#000000" size="3" face="DejaVu Sans">From the previous plot the red configuration (m4=1 and Cs4=10) looks the most stable ones.</font>&nbsp;</p>
+<p align="left"><font color="#000000" size="3" face="DejaVu Sans"></font>&nbsp;</p>
+<p align="left"><font color="#000000" size="3" face="DejaVu Sans">Plot the modulus of the acceleration of mass G2 in the 5 different scenarios</font>&nbsp;</p>
+<p align="left"><table>
+<tr>
+<td valign="top" align="center"><font color="#2f48a8" size="3" face="DejaVu Sans Mono"><strong>&gt; </strong></font></td>
+<td valign="top"><font color="#2f48a8" size="3" face="DejaVu Sans Mono"><strong>display(odeplot(sol_dae__opt,subs(data,[t,sqrt(diff(G2[1],t,t)^2+diff(G2[2],t,t)^2)]),t=0..TF,
+<br> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;labels = ["time (s)", m/s^2]),
+<br>odeplot(sol_dae__opt2,subs(data,[t,sqrt(diff(G2[1],t,t)^2+diff(G2[2],t,t)^2)]),t=0..TF,
+<br> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;labels = ["time (s)", m/s^2]),
+<br>odeplot(sol_dae__opt3,subs(data,[t,sqrt(diff(G2[1],t,t)^2+diff(G2[2],t,t)^2)]),t=0..TF,
+<br> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;labels = ["time (s)", m/s^2]),
+<br>odeplot( sol_dae__opt4,subs(data,[t,sqrt(diff(G2[1],t,t)^2+diff(G2[2],t,t)^2)]),t=0..TF,
+<br> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;labels = ["time (s)", m/s^2]),
+<br>odeplot(sol_dae__opt5,subs(data,[t,sqrt(diff(G2[1],t,t)^2+diff(G2[2],t,t)^2)]),t=0..TF,
+<br> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;labels = ["time (s)", m/s^2],title &nbsp;= "Acceleration of G2"),
+<br>color=["Red","Orange","Yellow","green","Blue"],legend=["m4=1 Cs4=10 ","m4=10 Cs4=10 ","m4=10 Cs4=100 ","m4=100 Cs4=100 ","m4=1 Cs4=1 "],labels = ["time (s)", m/s^2],size=[800,600]);</td>
+</tr>
+</table></strong></font>&nbsp;</p>
+<p align="center"><table width='100%'>
+<tr>
+<td valign="top" align="center"><font color="#000000" size="3" face="Times New Roman"><img src="images/Homework2_StefanoTonini248413_495.gif" width="728" height="546" alt="Plot_2d" align="center" border="0"></td>
+<td width='5%' align='center'></td>
+</tr>
+</table></font>&nbsp;</p>
+<p align="left"><font color="#000000" size="3" face="DejaVu Sans">From the previous plot the red configuration (m4=1 and Cs4=10) looks the most stable ones.</font>&nbsp;</p>
+<p align="left"><font color="#000000" size="3" face="DejaVu Sans"></font>&nbsp;</p>
+<p align="left"><font color="#000000" size="3" face="DejaVu Sans">Plot the modulus of the acceleration of mass G3 in the 5 different scenarios</font>&nbsp;</p>
+<p align="left"><table>
+<tr>
+<td valign="top" align="center"><font color="#2f48a8" size="3" face="DejaVu Sans Mono"><strong>&gt; </strong></font></td>
+<td valign="top"><font color="#2f48a8" size="3" face="DejaVu Sans Mono"><strong>display(odeplot(sol_dae__opt,subs(data,[t,sqrt(diff(G3[1],t,t)^2+diff(G3[2],t,t)^2)]),t=0..TF,
+<br> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;labels = ["time (s)", m/s^2]),
+<br>odeplot(sol_dae__opt2,subs(data,[t,sqrt(diff(G3[1],t,t)^2+diff(G3[2],t,t)^2)]),t=0..TF,
+<br> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;labels = ["time (s)", m/s^2]),
+<br>odeplot(sol_dae__opt3,subs(data,[t,sqrt(diff(G3[1],t,t)^2+diff(G3[2],t,t)^2)]),t=0..TF,
+<br> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;labels = ["time (s)", m/s^2]),
+<br>odeplot( sol_dae__opt4,subs(data,[t,sqrt(diff(G3[1],t,t)^2+diff(G3[2],t,t)^2)]),t=0..TF,
+<br> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;labels = ["time (s)", m/s^2]),
+<br>odeplot(sol_dae__opt5,subs(data,[t,sqrt(diff(G3[1],t,t)^2+diff(G3[2],t,t)^2)]),t=0..TF,
+<br> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;labels = ["time (s)", m/s^2],title &nbsp;= "Acceleration of G3"),
+<br>color=["Red","Orange","Yellow","green","Blue"],legend=["m4=1 Cs4=10 ","m4=10 Cs4=10 ","m4=10 Cs4=100 ","m4=100 Cs4=100 ","m4=1 Cs4=1 "],labels = ["time (s)", m/s^2],size=[800,600]);</td>
+</tr>
+</table></strong></font>&nbsp;</p>
+<p align="center"><table width='100%'>
+<tr>
+<td valign="top" align="center"><font color="#000000" size="3" face="Times New Roman"><img src="images/Homework2_StefanoTonini248413_496.gif" width="728" height="546" alt="Plot_2d" align="center" border="0"></td>
+<td width='5%' align='center'></td>
+</tr>
+</table></font>&nbsp;</p>
+<p align="left"><font color="#ff9900" size="3" face="DejaVu Sans"><strong><em>Optimized Configuration with m4=1 and Cs4=10</em></strong></font>&nbsp;</p>
+<p align="left"><table>
+<tr>
+<td valign="top" align="center"><font color="#2f48a8" size="3" face="DejaVu Sans Mono"><strong>&gt; </strong></font></td>
+<td valign="top"><font color="#2f48a8" size="3" face="DejaVu Sans Mono"><strong>display(odeplot(sol_dae__opt,subs(data,[t,sqrt(diff(G4[1],t,t)^2+diff(G4[2],t,t)^2)]),t=0..TF,
+<br> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;labels = ["time (s)", m/s^2]),title &nbsp;= "Acceleration of G4",
+<br>color="Red",legend="m4=1 Cs4=10 ",labels = ["time (s)", m/s^2],size=[800,400]);</td>
+</tr>
+</table></strong></font>&nbsp;</p>
+<p align="center"><table width='100%'>
+<tr>
+<td valign="top" align="center"><font color="#000000" size="3" face="Times New Roman"><img src="images/Homework2_StefanoTonini248413_497.gif" width="728" height="364" alt="Plot_2d" align="center" border="0"></td>
+<td width='5%' align='center'></td>
+</tr>
+</table></font>&nbsp;</p>
+<p align="left"><table>
+<tr>
+<td valign="top" align="center"><font color="#2f48a8" size="3" face="DejaVu Sans Mono"><strong>&gt; </strong></font></td>
+<td valign="top"><font color="#2f48a8" size="3" face="DejaVu Sans Mono"><strong>display(odeplot(sol_dae__opt,subs(data,[t,sqrt(diff(G1[1],t,t)^2+diff(G1[2],t,t)^2)]),t=0..TF,
+<br> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;labels = ["time (s)", m/s^2]),title &nbsp;= "Acceleration of G1",
+<br>color="Red",legend="m4=1 Cs4=10 ",labels = ["time (s)", m/s^2],size=[800,400]);</td>
+</tr>
+</table></strong></font>&nbsp;</p>
+<p align="center"><table width='100%'>
+<tr>
+<td valign="top" align="center"><font color="#000000" size="3" face="Times New Roman"><img src="images/Homework2_StefanoTonini248413_498.gif" width="728" height="364" alt="Plot_2d" align="center" border="0"></td>
+<td width='5%' align='center'></td>
+</tr>
+</table></font>&nbsp;</p>
+<p align="left"><table>
+<tr>
+<td valign="top" align="center"><font color="#2f48a8" size="3" face="DejaVu Sans Mono"><strong>&gt; </strong></font></td>
+<td valign="top"><font color="#2f48a8" size="3" face="DejaVu Sans Mono"><strong>display(odeplot(sol_dae__opt,subs(data,[t,sqrt(diff(G2[1],t,t)^2+diff(G2[2],t,t)^2)]),t=0..TF,
+<br> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;labels = ["time (s)", m/s^2]),title &nbsp;= "Acceleration of G2",
+<br>color="Red",legend="m4=1 Cs4=10 ",labels = ["time (s)", m/s^2],size=[800,400]);</td>
+</tr>
+</table></strong></font>&nbsp;</p>
+<p align="center"><table width='100%'>
+<tr>
+<td valign="top" align="center"><font color="#000000" size="3" face="Times New Roman"><img src="images/Homework2_StefanoTonini248413_499.gif" width="728" height="364" alt="Plot_2d" align="center" border="0"></td>
+<td width='5%' align='center'></td>
+</tr>
+</table></font>&nbsp;</p>
+<p align="left"><table>
+<tr>
+<td valign="top" align="center"><font color="#2f48a8" size="3" face="DejaVu Sans Mono"><strong>&gt; </strong></font></td>
+<td valign="top"><font color="#2f48a8" size="3" face="DejaVu Sans Mono"><strong>display(odeplot(sol_dae__opt,subs(data,[t,sqrt(diff(G3[1],t,t)^2+diff(G3[2],t,t)^2)]),t=0..TF,
+<br> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;labels = ["time (s)", m/s^2]),title &nbsp;= "Acceleration of G3",
+<br>color="Red",legend="m4=1 Cs4=10 ",labels = ["time (s)", m/s^2],size=[800,400]);</td>
+</tr>
+</table></strong></font>&nbsp;</p>
+<p align="center"><table width='100%'>
+<tr>
+<td valign="top" align="center"><font color="#000000" size="3" face="Times New Roman"><img src="images/Homework2_StefanoTonini248413_500.gif" width="728" height="364" alt="Plot_2d" align="center" border="0"></td>
+<td width='5%' align='center'></td>
+</tr>
+</table></font>&nbsp;</p>
+</dl>
+
+</html>

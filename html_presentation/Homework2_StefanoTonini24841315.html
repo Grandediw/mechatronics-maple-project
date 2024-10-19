@@ -1,0 +1,169 @@
+<html>
+<head>
+<meta http-equiv="content-type" content="text/html; charset=utf-8">
+<title>Homework2_StefanoTonini24841315.html</title>
+<!-- Created by Maple 2024.0, Mac OS X -->
+</head>
+<dl style="margin-left:40px"><a name="MapleAutoBookmark18" />
+<p align="left"><font color="#ff6600" size="4" face="DejaVu Sans"><strong> Index-reduction and projection method (prof. Bertolazzi)</strong></font>&nbsp;</p>
+<p align="left"><font color="#000000" size="3" face="DejaVu Sans">In this section the dynamic system is solved using the index-reduction and projection method explained by prof.
+<br>Bertolazzi.</font>&nbsp;</p>
+<p align="left"><table>
+<tr>
+<td valign="top" align="center"><font color="#2f48a8" size="3" face="DejaVu Sans Mono"><strong>&gt; </strong></font></td>
+<td valign="top"><font color="#2f48a8" size="3" face="DejaVu Sans Mono"><strong>dae_sys := convert([op(convert(ode_sys,list)), op(Phi)],set): &lt;op(%)&gt;;</td>
+</tr>
+</table></strong></font>&nbsp;</p>
+<p align="center"><table width='100%'>
+<tr>
+<td valign="top" align="center"><font color="#0000ff" size="3" face="Times New Roman"><img src="images/Homework2_StefanoTonini248413_197.gif" width="728" height="273" alt="rtable(1 .. 7, [`+`(`*`(`^`(`+`(`-`(L), `-`(`*`(cos(theta__1(t)), `*`(L__s0))), `*`(cos(theta__2(t)), `*`(s__2(t))), `*`(cos(theta__2(t)), `*`(L__s0))), 2)), `*`(`^`(`+`(`-`(`*`(sin(theta__1(t)), `*`(..." align="center" border="0"></td>
+<td width='5%' align='center'>(6.3.1)</td>
+</tr>
+</table></font>&nbsp;</p>
+<p align="left"><table>
+<tr>
+<td valign="top" align="center"><font color="#2f48a8" size="3" face="DejaVu Sans Mono"><strong>&gt; </strong></font></td>
+<td valign="top"><font color="#2f48a8" size="3" face="DejaVu Sans Mono"><strong>ALG := &lt;
+<br> &nbsp;dae_sys[1],
+<br> &nbsp;dae_sys[2]
+<br>&gt;;</td>
+</tr>
+</table></strong></font>&nbsp;</p>
+<p align="center"><table width='100%'>
+<tr>
+<td valign="top" align="center"><font color="#0000ff" size="3" face="Times New Roman"><img src="images/Homework2_StefanoTonini248413_198.gif" width="728" height="59" alt="rtable(1 .. 2, [`+`(`*`(`^`(`+`(`-`(L), `-`(`*`(cos(theta__1(t)), `*`(L__s0))), `*`(cos(theta__2(t)), `*`(s__2(t))), `*`(cos(theta__2(t)), `*`(L__s0))), 2)), `*`(`^`(`+`(`-`(`*`(sin(theta__1(t)), `*`(..." align="center" border="0"></td>
+<td width='5%' align='center'>(6.3.2)</td>
+</tr>
+</table></font>&nbsp;</p>
+<p align="left"><table>
+<tr>
+<td valign="top" align="center"><font color="#2f48a8" size="3" face="DejaVu Sans Mono"><strong>&gt; </strong></font></td>
+<td valign="top"><font color="#2f48a8" size="3" face="DejaVu Sans Mono"><strong>ODE := &lt;
+<br> &nbsp;dae_sys[3],
+<br> &nbsp;dae_sys[4],
+<br> &nbsp;dae_sys[5],
+<br> &nbsp;dae_sys[6],
+<br> &nbsp;dae_sys[7]
+<br>&gt;;</td>
+</tr>
+</table></strong></font>&nbsp;</p>
+<p align="center"><table width='100%'>
+<tr>
+<td valign="top" align="center"><font color="#0000ff" size="3" face="Times New Roman"><img src="images/Homework2_StefanoTonini248413_199.gif" width="728" height="14" alt="rtable(1 .. 5, [`+`(`*`(`/`(1, 2), `*`(m__1, `*`(`+`(`*`(2, `*`(diff(diff(theta__1(t), t), t), `*`(`^`(sin(theta__1(t)), 2), `*`(`^`(L__s0, 2))))), `*`(2, `*`(diff(diff(theta__1(t), t), t), `*`(`^`(co..." align="center" border="0"><br><img src="images/Homework2_StefanoTonini248413_200.gif" width="728" height="219" alt="rtable(1 .. 5, [`+`(`*`(`/`(1, 2), `*`(m__1, `*`(`+`(`*`(2, `*`(diff(diff(theta__1(t), t), t), `*`(`^`(sin(theta__1(t)), 2), `*`(`^`(L__s0, 2))))), `*`(2, `*`(diff(diff(theta__1(t), t), t), `*`(`^`(co..." align="center" border="0"></td>
+<td width='5%' align='center'>(6.3.3)</td>
+</tr>
+</table></font>&nbsp;</p>
+<p align="left"><table>
+<tr>
+<td valign="top" align="center"><font color="#2f48a8" size="3" face="DejaVu Sans Mono"><strong>&gt; </strong></font></td>
+<td valign="top"><font color="#2f48a8" size="3" face="DejaVu Sans Mono"><strong>SS_DIFF_TO_DOT := diff(s__2(t),t)=x1(t),
+<br> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;diff(s__3(t),t)=x2(t),
+<br> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;diff(theta__1(t),t)=x3(t),
+<br> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;diff(theta__2(t),t)=x4(t),
+<br> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;diff(theta__3(t),t)=x5(t),
+<br> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;diff(x1(t),t)=x1dot(t),
+<br> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;diff(x2(t),t)=x2dot(t),
+<br> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;diff(x3(t),t)=x3dot(t),
+<br> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;diff(x4(t),t)=x4dot(t),
+<br> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;diff(x5(t),t)=x5dot(t);</td>
+</tr>
+</table></strong></font>&nbsp;</p>
+<p align="center"><table width='100%'>
+<tr>
+<td valign="top" align="center"><font color="#0000ff" size="3" face="Times New Roman"><img src="images/Homework2_StefanoTonini248413_201.gif" width="728" height="30" alt="Typesetting:-mprintslash([SS_DIFF_TO_DOT := diff(s__2(t), t) = x1(t), diff(s__3(t), t) = x2(t), diff(theta__1(t), t) = x3(t), diff(theta__2(t), t) = x4(t), diff(theta__3(t), t) = x5(t), diff(x1(t), t)..." align="center" border="0"><br><img src="images/Homework2_StefanoTonini248413_202.gif" width="728" height="30" alt="Typesetting:-mprintslash([SS_DIFF_TO_DOT := diff(s__2(t), t) = x1(t), diff(s__3(t), t) = x2(t), diff(theta__1(t), t) = x3(t), diff(theta__2(t), t) = x4(t), diff(theta__3(t), t) = x5(t), diff(x1(t), t)..." align="center" border="0"></td>
+<td width='5%' align='center'>(6.3.4)</td>
+</tr>
+</table></font>&nbsp;</p>
+<p align="left"><table>
+<tr>
+<td valign="top" align="center"><font color="#2f48a8" size="3" face="DejaVu Sans Mono"><strong>&gt; </strong></font></td>
+<td valign="top"><font color="#2f48a8" size="3" face="DejaVu Sans Mono"><strong>RM1:=x3dot(t)=solve(dae_sys[3], diff(theta__1(t),t,t));</td>
+</tr>
+</table></strong></font>&nbsp;</p>
+<p align="center"><table width='100%'>
+<tr>
+<td valign="top" align="center"><font color="#0000ff" size="3" face="Times New Roman"><img src="images/Homework2_StefanoTonini248413_203.gif" width="728" height="37" alt="Typesetting:-mprintslash([RM1 := x3dot(t) = `/`(`*`(`+`(`*`(2, `*`(L__s0, `*`(sin(theta__1(t)), `*`(cos(theta__3(t)), `*`(lambda__1(t)))))), `*`(2, `*`(L__s0, `*`(sin(theta__1(t)), `*`(cos(theta__2(t)..." align="center" border="0"><br><img src="images/Homework2_StefanoTonini248413_204.gif" width="728" height="19" alt="Typesetting:-mprintslash([RM1 := x3dot(t) = `/`(`*`(`+`(`*`(2, `*`(L__s0, `*`(sin(theta__1(t)), `*`(cos(theta__3(t)), `*`(lambda__1(t)))))), `*`(2, `*`(L__s0, `*`(sin(theta__1(t)), `*`(cos(theta__2(t)..." align="center" border="0"><br><img src="images/Homework2_StefanoTonini248413_205.gif" width="728" height="19" alt="Typesetting:-mprintslash([RM1 := x3dot(t) = `/`(`*`(`+`(`*`(2, `*`(L__s0, `*`(sin(theta__1(t)), `*`(cos(theta__3(t)), `*`(lambda__1(t)))))), `*`(2, `*`(L__s0, `*`(sin(theta__1(t)), `*`(cos(theta__2(t)..." align="center" border="0"><br><img src="images/Homework2_StefanoTonini248413_206.gif" width="728" height="19" alt="Typesetting:-mprintslash([RM1 := x3dot(t) = `/`(`*`(`+`(`*`(2, `*`(L__s0, `*`(sin(theta__1(t)), `*`(cos(theta__3(t)), `*`(lambda__1(t)))))), `*`(2, `*`(L__s0, `*`(sin(theta__1(t)), `*`(cos(theta__2(t)..." align="center" border="0"></td>
+<td width='5%' align='center'>(6.3.5)</td>
+</tr>
+</table></font>&nbsp;</p>
+<p align="left"><table>
+<tr>
+<td valign="top" align="center"><font color="#2f48a8" size="3" face="DejaVu Sans Mono"><strong>&gt; </strong></font></td>
+<td valign="top"><font color="#2f48a8" size="3" face="DejaVu Sans Mono"><strong>RM2:=x4dot(t)=solve(dae_sys[6], diff(theta__2(t),t,t));</td>
+</tr>
+</table></strong></font>&nbsp;</p>
+<p align="center"><table width='100%'>
+<tr>
+<td valign="top" align="center"><font color="#0000ff" size="3" face="Times New Roman"><img src="images/Homework2_StefanoTonini248413_207.gif" width="728" height="33" alt="Typesetting:-mprintslash([RM2 := x4dot(t) = `/`(`*`(`+`(`-`(`*`(2, `*`(L__s0, `*`(sin(theta__1(t)), `*`(cos(theta__2(t)), `*`(lambda__2(t))))))), `*`(2, `*`(L__s0, `*`(cos(theta__1(t)), `*`(sin(theta_..." align="center" border="0"><br><img src="images/Homework2_StefanoTonini248413_208.gif" width="728" height="30" alt="Typesetting:-mprintslash([RM2 := x4dot(t) = `/`(`*`(`+`(`-`(`*`(2, `*`(L__s0, `*`(sin(theta__1(t)), `*`(cos(theta__2(t)), `*`(lambda__2(t))))))), `*`(2, `*`(L__s0, `*`(cos(theta__1(t)), `*`(sin(theta_..." align="center" border="0"></td>
+<td width='5%' align='center'>(6.3.6)</td>
+</tr>
+</table></font>&nbsp;</p>
+<p align="left"><table>
+<tr>
+<td valign="top" align="center"><font color="#2f48a8" size="3" face="DejaVu Sans Mono"><strong>&gt; </strong></font></td>
+<td valign="top"><font color="#2f48a8" size="3" face="DejaVu Sans Mono"><strong>RM3:=x5dot(t)=solve(dae_sys[7], diff(theta__3(t),t,t));</td>
+</tr>
+</table></strong></font>&nbsp;</p>
+<p align="center"><table width='100%'>
+<tr>
+<td valign="top" align="center"><font color="#0000ff" size="3" face="Times New Roman"><img src="images/Homework2_StefanoTonini248413_209.gif" width="728" height="33" alt="Typesetting:-mprintslash([RM3 := x5dot(t) = `+`(`-`(`/`(`*`(`+`(`-`(`*`(2, `*`(L__s0, `*`(cos(theta__1(t)), `*`(sin(theta__3(t)), `*`(lambda__1(t))))))), `*`(2, `*`(L__s0, `*`(sin(theta__1(t)), `*`(co..." align="center" border="0"><br><img src="images/Homework2_StefanoTonini248413_210.gif" width="728" height="30" alt="Typesetting:-mprintslash([RM3 := x5dot(t) = `+`(`-`(`/`(`*`(`+`(`-`(`*`(2, `*`(L__s0, `*`(cos(theta__1(t)), `*`(sin(theta__3(t)), `*`(lambda__1(t))))))), `*`(2, `*`(L__s0, `*`(sin(theta__1(t)), `*`(co..." align="center" border="0"></td>
+<td width='5%' align='center'>(6.3.7)</td>
+</tr>
+</table></font>&nbsp;</p>
+<p align="left"><table>
+<tr>
+<td valign="top" align="center"><font color="#2f48a8" size="3" face="DejaVu Sans Mono"><strong>&gt; </strong></font></td>
+<td valign="top"><font color="#2f48a8" size="3" face="DejaVu Sans Mono"><strong>RM4:=x1dot(t)=solve(dae_sys[4], diff(s__2(t),t,t));</td>
+</tr>
+</table></strong></font>&nbsp;</p>
+<p align="center"><table width='100%'>
+<tr>
+<td valign="top" align="center"><font color="#0000ff" size="3" face="Times New Roman"><img src="images/Homework2_StefanoTonini248413_211.gif" width="728" height="35" alt="Typesetting:-mprintslash([RM4 := x1dot(t) = `+`(`-`(`/`(`*`(`+`(`*`(C__s2, `*`(`^`(cos(theta__2(t)), 2), `*`(diff(s__2(t), t)))), `*`(C__s2, `*`(`^`(sin(theta__2(t)), 2), `*`(diff(s__2(t), t)))), `*`(..." align="center" border="0"><br><img src="images/Homework2_StefanoTonini248413_212.gif" width="728" height="32" alt="Typesetting:-mprintslash([RM4 := x1dot(t) = `+`(`-`(`/`(`*`(`+`(`*`(C__s2, `*`(`^`(cos(theta__2(t)), 2), `*`(diff(s__2(t), t)))), `*`(C__s2, `*`(`^`(sin(theta__2(t)), 2), `*`(diff(s__2(t), t)))), `*`(..." align="center" border="0"><br><img src="images/Homework2_StefanoTonini248413_213.gif" width="728" height="32" alt="Typesetting:-mprintslash([RM4 := x1dot(t) = `+`(`-`(`/`(`*`(`+`(`*`(C__s2, `*`(`^`(cos(theta__2(t)), 2), `*`(diff(s__2(t), t)))), `*`(C__s2, `*`(`^`(sin(theta__2(t)), 2), `*`(diff(s__2(t), t)))), `*`(..." align="center" border="0"></td>
+<td width='5%' align='center'>(6.3.8)</td>
+</tr>
+</table></font>&nbsp;</p>
+<p align="left"><table>
+<tr>
+<td valign="top" align="center"><font color="#2f48a8" size="3" face="DejaVu Sans Mono"><strong>&gt; </strong></font></td>
+<td valign="top"><font color="#2f48a8" size="3" face="DejaVu Sans Mono"><strong>RM5:=x2dot(t)=solve(dae_sys[5], diff(s__3(t),t,t));</td>
+</tr>
+</table></strong></font>&nbsp;</p>
+<p align="center"><table width='100%'>
+<tr>
+<td valign="top" align="center"><font color="#0000ff" size="3" face="Times New Roman"><img src="images/Homework2_StefanoTonini248413_214.gif" width="728" height="35" alt="Typesetting:-mprintslash([RM5 := x2dot(t) = `+`(`-`(`/`(`*`(`+`(`*`(C__s3, `*`(`^`(cos(theta__3(t)), 2), `*`(diff(s__3(t), t)))), `*`(C__s3, `*`(`^`(sin(theta__3(t)), 2), `*`(diff(s__3(t), t)))), `*`(..." align="center" border="0"><br><img src="images/Homework2_StefanoTonini248413_215.gif" width="728" height="32" alt="Typesetting:-mprintslash([RM5 := x2dot(t) = `+`(`-`(`/`(`*`(`+`(`*`(C__s3, `*`(`^`(cos(theta__3(t)), 2), `*`(diff(s__3(t), t)))), `*`(C__s3, `*`(`^`(sin(theta__3(t)), 2), `*`(diff(s__3(t), t)))), `*`(..." align="center" border="0"><br><img src="images/Homework2_StefanoTonini248413_216.gif" width="728" height="32" alt="Typesetting:-mprintslash([RM5 := x2dot(t) = `+`(`-`(`/`(`*`(`+`(`*`(C__s3, `*`(`^`(cos(theta__3(t)), 2), `*`(diff(s__3(t), t)))), `*`(C__s3, `*`(`^`(sin(theta__3(t)), 2), `*`(diff(s__3(t), t)))), `*`(..." align="center" border="0"></td>
+<td width='5%' align='center'>(6.3.9)</td>
+</tr>
+</table></font>&nbsp;</p>
+<p align="left"><table>
+<tr>
+<td valign="top" align="center"><font color="#2f48a8" size="3" face="DejaVu Sans Mono"><strong>&gt; </strong></font></td>
+<td valign="top"><font color="#2f48a8" size="3" face="DejaVu Sans Mono"><strong>REMOVE_DOT:=subs(SS_DIFF_TO_DOT,[RM1,RM2,RM3,RM4,RM5]);</td>
+</tr>
+</table></strong></font>&nbsp;</p>
+<p align="center"><table width='100%'>
+<tr>
+<td valign="top" align="center"><font color="#0000ff" size="3" face="Times New Roman"><img src="images/Homework2_StefanoTonini248413_217.gif" width="728" height="44" alt="Typesetting:-mprintslash([REMOVE_DOT := [x3dot(t) = `/`(`*`(`+`(`*`(2, `*`(L__s0, `*`(sin(theta__1(t)), `*`(cos(theta__3(t)), `*`(lambda__1(t)))))), `*`(2, `*`(L__s0, `*`(sin(theta__1(t)), `*`(cos(the..." align="center" border="0"><br><img src="images/Homework2_StefanoTonini248413_218.gif" width="728" height="40" alt="Typesetting:-mprintslash([REMOVE_DOT := [x3dot(t) = `/`(`*`(`+`(`*`(2, `*`(L__s0, `*`(sin(theta__1(t)), `*`(cos(theta__3(t)), `*`(lambda__1(t)))))), `*`(2, `*`(L__s0, `*`(sin(theta__1(t)), `*`(cos(the..." align="center" border="0"><br><img src="images/Homework2_StefanoTonini248413_219.gif" width="728" height="40" alt="Typesetting:-mprintslash([REMOVE_DOT := [x3dot(t) = `/`(`*`(`+`(`*`(2, `*`(L__s0, `*`(sin(theta__1(t)), `*`(cos(theta__3(t)), `*`(lambda__1(t)))))), `*`(2, `*`(L__s0, `*`(sin(theta__1(t)), `*`(cos(the..." align="center" border="0"><br><img src="images/Homework2_StefanoTonini248413_220.gif" width="728" height="40" alt="Typesetting:-mprintslash([REMOVE_DOT := [x3dot(t) = `/`(`*`(`+`(`*`(2, `*`(L__s0, `*`(sin(theta__1(t)), `*`(cos(theta__3(t)), `*`(lambda__1(t)))))), `*`(2, `*`(L__s0, `*`(sin(theta__1(t)), `*`(cos(the..." align="center" border="0"><br><img src="images/Homework2_StefanoTonini248413_221.gif" width="728" height="40" alt="Typesetting:-mprintslash([REMOVE_DOT := [x3dot(t) = `/`(`*`(`+`(`*`(2, `*`(L__s0, `*`(sin(theta__1(t)), `*`(cos(theta__3(t)), `*`(lambda__1(t)))))), `*`(2, `*`(L__s0, `*`(sin(theta__1(t)), `*`(cos(the..." align="center" border="0"><br><img src="images/Homework2_StefanoTonini248413_222.gif" width="728" height="40" alt="Typesetting:-mprintslash([REMOVE_DOT := [x3dot(t) = `/`(`*`(`+`(`*`(2, `*`(L__s0, `*`(sin(theta__1(t)), `*`(cos(theta__3(t)), `*`(lambda__1(t)))))), `*`(2, `*`(L__s0, `*`(sin(theta__1(t)), `*`(cos(the..." align="center" border="0"><br><img src="images/Homework2_StefanoTonini248413_223.gif" width="728" height="40" alt="Typesetting:-mprintslash([REMOVE_DOT := [x3dot(t) = `/`(`*`(`+`(`*`(2, `*`(L__s0, `*`(sin(theta__1(t)), `*`(cos(theta__3(t)), `*`(lambda__1(t)))))), `*`(2, `*`(L__s0, `*`(sin(theta__1(t)), `*`(cos(the..." align="center" border="0"><br><img src="images/Homework2_StefanoTonini248413_224.gif" width="728" height="40" alt="Typesetting:-mprintslash([REMOVE_DOT := [x3dot(t) = `/`(`*`(`+`(`*`(2, `*`(L__s0, `*`(sin(theta__1(t)), `*`(cos(theta__3(t)), `*`(lambda__1(t)))))), `*`(2, `*`(L__s0, `*`(sin(theta__1(t)), `*`(cos(the..." align="center" border="0"><br><img src="images/Homework2_StefanoTonini248413_225.gif" width="728" height="40" alt="Typesetting:-mprintslash([REMOVE_DOT := [x3dot(t) = `/`(`*`(`+`(`*`(2, `*`(L__s0, `*`(sin(theta__1(t)), `*`(cos(theta__3(t)), `*`(lambda__1(t)))))), `*`(2, `*`(L__s0, `*`(sin(theta__1(t)), `*`(cos(the..." align="center" border="0"><br><img src="images/Homework2_StefanoTonini248413_226.gif" width="728" height="33" alt="Typesetting:-mprintslash([REMOVE_DOT := [x3dot(t) = `/`(`*`(`+`(`*`(2, `*`(L__s0, `*`(sin(theta__1(t)), `*`(cos(theta__3(t)), `*`(lambda__1(t)))))), `*`(2, `*`(L__s0, `*`(sin(theta__1(t)), `*`(cos(the..." align="center" border="0"><br><img src="images/Homework2_StefanoTonini248413_227.gif" width="728" height="33" alt="Typesetting:-mprintslash([REMOVE_DOT := [x3dot(t) = `/`(`*`(`+`(`*`(2, `*`(L__s0, `*`(sin(theta__1(t)), `*`(cos(theta__3(t)), `*`(lambda__1(t)))))), `*`(2, `*`(L__s0, `*`(sin(theta__1(t)), `*`(cos(the..." align="center" border="0"><br><img src="images/Homework2_StefanoTonini248413_228.gif" width="728" height="21" alt="Typesetting:-mprintslash([REMOVE_DOT := [x3dot(t) = `/`(`*`(`+`(`*`(2, `*`(L__s0, `*`(sin(theta__1(t)), `*`(cos(theta__3(t)), `*`(lambda__1(t)))))), `*`(2, `*`(L__s0, `*`(sin(theta__1(t)), `*`(cos(the..." align="center" border="0"><br><img src="images/Homework2_StefanoTonini248413_229.gif" width="728" height="21" alt="Typesetting:-mprintslash([REMOVE_DOT := [x3dot(t) = `/`(`*`(`+`(`*`(2, `*`(L__s0, `*`(sin(theta__1(t)), `*`(cos(theta__3(t)), `*`(lambda__1(t)))))), `*`(2, `*`(L__s0, `*`(sin(theta__1(t)), `*`(cos(the..." align="center" border="0"></td>
+<td width='5%' align='center'>(6.3.10)</td>
+</tr>
+</table></font>&nbsp;</p>
+<p align="left"><table>
+<tr>
+<td valign="top" align="center"><font color="#2f48a8" size="3" face="DejaVu Sans Mono"><strong>&gt; </strong></font></td>
+<td valign="top"><font color="#2f48a8" size="3" face="DejaVu Sans Mono"><strong>ALG := subs(SS_DIFF_TO_DOT, convert(dae_sys, list));</td>
+</tr>
+</table></strong></font>&nbsp;</p>
+<p align="center"><table width='100%'>
+<tr>
+<td valign="top" align="center"><font color="#0000ff" size="3" face="Times New Roman"><img src="images/Homework2_StefanoTonini248413_230.gif" width="728" height="37" alt="Typesetting:-mprintslash([ALG := [`+`(`*`(`^`(`+`(`-`(L), `-`(`*`(cos(theta__1(t)), `*`(L__s0))), `*`(cos(theta__2(t)), `*`(s__2(t))), `*`(cos(theta__2(t)), `*`(L__s0))), 2)), `*`(`^`(`+`(`-`(`*`(sin(..." align="center" border="0"><br><img src="images/Homework2_StefanoTonini248413_231.gif" width="728" height="37" alt="Typesetting:-mprintslash([ALG := [`+`(`*`(`^`(`+`(`-`(L), `-`(`*`(cos(theta__1(t)), `*`(L__s0))), `*`(cos(theta__2(t)), `*`(s__2(t))), `*`(cos(theta__2(t)), `*`(L__s0))), 2)), `*`(`^`(`+`(`-`(`*`(sin(..." align="center" border="0"><br><img src="images/Homework2_StefanoTonini248413_232.gif" width="728" height="37" alt="Typesetting:-mprintslash([ALG := [`+`(`*`(`^`(`+`(`-`(L), `-`(`*`(cos(theta__1(t)), `*`(L__s0))), `*`(cos(theta__2(t)), `*`(s__2(t))), `*`(cos(theta__2(t)), `*`(L__s0))), 2)), `*`(`^`(`+`(`-`(`*`(sin(..." align="center" border="0"><br><img src="images/Homework2_StefanoTonini248413_233.gif" width="728" height="21" alt="Typesetting:-mprintslash([ALG := [`+`(`*`(`^`(`+`(`-`(L), `-`(`*`(cos(theta__1(t)), `*`(L__s0))), `*`(cos(theta__2(t)), `*`(s__2(t))), `*`(cos(theta__2(t)), `*`(L__s0))), 2)), `*`(`^`(`+`(`-`(`*`(sin(..." align="center" border="0"><br><img src="images/Homework2_StefanoTonini248413_234.gif" width="728" height="21" alt="Typesetting:-mprintslash([ALG := [`+`(`*`(`^`(`+`(`-`(L), `-`(`*`(cos(theta__1(t)), `*`(L__s0))), `*`(cos(theta__2(t)), `*`(s__2(t))), `*`(cos(theta__2(t)), `*`(L__s0))), 2)), `*`(`^`(`+`(`-`(`*`(sin(..." align="center" border="0"><br><img src="images/Homework2_StefanoTonini248413_235.gif" width="728" height="21" alt="Typesetting:-mprintslash([ALG := [`+`(`*`(`^`(`+`(`-`(L), `-`(`*`(cos(theta__1(t)), `*`(L__s0))), `*`(cos(theta__2(t)), `*`(s__2(t))), `*`(cos(theta__2(t)), `*`(L__s0))), 2)), `*`(`^`(`+`(`-`(`*`(sin(..." align="center" border="0"><br><img src="images/Homework2_StefanoTonini248413_236.gif" width="728" height="21" alt="Typesetting:-mprintslash([ALG := [`+`(`*`(`^`(`+`(`-`(L), `-`(`*`(cos(theta__1(t)), `*`(L__s0))), `*`(cos(theta__2(t)), `*`(s__2(t))), `*`(cos(theta__2(t)), `*`(L__s0))), 2)), `*`(`^`(`+`(`-`(`*`(sin(..." align="center" border="0"><br><img src="images/Homework2_StefanoTonini248413_237.gif" width="728" height="21" alt="Typesetting:-mprintslash([ALG := [`+`(`*`(`^`(`+`(`-`(L), `-`(`*`(cos(theta__1(t)), `*`(L__s0))), `*`(cos(theta__2(t)), `*`(s__2(t))), `*`(cos(theta__2(t)), `*`(L__s0))), 2)), `*`(`^`(`+`(`-`(`*`(sin(..." align="center" border="0"><br><img src="images/Homework2_StefanoTonini248413_238.gif" width="728" height="21" alt="Typesetting:-mprintslash([ALG := [`+`(`*`(`^`(`+`(`-`(L), `-`(`*`(cos(theta__1(t)), `*`(L__s0))), `*`(cos(theta__2(t)), `*`(s__2(t))), `*`(cos(theta__2(t)), `*`(L__s0))), 2)), `*`(`^`(`+`(`-`(`*`(sin(..." align="center" border="0"><br><img src="images/Homework2_StefanoTonini248413_239.gif" width="728" height="21" alt="Typesetting:-mprintslash([ALG := [`+`(`*`(`^`(`+`(`-`(L), `-`(`*`(cos(theta__1(t)), `*`(L__s0))), `*`(cos(theta__2(t)), `*`(s__2(t))), `*`(cos(theta__2(t)), `*`(L__s0))), 2)), `*`(`^`(`+`(`-`(`*`(sin(..." align="center" border="0"><br><img src="images/Homework2_StefanoTonini248413_240.gif" width="728" height="19" alt="Typesetting:-mprintslash([ALG := [`+`(`*`(`^`(`+`(`-`(L), `-`(`*`(cos(theta__1(t)), `*`(L__s0))), `*`(cos(theta__2(t)), `*`(s__2(t))), `*`(cos(theta__2(t)), `*`(L__s0))), 2)), `*`(`^`(`+`(`-`(`*`(sin(..." align="center" border="0"><br><img src="images/Homework2_StefanoTonini248413_241.gif" width="728" height="19" alt="Typesetting:-mprintslash([ALG := [`+`(`*`(`^`(`+`(`-`(L), `-`(`*`(cos(theta__1(t)), `*`(L__s0))), `*`(cos(theta__2(t)), `*`(s__2(t))), `*`(cos(theta__2(t)), `*`(L__s0))), 2)), `*`(`^`(`+`(`-`(`*`(sin(..." align="center" border="0"><br><img src="images/Homework2_StefanoTonini248413_242.gif" width="728" height="19" alt="Typesetting:-mprintslash([ALG := [`+`(`*`(`^`(`+`(`-`(L), `-`(`*`(cos(theta__1(t)), `*`(L__s0))), `*`(cos(theta__2(t)), `*`(s__2(t))), `*`(cos(theta__2(t)), `*`(L__s0))), 2)), `*`(`^`(`+`(`-`(`*`(sin(..." align="center" border="0"><br><img src="images/Homework2_StefanoTonini248413_243.gif" width="728" height="19" alt="Typesetting:-mprintslash([ALG := [`+`(`*`(`^`(`+`(`-`(L), `-`(`*`(cos(theta__1(t)), `*`(L__s0))), `*`(cos(theta__2(t)), `*`(s__2(t))), `*`(cos(theta__2(t)), `*`(L__s0))), 2)), `*`(`^`(`+`(`-`(`*`(sin(..." align="center" border="0"><br><img src="images/Homework2_StefanoTonini248413_244.gif" width="728" height="19" alt="Typesetting:-mprintslash([ALG := [`+`(`*`(`^`(`+`(`-`(L), `-`(`*`(cos(theta__1(t)), `*`(L__s0))), `*`(cos(theta__2(t)), `*`(s__2(t))), `*`(cos(theta__2(t)), `*`(L__s0))), 2)), `*`(`^`(`+`(`-`(`*`(sin(..." align="center" border="0"><br><img src="images/Homework2_StefanoTonini248413_245.gif" width="728" height="19" alt="Typesetting:-mprintslash([ALG := [`+`(`*`(`^`(`+`(`-`(L), `-`(`*`(cos(theta__1(t)), `*`(L__s0))), `*`(cos(theta__2(t)), `*`(s__2(t))), `*`(cos(theta__2(t)), `*`(L__s0))), 2)), `*`(`^`(`+`(`-`(`*`(sin(..." align="center" border="0"><br><img src="images/Homework2_StefanoTonini248413_246.gif" width="728" height="19" alt="Typesetting:-mprintslash([ALG := [`+`(`*`(`^`(`+`(`-`(L), `-`(`*`(cos(theta__1(t)), `*`(L__s0))), `*`(cos(theta__2(t)), `*`(s__2(t))), `*`(cos(theta__2(t)), `*`(L__s0))), 2)), `*`(`^`(`+`(`-`(`*`(sin(..." align="center" border="0"></td>
+<td width='5%' align='center'>(6.3.11)</td>
+</tr>
+</table></font>&nbsp;</p>
+<dl style="margin-left:40px"><a href="Homework2_StefanoTonini24841316.html" target="Content"><p align="left"><font color="#ff9900" size="3" face="DejaVu Sans"><strong><em>Reduce index by one [1] &nbsp;</em></strong></font>&nbsp;</p>
+</a></dl>
+<dl style="margin-left:40px"><a href="Homework2_StefanoTonini24841317.html" target="Content"><p align="left"><font color="#ff9900" size="3" face="DejaVu Sans"><strong><em>Reduce index by one [2]</em></strong></font>&nbsp;</p>
+</a></dl>
+<dl style="margin-left:40px"><a href="Homework2_StefanoTonini24841318.html" target="Content"><p align="left"><font color="#ff9900" size="3" face="DejaVu Sans"><strong><em>Test forward integration and plots</em></strong></font>&nbsp;</p>
+</a></dl>
+</dl>
+
+</html>

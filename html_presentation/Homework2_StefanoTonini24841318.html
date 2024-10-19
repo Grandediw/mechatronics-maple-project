@@ -1,0 +1,272 @@
+<html>
+<head>
+<meta http-equiv="content-type" content="text/html; charset=utf-8">
+<title>Homework2_StefanoTonini24841318.html</title>
+<!-- Created by Maple 2024.0, Mac OS X -->
+</head>
+<dl style="margin-left:40px"><a name="MapleAutoBookmark21" />
+<p align="left"><font color="#ff9900" size="3" face="DejaVu Sans"><strong><em>Test forward integration and plots</em></strong></font>&nbsp;</p>
+<p align="left"><font color="#000000" size="3" face="DejaVu Sans">Define the initial conditions</font>&nbsp;</p>
+<p align="left"><table>
+<tr>
+<td valign="top" align="center"><font color="#2f48a8" size="3" face="DejaVu Sans Mono"><strong>&gt; </strong></font></td>
+<td valign="top"><font color="#2f48a8" size="3" face="DejaVu Sans Mono"><strong>INI := &lt;0,0,-Pi/2,-Pi/2,-Pi/2,0,0,0,0,0&gt;</td>
+</tr>
+</table></strong></font>&nbsp;</p>
+<p align="center"><table width='100%'>
+<tr>
+<td valign="top" align="center"><font color="#0000ff" size="3" face="Times New Roman"><img src="images/Homework2_StefanoTonini248413_383.gif" width="122" height="334" alt="rtable(1 .. 10, [0, 0, `+`(`-`(`*`(`/`(1, 2), `*`(Pi)))), `+`(`-`(`*`(`/`(1, 2), `*`(Pi)))), `+`(`-`(`*`(`/`(1, 2), `*`(Pi)))), 0, 0, 0, 0, 0], subtype = Vector[column]); "_noterminate" align="center" border="0"></td>
+<td width='5%' align='center'>(6.3.3.1)</td>
+</tr>
+</table></font>&nbsp;</p>
+<p align="left"><table>
+<tr>
+<td valign="top" align="center"><font color="#2f48a8" size="3" face="DejaVu Sans Mono"><strong>&gt; </strong></font></td>
+<td valign="top"><font color="#2f48a8" size="3" face="DejaVu Sans Mono"><strong>RES := PROJECT(INI,0);</td>
+</tr>
+</table></strong></font>&nbsp;</p>
+<p align="left"><table width='100%'>
+<tr>
+<td valign="top" align="center"><font color="#0000ff" size="3" face="Courier New"><u><a href="http://www.maplesoft.com/support/help/errors/view.aspx?path=Warning,%20no%20iterations%20performed%20as%20initial%20point%20satisfies%20first-order%20conditions"></u></font><font color="#0000ff" size="3" face="Courier New"><u>Warning, no iterations performed as initial point satisfies first-order conditions</u></font></a></td>
+</tr>&nbsp;</p>
+<p align="center"><tr>
+<td valign="top" align="center"><font color="#0000ff" size="3" face="Times New Roman"><img src="images/Homework2_StefanoTonini248413_384.gif" width="231" height="252" alt="rtable(1 .. 10, [0., 0., -1.5707963267949, -1.5707963267949, -1.5707963267949, 0., 0., 0., 0., 0.], subtype = Vector[column]); "_noterminate" align="center" border="0"></td>
+<td width='5%' align='center'>(6.3.3.2)</td>
+</tr>
+</table></font>&nbsp;</p>
+<p align="left"><table>
+<tr>
+<td valign="top" align="center"><font color="#2f48a8" size="3" face="DejaVu Sans Mono"><strong>&gt; </strong></font></td>
+<td valign="top"><font color="#2f48a8" size="3" face="DejaVu Sans Mono"><strong>RHS_ODE(INI, 0, Mf, Rf);</td>
+</tr>
+</table></strong></font>&nbsp;</p>
+<p align="center"><table width='100%'>
+<tr>
+<td valign="top" align="center"><font color="#0000ff" size="3" face="Times New Roman"><img src="images/Homework2_StefanoTonini248413_385.gif" width="177" height="264" alt="rtable(1 .. 10, [0, 0, 0, 0, 0, 9.810000000, 9.810000000, 0.4790628970e-9, 0.2491127062e-8, 0.2491127062e-8], subtype = Vector[column]); "_noterminate" align="center" border="0"></td>
+<td width='5%' align='center'>(6.3.3.3)</td>
+</tr>
+</table></font>&nbsp;</p>
+<p align="left"><table>
+<tr>
+<td valign="top" align="center"><font color="#2f48a8" size="3" face="DejaVu Sans Mono"><strong>&gt; </strong></font></td>
+<td valign="top"><font color="#2f48a8" size="3" face="DejaVu Sans Mono"><strong>RES := ADVANCE( evalf(INI), 0, 10, 0.01,Mf,Rf, true ):</td>
+</tr>
+</table></strong></font>&nbsp;</p>
+<p align="left"><table width='100%'>
+<tr>
+<td valign="top" align="center"><font color="#0000ff" size="3" face="Courier New"><u><a href="http://www.maplesoft.com/support/help/errors/view.aspx?path=Warning,%20no%20iterations%20performed%20as%20initial%20point%20satisfies%20first-order%20conditions"></u></font><font color="#0000ff" size="3" face="Courier New"><u>Warning, no iterations performed as initial point satisfies first-order conditions</u></font></a></td>
+</tr>&nbsp;</p>
+<p align="left"><tr>
+<td valign="top" align="center"><font color="#0000ff" size="3" face="Courier New">[0%] t=0
+<br>[0.6%] t=0.06
+<br>[1.2%] t=0.12
+<br>[1.8%] t=0.18
+<br>[2.4%] t=0.24
+<br>[3%] t=0.3
+<br>[3.6%] t=0.36
+<br>[4.2%] t=0.42
+<br>[4.8%] t=0.48
+<br>[5.4%] t=0.54
+<br>[6%] t=0.6
+<br>[6.6%] t=0.66
+<br>[7.2%] t=0.72
+<br>[7.8%] t=0.78
+<br>[8.4%] t=0.84
+<br>[9%] t=0.9
+<br>[9.6%] t=0.96
+<br>[10.2%] t=1.02
+<br>[10.8%] t=1.08
+<br>[11.4%] t=1.14
+<br>[12%] t=1.2
+<br>[12.6%] t=1.26
+<br>[13.2%] t=1.32
+<br>[13.8%] t=1.38
+<br>[14.4%] t=1.44
+<br>[15%] t=1.5
+<br>[15.6%] t=1.56
+<br>[16.2%] t=1.62
+<br>[16.8%] t=1.68
+<br>[17.4%] t=1.74
+<br>[18%] t=1.8
+<br>[18.6%] t=1.86
+<br>[19.2%] t=1.92
+<br>[19.8%] t=1.98
+<br>[20.4%] t=2.04
+<br>[21%] t=2.1
+<br>[21.6%] t=2.16
+<br>[22.2%] t=2.22
+<br>[22.8%] t=2.28
+<br>[23.4%] t=2.34
+<br>[24%] t=2.4
+<br>[24.6%] t=2.46
+<br>[25.2%] t=2.52
+<br>[25.8%] t=2.58
+<br>[26.4%] t=2.64
+<br>[27%] t=2.7
+<br>[27.6%] t=2.76
+<br>[28.2%] t=2.82
+<br>[28.8%] t=2.88
+<br>[29.4%] t=2.94
+<br>[30%] t=3
+<br>[30.6%] t=3.06
+<br>[31.2%] t=3.12
+<br>[31.8%] t=3.18
+<br>[32.4%] t=3.24
+<br>[33%] t=3.3
+<br>[33.6%] t=3.36
+<br>[34.2%] t=3.42
+<br>[34.8%] t=3.48
+<br>[35.4%] t=3.54
+<br>[36%] t=3.6
+<br>[36.6%] t=3.66
+<br>[37.2%] t=3.72
+<br>[37.8%] t=3.78
+<br>[38.4%] t=3.84
+<br>[39%] t=3.9
+<br>[39.6%] t=3.96
+<br>[40.2%] t=4.02
+<br>[40.8%] t=4.08
+<br>[41.4%] t=4.14
+<br>[42%] t=4.2
+<br>[42.6%] t=4.26
+<br>[43.2%] t=4.32
+<br>[43.8%] t=4.38
+<br>[44.4%] t=4.44
+<br>[45%] t=4.5
+<br>[45.6%] t=4.56
+<br>[46.2%] t=4.62
+<br>[46.8%] t=4.68
+<br>[47.4%] t=4.74
+<br>[48%] t=4.8
+<br>[48.6%] t=4.86
+<br>[49.2%] t=4.92
+<br>[49.8%] t=4.98
+<br>[50.4%] t=5.04
+<br>[51%] t=5.1
+<br>[51.6%] t=5.16
+<br>[52.2%] t=5.22
+<br>[52.8%] t=5.28
+<br>[53.4%] t=5.34
+<br>[54%] t=5.4
+<br>[54.6%] t=5.46
+<br>[55.2%] t=5.52
+<br>[55.8%] t=5.58
+<br>[56.4%] t=5.64
+<br>[57%] t=5.7
+<br>[57.6%] t=5.76
+<br>[58.2%] t=5.82
+<br>[58.8%] t=5.88
+<br>[59.4%] t=5.94
+<br>[60%] t=6
+<br>[60.6%] t=6.06
+<br>[61.2%] t=6.12
+<br>[61.8%] t=6.18
+<br>[62.4%] t=6.24
+<br>[63%] t=6.3
+<br>[63.6%] t=6.36
+<br>[64.2%] t=6.42
+<br>[64.8%] t=6.48
+<br>[65.4%] t=6.54
+<br>[66%] t=6.6
+<br>[66.6%] t=6.66
+<br>[67.2%] t=6.72
+<br>[67.8%] t=6.78
+<br>[68.4%] t=6.84
+<br>[69%] t=6.9
+<br>[69.6%] t=6.96
+<br>[70.2%] t=7.02
+<br>[70.8%] t=7.08
+<br>[71.4%] t=7.14
+<br>[72%] t=7.2
+<br>[72.6%] t=7.26
+<br>[73.2%] t=7.32
+<br>[73.8%] t=7.38
+<br>[74.4%] t=7.44
+<br>[75%] t=7.5
+<br>[75.6%] t=7.56
+<br>[76.2%] t=7.62
+<br>[76.8%] t=7.68
+<br>[77.4%] t=7.74
+<br>[78%] t=7.8
+<br>[78.6%] t=7.86
+<br>[79.2%] t=7.92
+<br>[79.8%] t=7.98
+<br>[80.4%] t=8.04
+<br>[81%] t=8.1
+<br>[81.6%] t=8.16
+<br>[82.2%] t=8.22
+<br>[82.8%] t=8.28
+<br>[83.4%] t=8.34
+<br>[84%] t=8.4
+<br>[84.6%] t=8.46
+<br>[85.2%] t=8.52
+<br>[85.8%] t=8.58
+<br>[86.4%] t=8.64
+<br>[87%] t=8.7
+<br>[87.6%] t=8.76
+<br>[88.2%] t=8.82
+<br>[88.8%] t=8.88
+<br>[89.4%] t=8.94
+<br>[90%] t=9
+<br>[90.6%] t=9.06
+<br>[91.2%] t=9.12
+<br>[91.8%] t=9.18
+<br>[92.4%] t=9.24
+<br>[93%] t=9.3
+<br>[93.6%] t=9.36
+<br>[94.2%] t=9.42
+<br>[94.8%] t=9.48
+<br>[95.4%] t=9.54
+<br>[96%] t=9.6
+<br>[96.6%] t=9.66
+<br>[97.2%] t=9.72
+<br>[97.8%] t=9.78
+<br>[98.4%] t=9.84
+<br>[99%] t=9.9
+<br>[99.6%] t=9.96
+<br></td>
+<td width='5%' align='center'></td>
+</tr>
+</table></font>&nbsp;</p>
+<p align="left"><font color="#000000" size="3" face="DejaVu Sans">Plot of theta1dot, theta2dot and theta3dot</font>&nbsp;</p>
+<p align="left"><table>
+<tr>
+<td valign="top" align="center"><font color="#2f48a8" size="3" face="DejaVu Sans Mono"><strong>&gt; </strong></font></td>
+<td valign="top"><font color="#2f48a8" size="3" face="DejaVu Sans Mono"><strong>dataplot( RES["t"], [ RES["x3"], RES["x4"], RES["x5"] ],symbolsize=1,legend=[theta__1dot,theta__2dot,theta__3dot] );</td>
+</tr>
+</table></strong></font>&nbsp;</p>
+<p align="center"><table width='100%'>
+<tr>
+<td valign="top" align="center"><font color="#000000" size="3" face="Times New Roman"><img src="images/Homework2_StefanoTonini248413_386.gif" width="728" height="182" alt="Plot_2d" align="center" border="0"></td>
+<td width='5%' align='center'></td>
+</tr>
+</table></font>&nbsp;</p>
+<p align="left"><font color="#000000" size="3" face="DejaVu Sans">Plot of s2 and s3</font>&nbsp;</p>
+<p align="left"><table>
+<tr>
+<td valign="top" align="center"><font color="#2f48a8" size="3" face="DejaVu Sans Mono"><strong>&gt; </strong></font></td>
+<td valign="top"><font color="#2f48a8" size="3" face="DejaVu Sans Mono"><strong>dataplot( RES["t"], [ RES["s__2"], RES["s__3"] ],symbolsize=1,legend=[s__2,s__3] &nbsp;);</td>
+</tr>
+</table></strong></font>&nbsp;</p>
+<p align="center"><table width='100%'>
+<tr>
+<td valign="top" align="center"><font color="#000000" size="3" face="Times New Roman"><img src="images/Homework2_StefanoTonini248413_387.gif" width="728" height="182" alt="Plot_2d" align="center" border="0"></td>
+<td width='5%' align='center'></td>
+</tr>
+</table></font>&nbsp;</p>
+<p align="left"><font color="#000000" size="3" face="DejaVu Sans">Plot of s2dot and s3dot</font>&nbsp;</p>
+<p align="left"><table>
+<tr>
+<td valign="top" align="center"><font color="#2f48a8" size="3" face="DejaVu Sans Mono"><strong>&gt; </strong></font></td>
+<td valign="top"><font color="#2f48a8" size="3" face="DejaVu Sans Mono"><strong>dataplot( RES["t"], [ RES["x1"], RES["x2"] ],symbolsize=1,legend=[s__2dot,s__3dot] &nbsp;);</td>
+</tr>
+</table></strong></font>&nbsp;</p>
+<p align="center"><table width='100%'>
+<tr>
+<td valign="top" align="center"><font color="#000000" size="3" face="Times New Roman"><img src="images/Homework2_StefanoTonini248413_388.gif" width="728" height="182" alt="Plot_2d" align="center" border="0"></td>
+<td width='5%' align='center'></td>
+</tr>
+</table></font>&nbsp;</p>
+</dl>
+
+</html>

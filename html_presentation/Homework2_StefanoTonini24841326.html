@@ -1,0 +1,155 @@
+<html>
+<head>
+<meta http-equiv="content-type" content="text/html; charset=utf-8">
+<title>Homework2_StefanoTonini24841326.html</title>
+<!-- Created by Maple 2024.0, Mac OS X -->
+</head>
+<dl style="margin-left:40px"><a name="MapleAutoBookmark29" />
+<p align="left"><font color="#ff6600" size="4" face="DejaVu Sans"><strong>Simulation with m4 = 1 and Cs4 = 1</strong></font>&nbsp;</p>
+<p align="left"><font color="#000000" size="3" face="DejaVu Sans">In this section the mechanical system is solved assuming a mass m4=1 and a damper coefficient Cs4=1</font>&nbsp;</p>
+<p align="left"><table>
+<tr>
+<td valign="top" align="center"><font color="#2f48a8" size="3" face="DejaVu Sans Mono"><strong>&gt; </strong></font></td>
+<td valign="top"><font color="#2f48a8" size="3" face="DejaVu Sans Mono"><strong>data__opt := [L = 1, L__s0 = 1, m__1 = 10, m__2 = 2, m__3 = 30, g = 9.81,
+<br>K__s2 = 5000, C__s2 = 10, K__s3 = 100000, C__s3 = 100,C__s4=1,m__4=1];</td>
+</tr>
+</table></strong></font>&nbsp;</p>
+<p align="center"><table width='100%'>
+<tr>
+<td valign="top" align="center"><font color="#0000ff" size="3" face="Times New Roman"><img src="images/Homework2_StefanoTonini248413_480.gif" width="728" height="21" alt="Typesetting:-mprintslash([data__opt := [L = 1, L__s0 = 1, m__1 = 10, m__2 = 2, m__3 = 30, g = 9.81, K__s2 = 5000, C__s2 = 10, K__s3 = 100000, C__s3 = 100, C__s4 = 1, m__4 = 1]], [[L = 1, L__s0 = 1, m_..." align="center" border="0"></td>
+<td width='5%' align='center'>(7.7.1)</td>
+</tr>
+</table></font>&nbsp;</p>
+<p align="left"><table>
+<tr>
+<td valign="top" align="center"><font color="#2f48a8" size="3" face="DejaVu Sans Mono"><strong>&gt; </strong></font></td>
+<td valign="top"><font color="#2f48a8" size="3" face="DejaVu Sans Mono"><strong>evalf(subs(ics__opt, data__opt, t=0, MM)): &nbsp;
+<br>evalf(subs(ics__opt, data__opt, t=0, bb)):
+<br>tmp:= LinearSolve(%%,%);</td>
+</tr>
+</table></strong></font>&nbsp;</p>
+<p align="center"><table width='100%'>
+<tr>
+<td valign="top" align="center"><font color="#0000ff" size="3" face="Times New Roman"><img src="images/Homework2_StefanoTonini248413_481.gif" width="281" height="238" alt="rtable(1 .. 9, [9.81, 0.4790628965e-9, 9.81, 9.81, 0.2491127062e-8, 0.2491127062e-8, 0.1533001269e-8, 0.7185943448e-8, -0.4790628967e-9], subtype = Vector[column]); "_noterminate" align="center" border="0"></td>
+<td width='5%' align='center'>(7.7.2)</td>
+</tr>
+</table></font>&nbsp;</p>
+<p align="left"><table>
+<tr>
+<td valign="top" align="center"><font color="#2f48a8" size="3" face="DejaVu Sans Mono"><strong>&gt; </strong></font></td>
+<td valign="top"><font color="#2f48a8" size="3" face="DejaVu Sans Mono"><strong>&lt;[op(diff(q_vars__opt,t,t)),lambda__1(t),lambda__1(t)]&gt; = &nbsp;tmp;
+<br>
+<br>ics_lambda := [lambda__1(t) = tmp[7],lambda__2(t) = tmp[8]];</td>
+</tr>
+</table></strong></font>&nbsp;</p>
+<p align="center"><table width='100%'>
+<tr>
+<td valign="top" align="center"><font color="#0000ff" size="3" face="Times New Roman"><img src="images/Homework2_StefanoTonini248413_482.gif" width="342" height="433" alt="rtable(1 .. 9, [diff(diff(s__2(t), t), t), diff(diff(theta__1(t), t), t), diff(diff(s__3(t), t), t), diff(diff(s__4(t), t), t), diff(diff(theta__2(t), t), t), diff(diff(theta__3(t), t), t), diff(diff(..." align="center" border="0"></td>
+</tr></font>&nbsp;</p>
+<p align="center"><tr>
+<td valign="top" align="center"><font color="#0000ff" size="3" face="Times New Roman"><img src="images/Homework2_StefanoTonini248413_483.gif" width="564" height="25" alt="Typesetting:-mprintslash([ics_lambda := [lambda__1(t) = 0.153300126946991e-8, lambda__2(t) = 0.718594344767143e-8]], [[lambda__1(t) = HFloat(1.533001269469905e-9), lambda__2(t) = HFloat(7.185943447671..." align="center" border="0"></td>
+<td width='5%' align='center'>(7.7.3)</td>
+</tr>
+</table></font>&nbsp;</p>
+<p align="left"><table>
+<tr>
+<td valign="top" align="center"><font color="#2f48a8" size="3" face="DejaVu Sans Mono"><strong>&gt; </strong></font></td>
+<td valign="top"><font color="#2f48a8" size="3" face="DejaVu Sans Mono"><strong>dae_sys &nbsp;:= convert(subs(data__opt,[op(convert(ode_sys__opt,list)),op(Phi)]),set): &lt;op(%)&gt;; 
+<br>full_ics := subs( t = 0, convert(convert(ics__opt,set) union {ics_lambda[1]} union {ics_lambda[2]}, D));</td>
+</tr>
+</table></strong></font>&nbsp;</p>
+<p align="center"><table width='100%'>
+<tr>
+<td valign="top" align="center"><font color="#0000ff" size="3" face="Times New Roman"><img src="images/Homework2_StefanoTonini248413_484.gif" width="728" height="337" alt="Typesetting:-mprintslash([Vector(9, {(1) = Typesetting:-mrow(Typesetting:-msup(Typesetting:-mfenced(Typesetting:-mrow(Typesetting:-mo("&uminus0;"), Typesetting:-mn("1"), Typesetting:-mo("&minus;"), Ty..." align="center" border="0"></td>
+</tr></font>&nbsp;</p>
+<p align="center"><tr>
+<td valign="top" align="center"><font color="#0000ff" size="3" face="Times New Roman"><img src="images/Homework2_StefanoTonini248413_485.gif" width="728" height="32" alt="Typesetting:-mprintslash([full_ics := {s__2(0) = 0, s__3(0) = 0, s__4(0) = 0, lambda__1(0) = 0.153300126946991e-8, lambda__2(0) = 0.718594344767143e-8, theta__1(0) = `+`(`-`(`*`(`/`(1, 2), `*`(Pi)))),..." align="center" border="0"><br><img src="images/Homework2_StefanoTonini248413_486.gif" width="728" height="32" alt="Typesetting:-mprintslash([full_ics := {s__2(0) = 0, s__3(0) = 0, s__4(0) = 0, lambda__1(0) = 0.153300126946991e-8, lambda__2(0) = 0.718594344767143e-8, theta__1(0) = `+`(`-`(`*`(`/`(1, 2), `*`(Pi)))),..." align="center" border="0"></td>
+<td width='5%' align='center'>(7.7.4)</td>
+</tr>
+</table></font>&nbsp;</p>
+<p align="left"><table>
+<tr>
+<td valign="top" align="center"><font color="#2f48a8" size="3" face="DejaVu Sans Mono"><strong>&gt; </strong></font></td>
+<td valign="top"><font color="#2f48a8" size="3" face="DejaVu Sans Mono"><strong>sol_dae__opt5 := dsolve(convert(dae_sys,set) union full_ics,numeric,implicit=true,maxfun=300000);</td>
+</tr>
+</table></strong></font>&nbsp;</p>
+<p align="center"><table width='100%'>
+<tr>
+<td valign="top" align="center"><font color="#0000ff" size="3" face="Times New Roman"><img src="images/Homework2_StefanoTonini248413_487.gif" width="311" height="22" alt="Typesetting:-mprintslash([sol_dae__opt5 := proc (x_rkf45_dae) local _res, _dat, _vars, _solnproc, _xout, _ndsol, _pars, _n, _i; option `Copyright (c) 2000 by Waterloo Maple Inc. All rights reserved.`;..." align="center" border="0"></td>
+<td width='5%' align='center'>(7.7.5)</td>
+</tr>
+</table></font>&nbsp;</p>
+<p align="left"><table>
+<tr>
+<td valign="top" align="center"><font color="#2f48a8" size="3" face="DejaVu Sans Mono"><strong>&gt; </strong></font></td>
+<td valign="top"><font color="#2f48a8" size="3" face="DejaVu Sans Mono"><strong>odeplot(sol_dae__opt5,subs(data,[t,G4[1]]),t=0..TF,
+<br> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;labels = ["time (s)", "(m)"],
+<br> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;title &nbsp;= "Coordinate x of G4");</td>
+</tr>
+</table></strong></font>&nbsp;</p>
+<p align="center"><table width='100%'>
+<tr>
+<td valign="top" align="center"><font color="#000000" size="3" face="Times New Roman"><img src="images/Homework2_StefanoTonini248413_488.gif" width="728" height="182" alt="Plot_2d" align="center" border="0"></td>
+<td width='5%' align='center'></td>
+</tr>
+</table></font>&nbsp;</p>
+<p align="left"><table>
+<tr>
+<td valign="top" align="center"><font color="#2f48a8" size="3" face="DejaVu Sans Mono"><strong>&gt; </strong></font></td>
+<td valign="top"><font color="#2f48a8" size="3" face="DejaVu Sans Mono"><strong>odeplot(sol_dae__opt5,subs(data,[t,G4[2]]),t=0..TF,
+<br> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;labels = ["time (s)", "(m)"],
+<br> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;title &nbsp;= "Coordinate y of G4");</td>
+</tr>
+</table></strong></font>&nbsp;</p>
+<p align="center"><table width='100%'>
+<tr>
+<td valign="top" align="center"><font color="#000000" size="3" face="Times New Roman"><img src="images/Homework2_StefanoTonini248413_489.gif" width="728" height="182" alt="Plot_2d" align="center" border="0"></td>
+<td width='5%' align='center'></td>
+</tr>
+</table></font>&nbsp;</p>
+<p align="left"><font color="#000000" size="3" face="DejaVu Sans">Plot the modulus of the acceleration of mass G4</font>&nbsp;</p>
+<p align="left"><table>
+<tr>
+<td valign="top" align="center"><font color="#2f48a8" size="3" face="DejaVu Sans Mono"><strong>&gt; </strong></font></td>
+<td valign="top"><font color="#2f48a8" size="3" face="DejaVu Sans Mono"><strong>odeplot(sol_dae__opt5,subs(data,[t,sqrt(diff(G4[1],t,t)^2+diff(G4[2],t,t)^2)]),t=0..TF,
+<br> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;labels = ["time (s)", m/s^2],
+<br> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;title &nbsp;= "Acceleration of G4");</td>
+</tr>
+</table></strong></font>&nbsp;</p>
+<p align="center"><table width='100%'>
+<tr>
+<td valign="top" align="center"><font color="#000000" size="3" face="Times New Roman"><img src="images/Homework2_StefanoTonini248413_490.gif" width="728" height="182" alt="Plot_2d" align="center" border="0"></td>
+<td width='5%' align='center'></td>
+</tr>
+</table></font>&nbsp;</p>
+<p align="left"><table>
+<tr>
+<td valign="top" align="center"><font color="#2f48a8" size="3" face="DejaVu Sans Mono"><strong>&gt; </strong></font></td>
+<td valign="top"><font color="#2f48a8" size="3" face="DejaVu Sans Mono"><strong>odeplot(sol_dae__opt5,subs(data,[t,G1[1]]),t=0..TF,
+<br> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;labels = ["time (s)", "(m)"],
+<br> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;title &nbsp;= "Coordinate x of G1");</td>
+</tr>
+</table></strong></font>&nbsp;</p>
+<p align="center"><table width='100%'>
+<tr>
+<td valign="top" align="center"><font color="#000000" size="3" face="Times New Roman"><img src="images/Homework2_StefanoTonini248413_491.gif" width="728" height="182" alt="Plot_2d" align="center" border="0"></td>
+<td width='5%' align='center'></td>
+</tr>
+</table></font>&nbsp;</p>
+<p align="left"><table>
+<tr>
+<td valign="top" align="center"><font color="#2f48a8" size="3" face="DejaVu Sans Mono"><strong>&gt; </strong></font></td>
+<td valign="top"><font color="#2f48a8" size="3" face="DejaVu Sans Mono"><strong>odeplot(sol_dae__opt5,subs(data,[t,G1[2]]),t=0..TF,
+<br> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;labels = ["time (s)", "(m)"],
+<br> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;title &nbsp;= "Coordinate y of G1");</td>
+</tr>
+</table></strong></font>&nbsp;</p>
+<p align="center"><table width='100%'>
+<tr>
+<td valign="top" align="center"><font color="#000000" size="3" face="Times New Roman"><img src="images/Homework2_StefanoTonini248413_492.gif" width="728" height="182" alt="Plot_2d" align="center" border="0"></td>
+<td width='5%' align='center'></td>
+</tr>
+</table></font>&nbsp;</p>
+</dl>
+
+</html>

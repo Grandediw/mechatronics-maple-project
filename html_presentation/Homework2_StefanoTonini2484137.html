@@ -1,0 +1,81 @@
+<html>
+<head>
+<meta http-equiv="content-type" content="text/html; charset=utf-8">
+<title>Homework2_StefanoTonini2484137.html</title>
+<!-- Created by Maple 2024.0, Mac OS X -->
+</head>
+<dl style="margin-left:40px"><a name="MapleAutoBookmark10" />
+<p align="left"><font color="#c00000" size="5" face="DejaVu Sans"><strong>System analysis </strong></font>&nbsp;</p>
+<p align="left"><font color="#000000" size="3" face="DejaVu Sans">The following procedure is defined in order to display the configuration of the mechanical system</font>&nbsp;</p>
+<p align="left"><table>
+<tr>
+<td valign="top" align="center"><font color="#2f48a8" size="3" face="DejaVu Sans Mono"><strong>&gt; </strong></font></td>
+<td valign="top"><font color="#2f48a8" size="3" face="DejaVu Sans Mono"><strong>vec_2D := proc(v::Vector(3))
+<br>
+<br> &nbsp;convert(v[1..2],list);
+<br>
+<br>end proc;</td>
+</tr>
+</table></strong></font>&nbsp;</p>
+<p align="center"><table width='100%'>
+<tr>
+<td valign="top" align="center"><font color="#0000ff" size="3" face="Times New Roman"><img src="images/Homework2_StefanoTonini248413_92.gif" width="430" height="18" alt="Typesetting:-mprintslash([vec_2D := proc (v::(Vector(3))) convert(v[1 .. 2], list) end proc], [proc (v::(Vector(3))) convert(v[1 .. 2], list) end proc])" align="center" border="0"></td>
+<td width='5%' align='center'>(4.1.1)</td>
+</tr>
+</table></font>&nbsp;</p>
+<p align="left"><table>
+<tr>
+<td valign="top" align="center"><font color="#2f48a8" size="3" face="DejaVu Sans Mono"><strong>&gt; </strong></font></td>
+<td valign="top"><font color="#2f48a8" size="3" face="DejaVu Sans Mono"><strong>draw_mech := proc(data, sol_kine, dof)
+<br>
+<br> &nbsp;local p0,p2,p3,pG1,pG2,pG3,LS1,LS2,LS3,SS2,SS3,PS1,PS2, PS3, VS;
+<br>
+<br> &nbsp;p0 &nbsp;:= subs(sol_kine, dof,data, P0);
+<br> &nbsp;p2 &nbsp;:= subs(sol_kine, dof,data, P2);
+<br> &nbsp;p3 &nbsp;:= subs(sol_kine, dof,data, P3);
+<br> &nbsp;pG1 &nbsp;:= subs(sol_kine, dof,data, G1):
+<br> &nbsp;pG2 &nbsp;:= subs(sol_kine, dof,data, G2):
+<br> &nbsp;pG3 &nbsp;:= subs(sol_kine, dof,data, G3):
+<br> &nbsp;LS1 &nbsp;:= subs(sol_kine, dof,data, L__s0*is_uvec__1);
+<br> &nbsp;LS2 &nbsp;:= subs(sol_kine, dof,data, L__s0*is_uvec__2);
+<br> &nbsp;LS3 &nbsp;:= subs(sol_kine, dof,data, L__s0*is_uvec__3);
+<br> &nbsp;SS2 &nbsp;:= subs(sol_kine, dof,data, s__2(t)*is_uvec__2);
+<br> &nbsp;SS3 &nbsp;:= subs(sol_kine, dof,data, s__3(t)*is_uvec__3);
+<br> &nbsp;PS1 &nbsp;:= p0+LS1;
+<br> &nbsp;PS2 := p2+LS2+SS2;
+<br> &nbsp;PS3 &nbsp;:= p3+LS3+SS3;
+<br>
+<br> &nbsp;display( plottools:-disk(vec_2D(p0),0.05,color="Gray"),
+<br> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;plottools:-disk(vec_2D(p2),0.05,color="Gray"),
+<br> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;plottools:-disk(vec_2D(p3),0.05,color="Gray"),
+<br> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;plottools:-disk(vec_2D(PS1),0.05,color="Goldenrod"),
+<br> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;plottools:-disk(vec_2D(PS2),0.05,color="Goldenrod"),
+<br> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;plottools:-disk(vec_2D(PS3),0.05,color="Goldenrod"),
+<br> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;plottools:-line(vec_2D(p0),vec_2D(p2),color="Green",thickness=4),
+<br> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;plottools:-line(vec_2D(p0),vec_2D(p3),color="Green",thickness=4),
+<br> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;plottools:-line(vec_2D(p0),vec_2D(PS1),color="DodgerBlue",thickness=4),
+<br> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;plottools:-line(vec_2D(p2),vec_2D(PS2),color="DodgerBlue",thickness=4),
+<br> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;plottools:-line(vec_2D(p3),vec_2D(PS3),color="DodgerBlue",thickness=4),
+<br> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;plottools:-line(vec_2D(PS1),vec_2D(PS2),color="DodgerBlue",thickness=4),
+<br> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;plottools:-line(vec_2D(PS1),vec_2D(PS3),color="DodgerBlue",thickness=4),
+<br> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;#plots:-arrow(vec_2D(p0),vec_2D(LS1),color="red",thickness=3,shape=arrow),
+<br> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;#plots:-arrow(vec_2D(p2),vec_2D(SS2),color="DarkOrange",thickness=2,shape=arrow),
+<br> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;axes = boxed,
+<br> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;scaling = constrained
+<br>
+<br> &nbsp;&nbsp;);
+<br>
+<br>end proc:
+<br>
+<br>anim_draw_mech := proc(data, sol_kine, dof::list, k)
+<br> &nbsp;draw_mech(data, sol_kine, dof[k]);
+<br>end proc:</td>
+</tr>
+</table></strong></font>&nbsp;</p>
+<dl style="margin-left:40px"><a href="Homework2_StefanoTonini2484138.html" target="Content"><p align="left"><font color="#ff9900" size="3" face="DejaVu Sans"><strong><em>Kinematic Analytical Solution</em></strong></font>&nbsp;</p>
+</a></dl>
+<dl style="margin-left:40px"><a href="Homework2_StefanoTonini2484139.html" target="Content"><p align="left"><font color="#ff9900" size="3" face="DejaVu Sans"><strong><em>Kinematic Numerical Solution</em></strong></font>&nbsp;</p>
+</a></dl>
+</dl>
+
+</html>

@@ -1,0 +1,132 @@
+<html>
+<head>
+<meta http-equiv="content-type" content="text/html; charset=utf-8">
+<title>Homework2_StefanoTonini24841320.html</title>
+<!-- Created by Maple 2024.0, Mac OS X -->
+</head>
+<dl style="margin-left:40px"><a name="MapleAutoBookmark23" />
+<p align="left"><font color="#ff6600" size="4" face="DejaVu Sans"><strong>Kinematic with mass m4 and damper added</strong></font>&nbsp;</p>
+<p align="left"><font color="#000000" size="3" face="DejaVu Sans">In this section the kinematic model of the new mechanical system is defined and the displayed </font>&nbsp;</p>
+<p align="left"><table>
+<tr>
+<td valign="top" align="center"><font color="#2f48a8" size="3" face="DejaVu Sans Mono"><strong>&gt; </strong></font></td>
+<td valign="top"><font color="#2f48a8" size="3" face="DejaVu Sans Mono"><strong>r4 := Rz(theta__4(t)).&lt;-L__s0,0,0&gt;;</td>
+</tr>
+</table></strong></font>&nbsp;</p>
+<p align="center"><table width='100%'>
+<tr>
+<td valign="top" align="center"><font color="#0000ff" size="3" face="Times New Roman"><img src="images/Homework2_StefanoTonini248413_390.gif" width="188" height="95" alt="rtable(1 .. 3, [`+`(`-`(`*`(cos(theta__4(t)), `*`(L__s0)))), `+`(`-`(`*`(sin(theta__4(t)), `*`(L__s0)))), 0], subtype = Vector[column]); "_noterminate" align="center" border="0"></td>
+<td width='5%' align='center'>(7.1.1)</td>
+</tr>
+</table></font>&nbsp;</p>
+<p align="left"><table>
+<tr>
+<td valign="top" align="center"><font color="#2f48a8" size="3" face="DejaVu Sans Mono"><strong>&gt; </strong></font></td>
+<td valign="top"><font color="#2f48a8" size="3" face="DejaVu Sans Mono"><strong>hp4 := Rz(theta__4(t)).(s__4(t)*&lt;1,0,0&gt;);</td>
+</tr>
+</table></strong></font>&nbsp;</p>
+<p align="center"><table width='100%'>
+<tr>
+<td valign="top" align="center"><font color="#0000ff" size="3" face="Times New Roman"><img src="images/Homework2_StefanoTonini248413_391.gif" width="196" height="95" alt="rtable(1 .. 3, [`*`(cos(theta__4(t)), `*`(s__4(t))), `*`(sin(theta__4(t)), `*`(s__4(t))), 0], subtype = Vector[column]); "_noterminate" align="center" border="0"></td>
+<td width='5%' align='center'>(7.1.2)</td>
+</tr>
+</table></font>&nbsp;</p>
+<p align="left"><table>
+<tr>
+<td valign="top" align="center"><font color="#2f48a8" size="3" face="DejaVu Sans Mono"><strong>&gt; </strong></font></td>
+<td valign="top"><font color="#2f48a8" size="3" face="DejaVu Sans Mono"><strong>Rs__4 := Rz(theta__4(t));
+<br>is_uvec__4 := %[1..3,1]:
+<br>js_uvec__4 := %%[1..3,2]:
+<br>
+<br>is_uvec__4,js_uvec__4;</td>
+</tr>
+</table></strong></font>&nbsp;</p>
+<p align="center"><table width='100%'>
+<tr>
+<td valign="top" align="center"><font color="#0000ff" size="3" face="Times New Roman"><img src="images/Homework2_StefanoTonini248413_392.gif" width="278" height="95" alt="rtable(1 .. 3, 1 .. 3, [[cos(theta__4(t)), `+`(`-`(sin(theta__4(t)))), 0], [sin(theta__4(t)), cos(theta__4(t)), 0], [0, 0, 1]], subtype = Matrix); "_noterminate" align="center" border="0"></td>
+</tr></font>&nbsp;</p>
+<p align="center"><tr>
+<td valign="top" align="center"><font color="#0000ff" size="3" face="Times New Roman"><img src="images/Homework2_StefanoTonini248413_393.gif" width="235" height="95" alt="Typesetting:-mprintslash([Vector(3, {(1) = Typesetting:-mrow(Typesetting:-mi("cos", fontstyle = "normal"), Typesetting:-mo("&ApplyFunction;"), Typesetting:-mfenced(Typesetting:-mrow(Typesetting:-mi("t..." align="center" border="0"></td>
+<td width='5%' align='center'>(7.1.3)</td>
+</tr>
+</table></font>&nbsp;</p>
+<p align="left"><table>
+<tr>
+<td valign="top" align="center"><font color="#2f48a8" size="3" face="DejaVu Sans Mono"><strong>&gt; </strong></font></td>
+<td valign="top"><font color="#2f48a8" size="3" face="DejaVu Sans Mono"><strong>G4 := -r1-r4+hp4;</td>
+</tr>
+</table></strong></font>&nbsp;</p>
+<p align="center"><table width='100%'>
+<tr>
+<td valign="top" align="center"><font color="#0000ff" size="3" face="Times New Roman"><img src="images/Homework2_StefanoTonini248413_394.gif" width="415" height="95" alt="rtable(1 .. 3, [`+`(`*`(cos(theta__1(t)), `*`(L__s0)), `*`(cos(theta__4(t)), `*`(L__s0)), `*`(cos(theta__4(t)), `*`(s__4(t)))), `+`(`*`(sin(theta__1(t)), `*`(L__s0)), `*`(sin(theta__4(t)), `*`(L__s0))..." align="center" border="0"></td>
+<td width='5%' align='center'>(7.1.4)</td>
+</tr>
+</table></font>&nbsp;</p>
+<p align="left"><font color="#000000" size="3" face="DejaVu Sans">The following procedure is defined in order to display the configuration of the mechanical system with the mass m4 and the dumper added</font>&nbsp;</p>
+<p align="left"><table>
+<tr>
+<td valign="top" align="center"><font color="#2f48a8" size="3" face="DejaVu Sans Mono"><strong>&gt; </strong></font></td>
+<td valign="top"><font color="#2f48a8" size="3" face="DejaVu Sans Mono"><strong>draw_mech__2 := proc(data, sol_kine, dof)
+<br>
+<br> &nbsp;local p0,p2,p3,pG1,pG2,pG3,pG4,LS1,LS2,LS3,LS4,SS2,SS3,SS4,PS1,PS2, PS3, VS;
+<br>
+<br>
+<br> &nbsp;p0 &nbsp;:= subs(sol_kine, dof,data, P0);
+<br> &nbsp;p2 &nbsp;:= subs(sol_kine, dof,data, P2);
+<br> &nbsp;p3 &nbsp;:= subs(sol_kine, dof,data, P3);
+<br> &nbsp;pG1 &nbsp;:= subs(sol_kine, dof,data, G1):
+<br> &nbsp;pG2 &nbsp;:= subs(sol_kine, dof,data, G2):
+<br> &nbsp;pG3 &nbsp;:= subs(sol_kine, dof,data, G3):
+<br> &nbsp;pG4 &nbsp;:= subs(sol_kine, dof,data, G4):
+<br> &nbsp;LS1 &nbsp;:= subs(sol_kine, dof,data, L__s0*is_uvec__1);
+<br> &nbsp;LS2 &nbsp;:= subs(sol_kine, dof,data, L__s0*is_uvec__2);
+<br> &nbsp;LS3 &nbsp;:= subs(sol_kine, dof,data, L__s0*is_uvec__3);
+<br> &nbsp;LS4 &nbsp;:= subs(sol_kine, dof,data, L__s0*is_uvec__4);
+<br> &nbsp;SS2 &nbsp;:= subs(sol_kine, dof,data, s__2(t)*is_uvec__2);
+<br> &nbsp;SS3 &nbsp;:= subs(sol_kine, dof,data, s__3(t)*is_uvec__3);
+<br> &nbsp;SS4 &nbsp;:= subs(sol_kine, dof,data, s__4(t)*is_uvec__4);
+<br> &nbsp;PS1 &nbsp;:= p0+LS1;
+<br> &nbsp;PS2 := p2+LS2+SS2;
+<br> &nbsp;PS3 &nbsp;:= p3+LS3+SS3;
+<br>
+<br> &nbsp;display( plottools:-disk(vec_2D(p0),0.05,color="Gray"),
+<br> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;plottools:-disk(vec_2D(p2),0.05,color="Gray"),
+<br> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;plottools:-disk(vec_2D(p3),0.05,color="Gray"),
+<br> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;plottools:-disk(vec_2D(PS1),0.05,color="Goldenrod"),
+<br> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;plottools:-disk(vec_2D(PS2),0.05,color="Goldenrod"),
+<br> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;plottools:-disk(vec_2D(PS3),0.05,color="Goldenrod"),
+<br> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;plottools:-disk(vec_2D(pG4),0.05,color="Goldenrod"),
+<br> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;plottools:-line(vec_2D(p0),vec_2D(p2),color="Green",thickness=4),
+<br> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;plottools:-line(vec_2D(p0),vec_2D(p3),color="Green",thickness=4),
+<br> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;plottools:-line(vec_2D(p0),vec_2D(PS1),color="DodgerBlue",thickness=4),
+<br> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;plottools:-line(vec_2D(p2),vec_2D(PS2),color="grey",thickness=4),
+<br> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;plottools:-line(vec_2D(PS1),vec_2D(pG4),color="Gray",thickness=4),
+<br> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;plottools:-line(vec_2D(p3),vec_2D(PS3),color="grey",thickness=4),
+<br> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;plottools:-line(vec_2D(PS1),vec_2D(PS2),color="DodgerBlue",thickness=4),
+<br> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;plottools:-line(vec_2D(PS1),vec_2D(PS3),color="DodgerBlue",thickness=4),
+<br> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;axes = boxed,
+<br> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;scaling = constrained
+<br> &nbsp;&nbsp;);
+<br>
+<br>end proc:
+<br>
+<br>anim_draw_mech := proc(data, sol_kine, dof::list, k)
+<br> &nbsp;draw_mech(data, sol_kine, dof[k]);
+<br>end proc:</td>
+</tr>
+</table></strong></font>&nbsp;</p>
+<p align="left"><table>
+<tr>
+<td valign="top" align="center"><font color="#2f48a8" size="3" face="DejaVu Sans Mono"><strong>&gt; </strong></font></td>
+<td valign="top"><font color="#2f48a8" size="3" face="DejaVu Sans Mono"><strong>display(draw_mech__2(data,sol_kine_all[2],[s__2(t) = op(2,sol_fs[1]), s__3(t) = op(2,sol_fs[2]), theta__1(t) =op(2,sol_fs[3]), theta__2(t) = op(2,sol_fs[4]), theta__3(t) = op(2,sol_fs[5]),theta__4(t)=3*Pi/2,s__4(t)=0]),size=[800,400]);</td>
+</tr>
+</table></strong></font>&nbsp;</p>
+<p align="center"><table width='100%'>
+<tr>
+<td valign="top" align="center"><font color="#000000" size="3" face="Times New Roman"><img src="images/Homework2_StefanoTonini248413_395.gif" width="728" height="364" alt="Plot_2d" align="center" border="0"></td>
+<td width='5%' align='center'></td>
+</tr>
+</table></font>&nbsp;</p>
+</dl>
+
+</html>

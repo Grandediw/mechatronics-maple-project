@@ -1,0 +1,91 @@
+<html>
+<head>
+<meta http-equiv="content-type" content="text/html; charset=utf-8">
+<title>Homework2_StefanoTonini2484138.html</title>
+<!-- Created by Maple 2024.0, Mac OS X -->
+</head>
+<dl style="margin-left:40px"><a name="MapleAutoBookmark11" />
+<p align="left"><font color="#ff9900" size="3" face="DejaVu Sans"><strong><em>Kinematic Analytical Solution</em></strong></font>&nbsp;</p>
+<p align="left"><font color="#000000" size="3" face="DejaVu Sans">In this section the two analytical solutions are plotted and compared both for theta2 and theta3.
+<br>Then the equilibrium configuration is plotted using the procedure defined previously</font>&nbsp;</p>
+<p align="left"><table>
+<tr>
+<td valign="top" align="center"><font color="#2f48a8" size="3" face="DejaVu Sans Mono"><strong>&gt; </strong></font></td>
+<td valign="top"><font color="#2f48a8" size="3" face="DejaVu Sans Mono"><strong>display(plot(subs( sol_kine_all[1],data, s__2(t) =S, s__3(t) = 0.002942999986,theta__3(t) = -1.570797927,theta__1(t)=-1.570793602,theta__2(t)), &nbsp;S=-1..1, color=c_set[1], legend = "sol.1"),
+<br> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;plot(subs( sol_kine_all[2],data, s__2(t) = S, s__3(t) = 0.002942999986,theta__3(t) = -1.570797927,theta__1(t)=-1.570793602,theta__2(t)), S=-1..1, color=c_set[2], legend = "sol.2"),
+<br> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;labels = ["s (m)", typeset(theta__2, " (deg)") ],
+<br> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;size &nbsp;&nbsp;= [800,300],
+<br> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;title &nbsp;= "Compare two analytical solutions for: theta__2");
+<br>
+<br></td>
+</tr>
+</table></strong></font>&nbsp;</p>
+<p align="center"><table width='100%'>
+<tr>
+<td valign="top" align="center"><font color="#000000" size="3" face="Times New Roman"><img src="images/Homework2_StefanoTonini248413_93.gif" width="728" height="273" alt="Plot_2d" align="center" border="0"></td>
+<td width='5%' align='center'></td>
+</tr>
+</table></font>&nbsp;</p>
+<p align="left"><table>
+<tr>
+<td valign="top" align="center"><font color="#2f48a8" size="3" face="DejaVu Sans Mono"><strong>&gt; </strong></font></td>
+<td valign="top"><font color="#2f48a8" size="3" face="DejaVu Sans Mono"><strong>display(plot(subs( sol_kine_all[1],data, s__2(t) = S,s__3(t) = 0.003923999840,theta__1(t)=0.003923999840,theta__2(t) = -1.570785943, theta__3(t)), S=0..1, &nbsp;color=c_set[1], legend="sol.1"),
+<br> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;plot(subs( sol_kine_all[2],data, s__2(t) = S,s__3(t) = 0.003923999840,theta__1(t)=0.003923999840,theta__2(t) = -1.570785943, theta__3(t)), S=0..1, color=c_set[2], legend="sol.2"),
+<br> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;labels = ["s (m)", typeset(theta__3, " (deg)") ],
+<br> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;size &nbsp;&nbsp;= [800,300] ,
+<br> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;title &nbsp;= "Compare two analytical solutions for: theta__3" );
+<br>
+<br></td>
+</tr>
+</table></strong></font>&nbsp;</p>
+<p align="center"><table width='100%'>
+<tr>
+<td valign="top" align="center"><font color="#000000" size="3" face="Times New Roman"><img src="images/Homework2_StefanoTonini248413_94.gif" width="728" height="273" alt="Plot_2d" align="center" border="0"></td>
+<td width='5%' align='center'></td>
+</tr>
+</table></font>&nbsp;</p>
+<p align="left"><table>
+<tr>
+<td valign="top" align="center"><font color="#2f48a8" size="3" face="DejaVu Sans Mono"><strong>&gt; </strong></font></td>
+<td valign="top"><font color="#2f48a8" size="3" face="DejaVu Sans Mono"><strong>solve(Phi,qD_vars,explicit=true,allsolutions=true,maxsols=4):</td>
+</tr>
+</table></strong></font>&nbsp;</p>
+<p align="left"><font color="#000000" size="3" face="DejaVu Sans">Display the equilibrium configuration found in the previous section using the Principal of Virtual Work</font>&nbsp;</p>
+<p align="left"><table>
+<tr>
+<td valign="top" align="center"><font color="#2f48a8" size="3" face="DejaVu Sans Mono"><strong>&gt; </strong></font></td>
+<td valign="top"><font color="#2f48a8" size="3" face="DejaVu Sans Mono"><strong>display(draw_mech(data,sol_kine_all[2],[s__2(t) = op(2,sol_fs[1]), s__3(t) = op(2,sol_fs[2]), theta__1(t) =op(2,sol_fs[3]), theta__2(t) = op(2,sol_fs[4]), theta__3(t) = op(2,sol_fs[5])]),size=[800,400],title = "Equilibrium Confguration");</td>
+</tr>
+</table></strong></font>&nbsp;</p>
+<p align="center"><table width='100%'>
+<tr>
+<td valign="top" align="center"><font color="#000000" size="3" face="Times New Roman"><img src="images/Homework2_StefanoTonini248413_95.gif" width="728" height="364" alt="Plot_2d" align="center" border="0"></td>
+<td width='5%' align='center'></td>
+</tr>
+</table></font>&nbsp;</p>
+<p align="left"><font color="#000000" size="3" face="DejaVu Sans">Display the equilibrium found using both analytical solutions</font>&nbsp;</p>
+<p align="left"><table>
+<tr>
+<td valign="top" align="center"><font color="#2f48a8" size="3" face="DejaVu Sans Mono"><strong>&gt; </strong></font></td>
+<td valign="top"><font color="#2f48a8" size="3" face="DejaVu Sans Mono"><strong>display(draw_mech(data,sol_kine_all[1],[s__2(t) = op(2,sol_fs[1]), s__3(t) = op(2,sol_fs[2]), theta__1(t) = op(2,sol_fs[3])]),size=[800,400]):
+<br>display(draw_mech(data,sol_kine_all[2],[ s__2(t) = op(2,sol_fs[1]), s__3(t) = op(2,sol_fs[2]), theta__1(t) = op(2,sol_fs[3])]),size=[800,400]):
+<br>DocumentTools:-Tabulate(Array(1..2,[%%,%]),interior=none,exterior=none,widthmode=percentage,width=100):</td>
+</tr>
+</table></strong></font>&nbsp;</p>
+
+<p><table style="empty-cells:show;border-collapse:collapse;border:none;border-color:black;border-width:1;" width=728>
+	<colgroup span="1" width="363" >
+	<colgroup span="1" width="363" >
+	<tr>
+		<td style="border-right:none;border-left:none;border-top:none;border-bottom:none;border-color:black;border-width:1;" valign=middle colspan=1 rowspan=1><p align="center"><font color="#000000" size="3" face="DejaVu Sans"><img src="images/Homework2_StefanoTonini248413_96.gif" width="362" height="362" alt="Plot_2d" align="center" border="0"></font>&nbsp;</p>
+
+		</td>
+		<td style="border-right:none;border-left:none;border-top:none;border-bottom:none;border-color:black;border-width:1;" valign=middle colspan=1 rowspan=1><p align="center"><font color="#000000" size="3" face="DejaVu Sans"><img src="images/Homework2_StefanoTonini248413_97.gif" width="362" height="362" alt="Plot_2d" align="center" border="0"></font>&nbsp;</p>
+
+		</td>
+	</tr>
+</table></p>
+<p align="center"><font color="#000000" size="3" face="DejaVu Sans"></font>&nbsp;</p>
+</dl>
+
+</html>

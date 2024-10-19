@@ -1,0 +1,223 @@
+<html>
+<head>
+<meta http-equiv="content-type" content="text/html; charset=utf-8">
+<title>Homework2_StefanoTonini24841311.html</title>
+<!-- Created by Maple 2024.0, Mac OS X -->
+</head>
+<dl style="margin-left:40px"><a name="MapleAutoBookmark14" />
+<p align="left"><font color="#ff6600" size="4" face="DejaVu Sans"><strong>Lagrangian Equations</strong></font>&nbsp;</p>
+<p align="left"><table>
+<tr>
+<td valign="top" align="center"><font color="#2f48a8" size="3" face="DejaVu Sans Mono"><strong>&gt; </strong></font></td>
+<td valign="top"><font color="#2f48a8" size="3" face="DejaVu Sans Mono"><strong>gravity := &lt;0,-g,0&gt;;</td>
+</tr>
+</table></strong></font>&nbsp;</p>
+<p align="center"><table width='100%'>
+<tr>
+<td valign="top" align="center"><font color="#0000ff" size="3" face="Times New Roman"><img src="images/Homework2_StefanoTonini248413_104.gif" width="135" height="82" alt="rtable(1 .. 3, [0, `+`(`-`(g)), 0], subtype = Vector[column]); "_noterminate" align="center" border="0"></td>
+<td width='5%' align='center'>(5.1.1)</td>
+</tr>
+</table></font>&nbsp;</p>
+<p align="left"><font color="#000000" size="3" face="DejaVu Sans">Kinetic and potential energy for mass m1</font>&nbsp;</p>
+<p align="left"><table>
+<tr>
+<td valign="top" align="center"><font color="#2f48a8" size="3" face="DejaVu Sans Mono"><strong>&gt; </strong></font></td>
+<td valign="top"><font color="#2f48a8" size="3" face="DejaVu Sans Mono"><strong>KE1 := kineticEnergy(m__1,G1,Rs__1, 0,0,0,0,0,0);
+<br>PE1 := gravitationalEnergy(m__1,G1,gravity);
+<br>
+<br></td>
+</tr>
+</table></strong></font>&nbsp;</p>
+<p align="center"><table width='100%'>
+<tr>
+<td valign="top" align="center"><font color="#0000ff" size="3" face="Times New Roman"><img src="images/Homework2_StefanoTonini248413_105.gif" width="92" height="82" alt="rtable(1 .. 3, 1 .. 3, [[0, 0, 0], [0, 0, 0], [0, 0, 0]], subtype = Matrix); "_noterminate" align="center" border="0"></td>
+</tr></font>&nbsp;</p>
+<p align="center"><tr>
+<td valign="top" align="center"><font color="#0000ff" size="3" face="Times New Roman"><img src="images/Homework2_StefanoTonini248413_106.gif" width="519" height="62" alt="Typesetting:-mprintslash([KE1 := `+`(`*`(`/`(1, 2), `*`(m__1, `*`(`+`(`*`(`^`(diff(theta__1(t), t), 2), `*`(`^`(sin(theta__1(t)), 2), `*`(`^`(L__s0, 2)))), `*`(`^`(diff(theta__1(t), t), 2), `*`(`^`(co..." align="center" border="0"></td>
+</tr></font>&nbsp;</p>
+<p align="center"><tr>
+<td valign="top" align="center"><font color="#0000ff" size="3" face="Times New Roman"><img src="images/Homework2_StefanoTonini248413_107.gif" width="186" height="25" alt="Typesetting:-mprintslash([PE1 := `*`(m__1, `*`(sin(theta__1(t)), `*`(L__s0, `*`(g))))], [`*`(m__1, `*`(sin(theta__1(t)), `*`(L__s0, `*`(g))))])" align="center" border="0"></td>
+<td width='5%' align='center'>(5.1.2)</td>
+</tr>
+</table></font>&nbsp;</p>
+<p align="left"><font color="#000000" size="3" face="DejaVu Sans">Kinetic and potential energy for mass m2</font>&nbsp;</p>
+<p align="left"><table>
+<tr>
+<td valign="top" align="center"><font color="#2f48a8" size="3" face="DejaVu Sans Mono"><strong>&gt; </strong></font></td>
+<td valign="top"><font color="#2f48a8" size="3" face="DejaVu Sans Mono"><strong>KE2 := simplify( kineticEnergy(m__2,G2,Rs__2, 0,0,0,0,0,0) );
+<br>PE2 := gravitationalEnergy(m__2,G2,gravity);</td>
+</tr>
+</table></strong></font>&nbsp;</p>
+<p align="center"><table width='100%'>
+<tr>
+<td valign="top" align="center"><font color="#0000ff" size="3" face="Times New Roman"><img src="images/Homework2_StefanoTonini248413_108.gif" width="92" height="82" alt="rtable(1 .. 3, 1 .. 3, [[0, 0, 0], [0, 0, 0], [0, 0, 0]], subtype = Matrix); "_noterminate" align="center" border="0"></td>
+</tr></font>&nbsp;</p>
+<p align="center"><tr>
+<td valign="top" align="center"><font color="#0000ff" size="3" face="Times New Roman"><img src="images/Homework2_StefanoTonini248413_109.gif" width="402" height="62" alt="Typesetting:-mprintslash([KE2 := `+`(`*`(`/`(1, 2), `*`(m__2, `*`(`+`(`*`(`^`(`+`(L__s0, s__2(t)), 2), `*`(`^`(diff(theta__2(t), t), 2))), `*`(`^`(diff(s__2(t), t), 2)))))))], [`+`(`*`(`/`(1, 2), `*`(..." align="center" border="0"></td>
+</tr></font>&nbsp;</p>
+<p align="center"><tr>
+<td valign="top" align="center"><font color="#0000ff" size="3" face="Times New Roman"><img src="images/Homework2_StefanoTonini248413_110.gif" width="328" height="25" alt="Typesetting:-mprintslash([PE2 := `*`(m__2, `*`(`+`(`*`(sin(theta__2(t)), `*`(L__s0)), `*`(sin(theta__2(t)), `*`(s__2(t)))), `*`(g)))], [`*`(m__2, `*`(`+`(`*`(sin(theta__2(t)), `*`(L__s0)), `*`(sin(the..." align="center" border="0"></td>
+<td width='5%' align='center'>(5.1.3)</td>
+</tr>
+</table></font>&nbsp;</p>
+<p align="left"><font color="#000000" size="3" face="DejaVu Sans">Kinetic and potential energy for mass m3</font>&nbsp;</p>
+<p align="left"><table>
+<tr>
+<td valign="top" align="center"><font color="#2f48a8" size="3" face="DejaVu Sans Mono"><strong>&gt; </strong></font></td>
+<td valign="top"><font color="#2f48a8" size="3" face="DejaVu Sans Mono"><strong>KE3 := simplify( kineticEnergy(m__3,G3,Rs__3, 0,0,0,0,0,0) );
+<br>PE3 := gravitationalEnergy(m__3,G3,gravity);</td>
+</tr>
+</table></strong></font>&nbsp;</p>
+<p align="center"><table width='100%'>
+<tr>
+<td valign="top" align="center"><font color="#0000ff" size="3" face="Times New Roman"><img src="images/Homework2_StefanoTonini248413_111.gif" width="92" height="82" alt="rtable(1 .. 3, 1 .. 3, [[0, 0, 0], [0, 0, 0], [0, 0, 0]], subtype = Matrix); "_noterminate" align="center" border="0"></td>
+</tr></font>&nbsp;</p>
+<p align="center"><tr>
+<td valign="top" align="center"><font color="#0000ff" size="3" face="Times New Roman"><img src="images/Homework2_StefanoTonini248413_112.gif" width="402" height="62" alt="Typesetting:-mprintslash([KE3 := `+`(`*`(`/`(1, 2), `*`(m__3, `*`(`+`(`*`(`^`(`+`(L__s0, s__3(t)), 2), `*`(`^`(diff(theta__3(t), t), 2))), `*`(`^`(diff(s__3(t), t), 2)))))))], [`+`(`*`(`/`(1, 2), `*`(..." align="center" border="0"></td>
+</tr></font>&nbsp;</p>
+<p align="center"><tr>
+<td valign="top" align="center"><font color="#0000ff" size="3" face="Times New Roman"><img src="images/Homework2_StefanoTonini248413_113.gif" width="328" height="25" alt="Typesetting:-mprintslash([PE3 := `*`(m__3, `*`(`+`(`*`(sin(theta__3(t)), `*`(L__s0)), `*`(sin(theta__3(t)), `*`(s__3(t)))), `*`(g)))], [`*`(m__3, `*`(`+`(`*`(sin(theta__3(t)), `*`(L__s0)), `*`(sin(the..." align="center" border="0"></td>
+<td width='5%' align='center'>(5.1.4)</td>
+</tr>
+</table></font>&nbsp;</p>
+<p align="left"><font color="#000000" size="3" face="DejaVu Sans">Lagrangian function</font>&nbsp;</p>
+<p align="left"><table>
+<tr>
+<td valign="top" align="center"><font color="#2f48a8" size="3" face="DejaVu Sans Mono"><strong>&gt; </strong></font></td>
+<td valign="top"><font color="#2f48a8" size="3" face="DejaVu Sans Mono"><strong>LagrF :=KE1+KE2+KE3-PE1-PE2-PE3; </td>
+</tr>
+</table></strong></font>&nbsp;</p>
+<p align="center"><table width='100%'>
+<tr>
+<td valign="top" align="center"><font color="#0000ff" size="3" face="Times New Roman"><img src="images/Homework2_StefanoTonini248413_114.gif" width="728" height="48" alt="Typesetting:-mprintslash([LagrF := `+`(`*`(`/`(1, 2), `*`(m__1, `*`(`+`(`*`(`^`(diff(theta__1(t), t), 2), `*`(`^`(sin(theta__1(t)), 2), `*`(`^`(L__s0, 2)))), `*`(`^`(diff(theta__1(t), t), 2), `*`(`^`(..." align="center" border="0"><br><img src="images/Homework2_StefanoTonini248413_115.gif" width="728" height="48" alt="Typesetting:-mprintslash([LagrF := `+`(`*`(`/`(1, 2), `*`(m__1, `*`(`+`(`*`(`^`(diff(theta__1(t), t), 2), `*`(`^`(sin(theta__1(t)), 2), `*`(`^`(L__s0, 2)))), `*`(`^`(diff(theta__1(t), t), 2), `*`(`^`(..." align="center" border="0"><br><img src="images/Homework2_StefanoTonini248413_116.gif" width="728" height="19" alt="Typesetting:-mprintslash([LagrF := `+`(`*`(`/`(1, 2), `*`(m__1, `*`(`+`(`*`(`^`(diff(theta__1(t), t), 2), `*`(`^`(sin(theta__1(t)), 2), `*`(`^`(L__s0, 2)))), `*`(`^`(diff(theta__1(t), t), 2), `*`(`^`(..." align="center" border="0"></td>
+<td width='5%' align='center'>(5.1.5)</td>
+</tr>
+</table></font>&nbsp;</p>
+<p align="left"><font color="#000000" size="3" face="DejaVu Sans">Generalized coordinates</font>&nbsp;</p>
+<p align="left"><table>
+<tr>
+<td valign="top" align="center"><font color="#2f48a8" size="3" face="DejaVu Sans Mono"><strong>&gt; </strong></font></td>
+<td valign="top"><font color="#2f48a8" size="3" face="DejaVu Sans Mono"><strong>q_vars</td>
+</tr>
+</table></strong></font>&nbsp;</p>
+<p align="center"><table width='100%'>
+<tr>
+<td valign="top" align="center"><font color="#0000ff" size="3" face="Times New Roman"><img src="images/Homework2_StefanoTonini248413_117.gif" width="216" height="25" alt="[s__2(t), theta__1(t), s__3(t), theta__2(t), theta__3(t)]" align="center" border="0"></td>
+<td width='5%' align='center'>(5.1.6)</td>
+</tr>
+</table></font>&nbsp;</p>
+<p align="left"><table>
+<tr>
+<td valign="top" align="center"><font color="#2f48a8" size="3" face="DejaVu Sans Mono"><strong>&gt; </strong></font></td>
+<td valign="top"><font color="#2f48a8" size="3" face="DejaVu Sans Mono"><strong>leqns := lagrangeEquations(LagrF,Phi,q_vars)</td>
+</tr>
+</table></strong></font>&nbsp;</p>
+<p align="center"><table width='100%'>
+<tr>
+<td valign="top" align="center"><font color="#0000ff" size="3" face="Times New Roman"><img src="images/Homework2_StefanoTonini248413_118.gif" width="728" height="14" alt="rtable(1 .. 5, [`+`(`*`(m__2, `*`(diff(diff(s__2(t), t), t))), `-`(`*`(m__2, `*`(`+`(L__s0, s__2(t)), `*`(`^`(diff(theta__2(t), t), 2))))), `*`(m__2, `*`(sin(theta__2(t)), `*`(g))), `-`(`*`(`+`(`*`(`+..." align="center" border="0"><br><img src="images/Homework2_StefanoTonini248413_119.gif" width="728" height="219" alt="rtable(1 .. 5, [`+`(`*`(m__2, `*`(diff(diff(s__2(t), t), t))), `-`(`*`(m__2, `*`(`+`(L__s0, s__2(t)), `*`(`^`(diff(theta__2(t), t), 2))))), `*`(m__2, `*`(sin(theta__2(t)), `*`(g))), `-`(`*`(`+`(`*`(`+..." align="center" border="0"></td>
+<td width='5%' align='center'>(5.1.7)</td>
+</tr>
+</table></font>&nbsp;</p>
+<p align="left"><table>
+<tr>
+<td valign="top" align="center"><font color="#2f48a8" size="3" face="DejaVu Sans Mono"><strong>&gt; </strong></font></td>
+<td valign="top"><font color="#2f48a8" size="3" face="DejaVu Sans Mono"><strong>z_vars := [ op(q_vars), lambda__1(t)];</td>
+</tr>
+</table></strong></font>&nbsp;</p>
+<p align="center"><table width='100%'>
+<tr>
+<td valign="top" align="center"><font color="#0000ff" size="3" face="Times New Roman"><img src="images/Homework2_StefanoTonini248413_120.gif" width="322" height="25" alt="Typesetting:-mprintslash([z_vars := [s__2(t), theta__1(t), s__3(t), theta__2(t), theta__3(t), lambda__1(t)]], [[s__2(t), theta__1(t), s__3(t), theta__2(t), theta__3(t), lambda__1(t)]])" align="center" border="0"></td>
+<td width='5%' align='center'>(5.1.8)</td>
+</tr>
+</table></font>&nbsp;</p>
+<p align="left"><table>
+<tr>
+<td valign="top" align="center"><font color="#2f48a8" size="3" face="DejaVu Sans Mono"><strong>&gt; </strong></font></td>
+<td valign="top"><font color="#2f48a8" size="3" face="DejaVu Sans Mono"><strong>MM, ff := GenerateMatrix(convert(leqns,list),diff(q_vars,t,t))</td>
+</tr>
+</table></strong></font>&nbsp;</p>
+<p align="center"><table width='100%'>
+<tr>
+<td valign="top" align="center"><font color="#0000ff" size="3" face="Times New Roman"><img src="images/Homework2_StefanoTonini248413_121.gif" width="728" height="142" alt="Typesetting:-mprintslash([MM, ff := Matrix(5, 5, {(1, 1) = Typesetting:-mi("m__2"), (1, 2) = Typesetting:-mn("0"), (1, 3) = Typesetting:-mn("0"), (1, 4) = Typesetting:-mn("0"), (1, 5) = Typesetting:-m..." align="center" border="0"><br><img src="images/Homework2_StefanoTonini248413_122.gif" width="728" height="176" alt="Typesetting:-mprintslash([MM, ff := Matrix(5, 5, {(1, 1) = Typesetting:-mi("m__2"), (1, 2) = Typesetting:-mn("0"), (1, 3) = Typesetting:-mn("0"), (1, 4) = Typesetting:-mn("0"), (1, 5) = Typesetting:-m..." align="center" border="0"></td>
+<td width='5%' align='center'>(5.1.9)</td>
+</tr>
+</table></font>&nbsp;</p>
+<p align="left"><font color="#000000" size="3" face="DejaVu Sans">Spring Ks2 and Damper Cs2 Forces </font>&nbsp;</p>
+<p align="left"><table>
+<tr>
+<td valign="top" align="center"><font color="#2f48a8" size="3" face="DejaVu Sans Mono"><strong>&gt; </strong></font></td>
+<td valign="top"><font color="#2f48a8" size="3" face="DejaVu Sans Mono"><strong>fe__2(t) := -K__s2*s__2(t)-C__s2*diff(s__2(t),t); # spring force model
+<br>FE__2 := &lt;fe__2(t),0,0&gt;;</td>
+</tr>
+</table></strong></font>&nbsp;</p>
+<p align="center"><table width='100%'>
+<tr>
+<td valign="top" align="center"><font color="#0000ff" size="3" face="Times New Roman"><img src="images/Homework2_StefanoTonini248413_123.gif" width="264" height="39" alt="fe__2 := proc (t) options operator, arrow, function_assign; `+`(`-`(`*`(K__s2, `*`(s__2(t)))), `-`(`*`(C__s2, `*`(diff(s__2(t), t))))) end proc; "_noterminate" align="center" border="0"></td>
+</tr></font>&nbsp;</p>
+<p align="center"><tr>
+<td valign="top" align="center"><font color="#0000ff" size="3" face="Times New Roman"><img src="images/Homework2_StefanoTonini248413_124.gif" width="283" height="103" alt="Typesetting:-mfenced(Typesetting:-mrow(Typesetting:-mtable(Typesetting:-mtr(Typesetting:-mtd(Typesetting:-mrow(Typesetting:-mo("&uminus0;", foreground = "[0,0,0]", readonly = "false", mathvariant = "n..." align="center" border="0"></td>
+<td width='5%' align='center'>(5.1.10)</td>
+</tr>
+</table></font>&nbsp;</p>
+<p align="left"><font color="#000000" size="3" face="DejaVu Sans">Spring Ks3 and Damper Cs3 Forces </font>&nbsp;</p>
+<p align="left"><table>
+<tr>
+<td valign="top" align="center"><font color="#2f48a8" size="3" face="DejaVu Sans Mono"><strong>&gt; </strong></font></td>
+<td valign="top"><font color="#2f48a8" size="3" face="DejaVu Sans Mono"><strong>fe__3(t) := -K__s3*s__3(t)-C__s3*diff(s__3(t),t); # spring force model
+<br>FE__3 := &lt;fe__3(t),0,0&gt;;</td>
+</tr>
+</table></strong></font>&nbsp;</p>
+<p align="center"><table width='100%'>
+<tr>
+<td valign="top" align="center"><font color="#0000ff" size="3" face="Times New Roman"><img src="images/Homework2_StefanoTonini248413_125.gif" width="264" height="39" alt="fe__3 := proc (t) options operator, arrow, function_assign; `+`(`-`(`*`(K__s3, `*`(s__3(t)))), `-`(`*`(C__s3, `*`(diff(s__3(t), t))))) end proc; "_noterminate" align="center" border="0"></td>
+</tr></font>&nbsp;</p>
+<p align="center"><tr>
+<td valign="top" align="center"><font color="#0000ff" size="3" face="Times New Roman"><img src="images/Homework2_StefanoTonini248413_126.gif" width="283" height="103" alt="Typesetting:-mfenced(Typesetting:-mrow(Typesetting:-mtable(Typesetting:-mtr(Typesetting:-mtd(Typesetting:-mrow(Typesetting:-mo("&uminus0;", foreground = "[0,0,0]", readonly = "false", mathvariant = "n..." align="center" border="0"></td>
+<td width='5%' align='center'>(5.1.11)</td>
+</tr>
+</table></font>&nbsp;</p>
+<p align="left"><table>
+<tr>
+<td valign="top" align="center"><font color="#2f48a8" size="3" face="DejaVu Sans Mono"><strong>&gt; </strong></font></td>
+<td valign="top"><font color="#2f48a8" size="3" face="DejaVu Sans Mono"><strong>FE__2:=Rs__2.FE__2;
+<br>FE__3:=Rs__3.FE__3;
+<br></td>
+</tr>
+</table></strong></font>&nbsp;</p>
+<p align="center"><table width='100%'>
+<tr>
+<td valign="top" align="center"><font color="#0000ff" size="3" face="Times New Roman"><img src="images/Homework2_StefanoTonini248413_127.gif" width="378" height="124" alt="rtable(1 .. 3, [`*`(cos(theta__2(t)), `*`(`+`(`-`(`*`(K__s2, `*`(s__2(t)))), `-`(`*`(C__s2, `*`(diff(s__2(t), t))))))), `*`(sin(theta__2(t)), `*`(`+`(`-`(`*`(K__s2, `*`(s__2(t)))), `-`(`*`(C__s2, `*`(..." align="center" border="0"></td>
+</tr></font>&nbsp;</p>
+<p align="center"><tr>
+<td valign="top" align="center"><font color="#0000ff" size="3" face="Times New Roman"><img src="images/Homework2_StefanoTonini248413_128.gif" width="378" height="124" alt="Typesetting:-mfenced(Typesetting:-mrow(Typesetting:-mtable(Typesetting:-mtr(Typesetting:-mtd(Typesetting:-mrow(Typesetting:-mrow(Typesetting:-mi("cos", italic = "false", foreground = "[0,0,0]", readon..." align="center" border="0"></td>
+<td width='5%' align='center'>(5.1.12)</td>
+</tr>
+</table></font>&nbsp;</p>
+<p align="left"><table>
+<tr>
+<td valign="top" align="center"><font color="#2f48a8" size="3" face="DejaVu Sans Mono"><strong>&gt; </strong></font></td>
+<td valign="top"><font color="#2f48a8" size="3" face="DejaVu Sans Mono"><strong>Q_genF := generalisedForces(G2,FE__2,q_vars)-generalisedForces(P2,FE__2,q_vars)+generalisedForces(G3,FE__3,q_vars)-generalisedForces(P3,FE__3,q_vars);</td>
+</tr>
+</table></strong></font>&nbsp;</p>
+<p align="center"><table width='100%'>
+<tr>
+<td valign="top" align="center"><font color="#0000ff" size="3" face="Times New Roman"><img src="images/Homework2_StefanoTonini248413_129.gif" width="728" height="14" alt="rtable(1 .. 5, [`+`(`*`(`^`(cos(theta__2(t)), 2), `*`(`+`(`-`(`*`(K__s2, `*`(s__2(t)))), `-`(`*`(C__s2, `*`(diff(s__2(t), t))))))), `*`(`^`(sin(theta__2(t)), 2), `*`(`+`(`-`(`*`(K__s2, `*`(s__2(t)))),..." align="center" border="0"><br><img src="images/Homework2_StefanoTonini248413_130.gif" width="728" height="167" alt="rtable(1 .. 5, [`+`(`*`(`^`(cos(theta__2(t)), 2), `*`(`+`(`-`(`*`(K__s2, `*`(s__2(t)))), `-`(`*`(C__s2, `*`(diff(s__2(t), t))))))), `*`(`^`(sin(theta__2(t)), 2), `*`(`+`(`-`(`*`(K__s2, `*`(s__2(t)))),..." align="center" border="0"></td>
+<td width='5%' align='center'>(5.1.13)</td>
+</tr>
+</table></font>&nbsp;</p>
+<p align="left"><font color="#000000" size="3" face="DejaVu Sans">Full set of equations </font>&nbsp;</p>
+<p align="left"><table>
+<tr>
+<td valign="top" align="center"><font color="#2f48a8" size="3" face="DejaVu Sans Mono"><strong>&gt; </strong></font></td>
+<td valign="top"><font color="#2f48a8" size="3" face="DejaVu Sans Mono"><strong>ode_sys := leqns-Q_genF;</td>
+</tr>
+</table></strong></font>&nbsp;</p>
+<p align="center"><table width='100%'>
+<tr>
+<td valign="top" align="center"><font color="#0000ff" size="3" face="Times New Roman"><img src="images/Homework2_StefanoTonini248413_131.gif" width="728" height="14" alt="rtable(1 .. 5, [`+`(`*`(m__2, `*`(diff(diff(s__2(t), t), t))), `-`(`*`(m__2, `*`(`+`(L__s0, s__2(t)), `*`(`^`(diff(theta__2(t), t), 2))))), `*`(m__2, `*`(sin(theta__2(t)), `*`(g))), `-`(`*`(`+`(`*`(`+..." align="center" border="0"><br><img src="images/Homework2_StefanoTonini248413_132.gif" width="728" height="219" alt="rtable(1 .. 5, [`+`(`*`(m__2, `*`(diff(diff(s__2(t), t), t))), `-`(`*`(m__2, `*`(`+`(L__s0, s__2(t)), `*`(`^`(diff(theta__2(t), t), 2))))), `*`(m__2, `*`(sin(theta__2(t)), `*`(g))), `-`(`*`(`+`(`*`(`+..." align="center" border="0"></td>
+<td width='5%' align='center'>(5.1.14)</td>
+</tr>
+</table></font>&nbsp;</p>
+</dl>
+
+</html>

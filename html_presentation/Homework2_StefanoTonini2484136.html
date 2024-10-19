@@ -1,0 +1,212 @@
+<html>
+<head>
+<meta http-equiv="content-type" content="text/html; charset=utf-8">
+<title>Homework2_StefanoTonini2484136.html</title>
+<!-- Created by Maple 2024.0, Mac OS X -->
+</head>
+<dl style="margin-left:40px"><a name="MapleAutoBookmark9" />
+<p align="left"><font color="#c00000" size="5" face="DejaVu Sans"><strong>Principle of Virtual Work - equilibrium conditions</strong></font>&nbsp;</p>
+<p align="left"><font color="#000000" size="3" face="DejaVu Sans">This section aims at finding the equilibrium conditions using the Principle of virtual work</font>&nbsp;</p>
+<p align="left"><font color="#ff9900" size="3" face="DejaVu Sans"><strong><em>Forces </em></strong></font>&nbsp;</p>
+<p align="left"><font color="#000000" size="3" face="DejaVu Sans">Vector of forces in ground frame</font>&nbsp;</p>
+<p align="left"><table>
+<tr>
+<td valign="top" align="center"><font color="#2f48a8" size="3" face="DejaVu Sans Mono"><strong>&gt; </strong></font></td>
+<td valign="top"><font color="#2f48a8" size="3" face="DejaVu Sans Mono"><strong>W1 := &lt;0,-m__1*g,0&gt;:
+<br>W2 := &lt;0,-m__2*g,0&gt;:
+<br>W3 := &lt;0,-m__3*g,0&gt;:</td>
+</tr>
+</table></strong></font>&nbsp;</p>
+<p align="left"><font color="#000000" size="3" face="DejaVu Sans">Spring and damper forces</font>&nbsp;</p>
+<p align="left"><table>
+<tr>
+<td valign="top" align="center"><font color="#2f48a8" size="3" face="DejaVu Sans Mono"><strong>&gt; </strong></font></td>
+<td valign="top"><font color="#2f48a8" size="3" face="DejaVu Sans Mono"><strong>fs__2(t):= K__s2*s__2(t)+C__s2*diff(s__2(t),t); # force linear model is defined with positive sign according to constitutive equation of the element
+<br>
+<br>fs__3(t):= K__s3*s__3(t)+C__s3*diff(s__3(t),t);
+<br>
+<br>Fs__2 := -fs__2(t)*is_uvec__2; # force is defined with minus sign since from the node balance it acts on the body
+<br>Fs__3 := -fs__3(t)*is_uvec__3;</td>
+</tr>
+</table></strong></font>&nbsp;</p>
+<p align="center"><table width='100%'>
+<tr>
+<td valign="top" align="center"><font color="#0000ff" size="3" face="Times New Roman"><img src="images/Homework2_StefanoTonini248413_52.gif" width="252" height="39" alt="fs__2 := proc (t) options operator, arrow, function_assign; `+`(`*`(K__s2, `*`(s__2(t))), `*`(C__s2, `*`(diff(s__2(t), t)))) end proc; "_noterminate" align="center" border="0"></td>
+</tr></font>&nbsp;</p>
+<p align="center"><tr>
+<td valign="top" align="center"><font color="#0000ff" size="3" face="Times New Roman"><img src="images/Homework2_StefanoTonini248413_53.gif" width="252" height="39" alt="fs__3 := proc (t) options operator, arrow, function_assign; `+`(`*`(K__s3, `*`(s__3(t))), `*`(C__s3, `*`(diff(s__3(t), t)))) end proc; "_noterminate" align="center" border="0"></td>
+</tr></font>&nbsp;</p>
+<p align="center"><tr>
+<td valign="top" align="center"><font color="#0000ff" size="3" face="Times New Roman"><img src="images/Homework2_StefanoTonini248413_54.gif" width="376" height="124" alt="rtable(1 .. 3, [`+`(`-`(`*`(`+`(`*`(K__s2, `*`(s__2(t))), `*`(C__s2, `*`(diff(s__2(t), t)))), `*`(cos(theta__2(t)))))), `+`(`-`(`*`(`+`(`*`(K__s2, `*`(s__2(t))), `*`(C__s2, `*`(diff(s__2(t), t)))), `*..." align="center" border="0"></td>
+</tr></font>&nbsp;</p>
+<p align="center"><tr>
+<td valign="top" align="center"><font color="#0000ff" size="3" face="Times New Roman"><img src="images/Homework2_StefanoTonini248413_55.gif" width="376" height="124" alt="Typesetting:-mfenced(Typesetting:-mrow(Typesetting:-mtable(Typesetting:-mtr(Typesetting:-mtd(Typesetting:-mrow(Typesetting:-mo("&uminus0;", foreground = "[0,0,0]", readonly = "false", mathvariant = "n..." align="center" border="0"></td>
+<td width='5%' align='center'>(4.1)</td>
+</tr>
+</table></font>&nbsp;</p>
+<p align="left"><font color="#ff9900" size="3" face="DejaVu Sans"><strong><em>Virtual work</em></strong></font>&nbsp;</p>
+<p align="left"><font color="#000000" size="3" face="DejaVu Sans">Procedure to compute the dot (i.e. scalar product as vector products)</font>&nbsp;</p>
+<p align="left"><table>
+<tr>
+<td valign="top" align="center"><font color="#2f48a8" size="3" face="DejaVu Sans Mono"><strong>&gt; </strong></font></td>
+<td valign="top"><font color="#2f48a8" size="3" face="DejaVu Sans Mono"><strong>dot_prod := proc(v1::Vector,v2::Vector)
+<br> &nbsp;Transpose(v1).v2;
+<br>end:</td>
+</tr>
+</table></strong></font>&nbsp;</p>
+<p align="left"><font color="#000000" size="3" face="DejaVu Sans">Spring and Damper work</font>&nbsp;</p>
+<p align="left"><table>
+<tr>
+<td valign="top" align="center"><font color="#2f48a8" size="3" face="DejaVu Sans Mono"><strong>&gt; </strong></font></td>
+<td valign="top"><font color="#2f48a8" size="3" face="DejaVu Sans Mono"><strong>VW_spring_damper__2 := simplify(+dot_prod(Transpose(Rs__2).(+Fs__2),Transpose(Rs__2).VG2)
+<br> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;+dot_prod(Transpose(Rs__2).(-Fs__2),Transpose(Rs__2).VP2)
+<br> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;);</td>
+</tr>
+</table></strong></font>&nbsp;</p>
+<p align="center"><table width='100%'>
+<tr>
+<td valign="top" align="center"><font color="#0000ff" size="3" face="Times New Roman"><img src="images/Homework2_StefanoTonini248413_56.gif" width="459" height="39" alt="Typesetting:-mprintslash([VW_spring_damper__2 := `+`(`-`(`*`(`+`(`*`(K__s2, `*`(s__2(t))), `*`(C__s2, `*`(diff(s__2(t), t)))), `*`(diff(s__2(t), t)))))], [`+`(`-`(`*`(`+`(`*`(K__s2, `*`(s__2(t))), `*`..." align="center" border="0"></td>
+<td width='5%' align='center'>(4.2)</td>
+</tr>
+</table></font>&nbsp;</p>
+<p align="left"><table>
+<tr>
+<td valign="top" align="center"><font color="#2f48a8" size="3" face="DejaVu Sans Mono"><strong>&gt; </strong></font></td>
+<td valign="top"><font color="#2f48a8" size="3" face="DejaVu Sans Mono"><strong>VW_spring_damper__3 := simplify(+dot_prod(Transpose(Rs__3).(+Fs__3),Transpose(Rs__3).VG3)
+<br> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;+dot_prod(Transpose(Rs__3).(-Fs__3),Transpose(Rs__3).VP3)
+<br> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;);</td>
+</tr>
+</table></strong></font>&nbsp;</p>
+<p align="center"><table width='100%'>
+<tr>
+<td valign="top" align="center"><font color="#0000ff" size="3" face="Times New Roman"><img src="images/Homework2_StefanoTonini248413_57.gif" width="459" height="39" alt="Typesetting:-mprintslash([VW_spring_damper__3 := `+`(`-`(`*`(`+`(`*`(K__s3, `*`(s__3(t))), `*`(C__s3, `*`(diff(s__3(t), t)))), `*`(diff(s__3(t), t)))))], [`+`(`-`(`*`(`+`(`*`(K__s3, `*`(s__3(t))), `*`..." align="center" border="0"></td>
+<td width='5%' align='center'>(4.3)</td>
+</tr>
+</table></font>&nbsp;</p>
+<p align="left"><font color="#000000" size="3" face="DejaVu Sans">Overall Virtual Work</font>&nbsp;</p>
+<p align="left"><table>
+<tr>
+<td valign="top" align="center"><font color="#2f48a8" size="3" face="DejaVu Sans Mono"><strong>&gt; </strong></font></td>
+<td valign="top"><font color="#2f48a8" size="3" face="DejaVu Sans Mono"><strong>PVW := &nbsp;dot_prod(W1,VG1)
+<br> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;+dot_prod(W2,VG2)
+<br> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;+dot_prod(W3,VG3)
+<br> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;+VW_spring_damper__2
+<br> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;+VW_spring_damper__3;</td>
+</tr>
+</table></strong></font>&nbsp;</p>
+<p align="center"><table width='100%'>
+<tr>
+<td valign="top" align="center"><font color="#0000ff" size="3" face="Times New Roman"><img src="images/Homework2_StefanoTonini248413_58.gif" width="728" height="30" alt="Typesetting:-mprintslash([PVW := `+`(`-`(`*`(m__1, `*`(g, `*`(diff(theta__1(t), t), `*`(cos(theta__1(t)), `*`(L__s0)))))), `-`(`*`(m__2, `*`(g, `*`(`+`(`*`(diff(theta__2(t), t), `*`(cos(theta__2(t)), ..." align="center" border="0"><br><img src="images/Homework2_StefanoTonini248413_59.gif" width="728" height="30" alt="Typesetting:-mprintslash([PVW := `+`(`-`(`*`(m__1, `*`(g, `*`(diff(theta__1(t), t), `*`(cos(theta__1(t)), `*`(L__s0)))))), `-`(`*`(m__2, `*`(g, `*`(`+`(`*`(diff(theta__2(t), t), `*`(cos(theta__2(t)), ..." align="center" border="0"><br><img src="images/Homework2_StefanoTonini248413_60.gif" width="728" height="30" alt="Typesetting:-mprintslash([PVW := `+`(`-`(`*`(m__1, `*`(g, `*`(diff(theta__1(t), t), `*`(cos(theta__1(t)), `*`(L__s0)))))), `-`(`*`(m__2, `*`(g, `*`(`+`(`*`(diff(theta__2(t), t), `*`(cos(theta__2(t)), ..." align="center" border="0"></td>
+<td width='5%' align='center'>(4.4)</td>
+</tr>
+</table></font>&nbsp;</p>
+<p align="left"><font color="#ff9900" size="3" face="DejaVu Sans"><strong><em>Equation of motion</em></strong></font>&nbsp;</p>
+<p align="left"><font color="#000000" size="3" face="DejaVu Sans">Substitute the virtual velocities of the dependent coordinates as a function of the independent</font>&nbsp;</p>
+<p align="left"><table>
+<tr>
+<td valign="top" align="center"><font color="#2f48a8" size="3" face="DejaVu Sans Mono"><strong>&gt; </strong></font></td>
+<td valign="top"><font color="#2f48a8" size="3" face="DejaVu Sans Mono"><strong>simplify(subs( vel_qD_vars, PVW ));
+<br>PVW_I := collect(%,diff(qI_vars,t));</td>
+</tr>
+</table></strong></font>&nbsp;</p>
+<p align="center"><table width='100%'>
+<tr>
+<td valign="top" align="center"><font color="#0000ff" size="3" face="Times New Roman"><img src="images/Homework2_StefanoTonini248413_61.gif" width="728" height="35" alt="Typesetting:-mprintslash([`+`(`-`(`*`(m__1, `*`(g, `*`(diff(theta__1(t), t), `*`(cos(theta__1(t)), `*`(L__s0)))))), `-`(`/`(`*`(`+`(`*`(`+`(`*`(`+`(`*`(cos(theta__1(t)), `*`(L__s0)), L), `*`(`^`(cos(t..." align="center" border="0"><br><img src="images/Homework2_StefanoTonini248413_62.gif" width="728" height="30" alt="Typesetting:-mprintslash([`+`(`-`(`*`(m__1, `*`(g, `*`(diff(theta__1(t), t), `*`(cos(theta__1(t)), `*`(L__s0)))))), `-`(`/`(`*`(`+`(`*`(`+`(`*`(`+`(`*`(cos(theta__1(t)), `*`(L__s0)), L), `*`(`^`(cos(t..." align="center" border="0"><br><img src="images/Homework2_StefanoTonini248413_63.gif" width="728" height="30" alt="Typesetting:-mprintslash([`+`(`-`(`*`(m__1, `*`(g, `*`(diff(theta__1(t), t), `*`(cos(theta__1(t)), `*`(L__s0)))))), `-`(`/`(`*`(`+`(`*`(`+`(`*`(`+`(`*`(cos(theta__1(t)), `*`(L__s0)), L), `*`(`^`(cos(t..." align="center" border="0"><br><img src="images/Homework2_StefanoTonini248413_64.gif" width="728" height="35" alt="Typesetting:-mprintslash([`+`(`-`(`*`(m__1, `*`(g, `*`(diff(theta__1(t), t), `*`(cos(theta__1(t)), `*`(L__s0)))))), `-`(`/`(`*`(`+`(`*`(`+`(`*`(`+`(`*`(cos(theta__1(t)), `*`(L__s0)), L), `*`(`^`(cos(t..." align="center" border="0"><br><img src="images/Homework2_StefanoTonini248413_65.gif" width="728" height="30" alt="Typesetting:-mprintslash([`+`(`-`(`*`(m__1, `*`(g, `*`(diff(theta__1(t), t), `*`(cos(theta__1(t)), `*`(L__s0)))))), `-`(`/`(`*`(`+`(`*`(`+`(`*`(`+`(`*`(cos(theta__1(t)), `*`(L__s0)), L), `*`(`^`(cos(t..." align="center" border="0"><br><img src="images/Homework2_StefanoTonini248413_66.gif" width="728" height="30" alt="Typesetting:-mprintslash([`+`(`-`(`*`(m__1, `*`(g, `*`(diff(theta__1(t), t), `*`(cos(theta__1(t)), `*`(L__s0)))))), `-`(`/`(`*`(`+`(`*`(`+`(`*`(`+`(`*`(cos(theta__1(t)), `*`(L__s0)), L), `*`(`^`(cos(t..." align="center" border="0"></td>
+</tr></font>&nbsp;</p>
+<p align="center"><tr>
+<td valign="top" align="center"><font color="#0000ff" size="3" face="Times New Roman"><img src="images/Homework2_StefanoTonini248413_67.gif" width="728" height="40" alt="Typesetting:-mprintslash([PVW_I := `+`(`*`(`+`(`-`(`*`(m__1, `*`(g, `*`(cos(theta__1(t)), `*`(L__s0))))), `-`(`/`(`*`(L__s0, `*`(cos(theta__2(t)), `*`(`+`(`-`(`*`(sin(theta__1(t)), `*`(`+`(L__s0, s__2..." align="center" border="0"><br><img src="images/Homework2_StefanoTonini248413_68.gif" width="728" height="40" alt="Typesetting:-mprintslash([PVW_I := `+`(`*`(`+`(`-`(`*`(m__1, `*`(g, `*`(cos(theta__1(t)), `*`(L__s0))))), `-`(`/`(`*`(L__s0, `*`(cos(theta__2(t)), `*`(`+`(`-`(`*`(sin(theta__1(t)), `*`(`+`(L__s0, s__2..." align="center" border="0"><br><img src="images/Homework2_StefanoTonini248413_69.gif" width="728" height="40" alt="Typesetting:-mprintslash([PVW_I := `+`(`*`(`+`(`-`(`*`(m__1, `*`(g, `*`(cos(theta__1(t)), `*`(L__s0))))), `-`(`/`(`*`(L__s0, `*`(cos(theta__2(t)), `*`(`+`(`-`(`*`(sin(theta__1(t)), `*`(`+`(L__s0, s__2..." align="center" border="0"><br><img src="images/Homework2_StefanoTonini248413_70.gif" width="728" height="42" alt="Typesetting:-mprintslash([PVW_I := `+`(`*`(`+`(`-`(`*`(m__1, `*`(g, `*`(cos(theta__1(t)), `*`(L__s0))))), `-`(`/`(`*`(L__s0, `*`(cos(theta__2(t)), `*`(`+`(`-`(`*`(sin(theta__1(t)), `*`(`+`(L__s0, s__2..." align="center" border="0"><br><img src="images/Homework2_StefanoTonini248413_71.gif" width="728" height="42" alt="Typesetting:-mprintslash([PVW_I := `+`(`*`(`+`(`-`(`*`(m__1, `*`(g, `*`(cos(theta__1(t)), `*`(L__s0))))), `-`(`/`(`*`(L__s0, `*`(cos(theta__2(t)), `*`(`+`(`-`(`*`(sin(theta__1(t)), `*`(`+`(L__s0, s__2..." align="center" border="0"><br><img src="images/Homework2_StefanoTonini248413_72.gif" width="728" height="42" alt="Typesetting:-mprintslash([PVW_I := `+`(`*`(`+`(`-`(`*`(m__1, `*`(g, `*`(cos(theta__1(t)), `*`(L__s0))))), `-`(`/`(`*`(L__s0, `*`(cos(theta__2(t)), `*`(`+`(`-`(`*`(sin(theta__1(t)), `*`(`+`(L__s0, s__2..." align="center" border="0"></td>
+<td width='5%' align='center'>(4.5)</td>
+</tr>
+</table></font>&nbsp;</p>
+<p align="left"><font color="#000000" size="3" face="DejaVu Sans">Collect for the independent coordinate virtual displacement</font>&nbsp;</p>
+<p align="left"><table>
+<tr>
+<td valign="top" align="center"><font color="#2f48a8" size="3" face="DejaVu Sans Mono"><strong>&gt; </strong></font></td>
+<td valign="top"><font color="#2f48a8" size="3" face="DejaVu Sans Mono"><strong>AA,BB := GenerateMatrix([PVW_I],diff(qI_vars,t));
+<br></td>
+</tr>
+</table></strong></font>&nbsp;</p>
+<p align="center"><table width='100%'>
+<tr>
+<td valign="top" align="center"><font color="#0000ff" size="3" face="Times New Roman"><img src="images/Homework2_StefanoTonini248413_73.gif" width="728" height="14" alt="Typesetting:-mprintslash([AA, BB := Matrix(1, 3, {(1, 1) = Typesetting:-mrow(Typesetting:-mo("&uminus0;"), Typesetting:-mrow(Typesetting:-mi("m__1"), Typesetting:-mo("&InvisibleTimes;"), Typesetting:-..." align="center" border="0"><br><img src="images/Homework2_StefanoTonini248413_74.gif" width="728" height="51" alt="Typesetting:-mprintslash([AA, BB := Matrix(1, 3, {(1, 1) = Typesetting:-mrow(Typesetting:-mo("&uminus0;"), Typesetting:-mrow(Typesetting:-mi("m__1"), Typesetting:-mo("&InvisibleTimes;"), Typesetting:-..." align="center" border="0"></td>
+<td width='5%' align='center'>(4.6)</td>
+</tr>
+</table></font>&nbsp;</p>
+<p align="left"><font color="#000000" size="3" face="DejaVu Sans">The equations of motions are the element in the vector AA.</font>&nbsp;</p>
+<p align="left"><table>
+<tr>
+<td valign="top" align="center"><font color="#2f48a8" size="3" face="DejaVu Sans Mono"><strong>&gt; </strong></font></td>
+<td valign="top"><font color="#2f48a8" size="3" face="DejaVu Sans Mono"><strong>eqns:= &nbsp;AA[1,1..3];
+<br>nops(%);
+<br></td>
+</tr>
+</table></strong></font>&nbsp;</p>
+<p align="center"><table width='100%'>
+<tr>
+<td valign="top" align="center"><font color="#0000ff" size="3" face="Times New Roman"><img src="images/Homework2_StefanoTonini248413_75.gif" width="728" height="14" alt="rtable(1 .. 3, [`+`(`-`(`*`(m__1, `*`(g, `*`(cos(theta__1(t)), `*`(L__s0))))), `-`(`/`(`*`(L__s0, `*`(cos(theta__2(t)), `*`(`+`(`-`(`*`(sin(theta__1(t)), `*`(`+`(L__s0, s__2(t)), `*`(cos(theta__2(t)))..." align="center" border="0"><br><img src="images/Homework2_StefanoTonini248413_76.gif" width="728" height="51" alt="rtable(1 .. 3, [`+`(`-`(`*`(m__1, `*`(g, `*`(cos(theta__1(t)), `*`(L__s0))))), `-`(`/`(`*`(L__s0, `*`(cos(theta__2(t)), `*`(`+`(`-`(`*`(sin(theta__1(t)), `*`(`+`(L__s0, s__2(t)), `*`(cos(theta__2(t)))..." align="center" border="0"></td>
+</tr></font>&nbsp;</p>
+<p align="center"><tr>
+<td valign="top" align="center"><font color="#0000ff" size="3" face="Times New Roman"><img src="images/Homework2_StefanoTonini248413_77.gif" width="21" height="18" alt="3" align="center" border="0"></td>
+<td width='5%' align='center'>(4.7)</td>
+</tr>
+</table></font>&nbsp;</p>
+<p align="left"><table>
+<tr>
+<td valign="top" align="center"><font color="#2f48a8" size="3" face="DejaVu Sans Mono"><strong>&gt; </strong></font></td>
+<td valign="top"><font color="#2f48a8" size="3" face="DejaVu Sans Mono"><strong>PVW__eqns := subs(theta__1(t)=theta__1,theta__2(t)=theta__2,theta__3(t)=theta__3,s__2(t)=s__2,s__3(t)=s__3,(convert(eqns,set) union convert(Phi,set)));
+<br>PVW__vars := convert(subs(theta__1(t)=theta__1,theta__2(t)=theta__2,theta__3(t)=theta__3,s__2(t)=s__2,s__3(t)=s__3,q_vars),set);</td>
+</tr>
+</table></strong></font>&nbsp;</p>
+<p align="center"><table width='100%'>
+<tr>
+<td valign="top" align="center"><font color="#0000ff" size="3" face="Times New Roman"><img src="images/Homework2_StefanoTonini248413_78.gif" width="728" height="42" alt="Typesetting:-mprintslash([PVW__eqns := {`+`(`-`(`/`(`*`(m__3, `*`(`+`(`*`(`+`(`-`(`*`(cos(theta__1), `*`(L__s0))), L), `*`(`^`(cos(theta__3), 2))), `*`(`+`(L__s0, s__3), `*`(cos(theta__3))), `*`(`^`(s..." align="center" border="0"><br><img src="images/Homework2_StefanoTonini248413_79.gif" width="728" height="42" alt="Typesetting:-mprintslash([PVW__eqns := {`+`(`-`(`/`(`*`(m__3, `*`(`+`(`*`(`+`(`-`(`*`(cos(theta__1), `*`(L__s0))), L), `*`(`^`(cos(theta__3), 2))), `*`(`+`(L__s0, s__3), `*`(cos(theta__3))), `*`(`^`(s..." align="center" border="0"><br><img src="images/Homework2_StefanoTonini248413_80.gif" width="728" height="40" alt="Typesetting:-mprintslash([PVW__eqns := {`+`(`-`(`/`(`*`(m__3, `*`(`+`(`*`(`+`(`-`(`*`(cos(theta__1), `*`(L__s0))), L), `*`(`^`(cos(theta__3), 2))), `*`(`+`(L__s0, s__3), `*`(cos(theta__3))), `*`(`^`(s..." align="center" border="0"><br><img src="images/Homework2_StefanoTonini248413_81.gif" width="728" height="40" alt="Typesetting:-mprintslash([PVW__eqns := {`+`(`-`(`/`(`*`(m__3, `*`(`+`(`*`(`+`(`-`(`*`(cos(theta__1), `*`(L__s0))), L), `*`(`^`(cos(theta__3), 2))), `*`(`+`(L__s0, s__3), `*`(cos(theta__3))), `*`(`^`(s..." align="center" border="0"><br><img src="images/Homework2_StefanoTonini248413_82.gif" width="728" height="40" alt="Typesetting:-mprintslash([PVW__eqns := {`+`(`-`(`/`(`*`(m__3, `*`(`+`(`*`(`+`(`-`(`*`(cos(theta__1), `*`(L__s0))), L), `*`(`^`(cos(theta__3), 2))), `*`(`+`(L__s0, s__3), `*`(cos(theta__3))), `*`(`^`(s..." align="center" border="0"><br><img src="images/Homework2_StefanoTonini248413_83.gif" width="728" height="40" alt="Typesetting:-mprintslash([PVW__eqns := {`+`(`-`(`/`(`*`(m__3, `*`(`+`(`*`(`+`(`-`(`*`(cos(theta__1), `*`(L__s0))), L), `*`(`^`(cos(theta__3), 2))), `*`(`+`(L__s0, s__3), `*`(cos(theta__3))), `*`(`^`(s..." align="center" border="0"></td>
+</tr></font>&nbsp;</p>
+<p align="center"><tr>
+<td valign="top" align="center"><font color="#0000ff" size="3" face="Times New Roman"><img src="images/Homework2_StefanoTonini248413_84.gif" width="195" height="25" alt="Typesetting:-mprintslash([PVW__vars := {s__2, s__3, theta__1, theta__2, theta__3}], [{s__2, s__3, theta__1, theta__2, theta__3}])" align="center" border="0"></td>
+<td width='5%' align='center'>(4.8)</td>
+</tr>
+</table></font>&nbsp;</p>
+<p align="left"><font color="#000000" size="3" face="DejaVu Sans">We can substitute the data and solve the equations in order to find the equilibrium conditions of the mechanical system</font>&nbsp;</p>
+<p align="left"><table>
+<tr>
+<td valign="top" align="center"><font color="#2f48a8" size="3" face="DejaVu Sans Mono"><strong>&gt; </strong></font></td>
+<td valign="top"><font color="#2f48a8" size="3" face="DejaVu Sans Mono"><strong>data := [L = 1, L__s0 = 1, m__1 = 10, m__2 = 2, m__3 = 30, g = 9.81,
+<br>K__s2 = 5000, C__s2 = 10, K__s3 = 100000, C__s3 = 100];</td>
+</tr>
+</table></strong></font>&nbsp;</p>
+<p align="center"><table width='100%'>
+<tr>
+<td valign="top" align="center"><font color="#0000ff" size="3" face="Times New Roman"><img src="images/Homework2_StefanoTonini248413_85.gif" width="663" height="22" alt="Typesetting:-mprintslash([data := [L = 1, L__s0 = 1, m__1 = 10, m__2 = 2, m__3 = 30, g = 9.81, K__s2 = 5000, C__s2 = 10, K__s3 = 100000, C__s3 = 100]], [[L = 1, L__s0 = 1, m__1 = 10, m__2 = 2, m__3 = ..." align="center" border="0"></td>
+<td width='5%' align='center'>(4.9)</td>
+</tr>
+</table></font>&nbsp;</p>
+<p align="left"><table>
+<tr>
+<td valign="top" align="center"><font color="#2f48a8" size="3" face="DejaVu Sans Mono"><strong>&gt; </strong></font></td>
+<td valign="top"><font color="#2f48a8" size="3" face="DejaVu Sans Mono"><strong>subs(data,PVW__eqns);</td>
+</tr>
+</table></strong></font>&nbsp;</p>
+<p align="center"><table width='100%'>
+<tr>
+<td valign="top" align="center"><font color="#0000ff" size="3" face="Times New Roman"><img src="images/Homework2_StefanoTonini248413_86.gif" width="728" height="42" alt="{`+`(`-`(`/`(`*`(294.30, `*`(`+`(`*`(`+`(`-`(cos(theta__1)), 1), `*`(`^`(cos(theta__3), 2))), `*`(`+`(1, s__3), `*`(cos(theta__3))), `*`(`^`(sin(theta__3), 2), `*`(`+`(`-`(cos(theta__1)), 1)))))), `*`..." align="center" border="0"><br><img src="images/Homework2_StefanoTonini248413_87.gif" width="728" height="42" alt="{`+`(`-`(`/`(`*`(294.30, `*`(`+`(`*`(`+`(`-`(cos(theta__1)), 1), `*`(`^`(cos(theta__3), 2))), `*`(`+`(1, s__3), `*`(cos(theta__3))), `*`(`^`(sin(theta__3), 2), `*`(`+`(`-`(cos(theta__1)), 1)))))), `*`..." align="center" border="0"><br><img src="images/Homework2_StefanoTonini248413_88.gif" width="728" height="40" alt="{`+`(`-`(`/`(`*`(294.30, `*`(`+`(`*`(`+`(`-`(cos(theta__1)), 1), `*`(`^`(cos(theta__3), 2))), `*`(`+`(1, s__3), `*`(cos(theta__3))), `*`(`^`(sin(theta__3), 2), `*`(`+`(`-`(cos(theta__1)), 1)))))), `*`..." align="center" border="0"><br><img src="images/Homework2_StefanoTonini248413_89.gif" width="728" height="40" alt="{`+`(`-`(`/`(`*`(294.30, `*`(`+`(`*`(`+`(`-`(cos(theta__1)), 1), `*`(`^`(cos(theta__3), 2))), `*`(`+`(1, s__3), `*`(cos(theta__3))), `*`(`^`(sin(theta__3), 2), `*`(`+`(`-`(cos(theta__1)), 1)))))), `*`..." align="center" border="0"><br><img src="images/Homework2_StefanoTonini248413_90.gif" width="728" height="40" alt="{`+`(`-`(`/`(`*`(294.30, `*`(`+`(`*`(`+`(`-`(cos(theta__1)), 1), `*`(`^`(cos(theta__3), 2))), `*`(`+`(1, s__3), `*`(cos(theta__3))), `*`(`^`(sin(theta__3), 2), `*`(`+`(`-`(cos(theta__1)), 1)))))), `*`..." align="center" border="0"></td>
+<td width='5%' align='center'>(4.10)</td>
+</tr>
+</table></font>&nbsp;</p>
+<p align="left"><font color="#ff9900" size="3" face="DejaVu Sans"><strong><em>Equilibrium conditions of the mechanical system</em></strong></font>&nbsp;</p>
+<p align="left"><table>
+<tr>
+<td valign="top" align="center"><font color="#2f48a8" size="3" face="DejaVu Sans Mono"><strong>&gt; </strong></font></td>
+<td valign="top"><font color="#2f48a8" size="3" face="DejaVu Sans Mono"><strong>sol_fs := fsolve(subs(data,PVW__eqns),PVW__vars,{s__2=-1..1,s__3=-1..1,theta__1=-Pi..0,theta__2=-Pi..0, theta__3=-Pi..0});</td>
+</tr>
+</table></strong></font>&nbsp;</p>
+<p align="center"><table width='100%'>
+<tr>
+<td valign="top" align="center"><font color="#0000ff" size="3" face="Times New Roman"><img src="images/Homework2_StefanoTonini248413_91.gif" width="728" height="24" alt="Typesetting:-mprintslash([sol_fs := {s__2 = 0.3923999840e-2, s__3 = 0.2942999986e-2, theta__1 = -1.570793602, theta__2 = -1.570785943, theta__3 = -1.570797927}], [{s__2 = 0.3923999840e-2, s__3 = 0.294..." align="center" border="0"></td>
+<td width='5%' align='center'>(4.11)</td>
+</tr>
+</table></font>&nbsp;</p>
+<dl style="margin-left:40px"><a href="Homework2_StefanoTonini2484137.html" target="Content"><p align="left"><font color="#c00000" size="5" face="DejaVu Sans"><strong>System analysis </strong></font>&nbsp;</p>
+</a></dl>
+</dl>
+
+</html>

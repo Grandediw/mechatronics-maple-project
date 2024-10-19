@@ -1,0 +1,510 @@
+<html>
+<head>
+<meta http-equiv="content-type" content="text/html; charset=utf-8">
+<title>Homework2_StefanoTonini2484133.html</title>
+<!-- Created by Maple 2024.0, Mac OS X -->
+</head>
+<dl style="margin-left:40px"><a name="MapleAutoBookmark3" />
+<p align="left"><font color="#c00000" size="5" face="DejaVu Sans"><strong>List of MBD procedures</strong></font>&nbsp;</p>
+<dl style="margin-left:40px"><a name="MapleAutoBookmark4" />
+<p align="left"><font color="#ff6600" size="4" face="DejaVu Sans"><strong>Primary rotation matrices and kinematic procedures</strong></font>&nbsp;</p>
+<p align="left"><font color="#000000" size="3" face="DejaVu Sans">Primary axes rotation matrices</font>&nbsp;</p>
+<p align="left"><font color="#000000" size="3" face="Times New Roman"><em>Rotation matrix around x axis</em></font>&nbsp;</p>
+<p align="left"><table>
+<tr>
+<td valign="top" align="center"><font color="#2f48a8" size="3" face="DejaVu Sans Mono"><strong>&gt; </strong></font></td>
+<td valign="top"><font color="#2f48a8" size="3" face="DejaVu Sans Mono"><strong>Rx := theta -&gt; &lt;&lt;1,0,0&gt;|&lt;0,cos(theta),sin(theta)&gt;|&lt;0,-sin(theta),cos(theta)&gt;&gt;:
+<br>Rx(alpha);</td>
+</tr>
+</table></strong></font>&nbsp;</p>
+<p align="center"><table width='100%'>
+<tr>
+<td valign="top" align="center"><font color="#0000ff" size="3" face="Times New Roman"><img src="images/Homework2_StefanoTonini248413_4.gif" width="185" height="87" alt="rtable(1 .. 3, 1 .. 3, [[1, 0, 0], [0, cos(alpha), `+`(`-`(sin(alpha)))], [0, sin(alpha), cos(alpha)]], subtype = Matrix); "_noterminate" align="center" border="0"></td>
+<td width='5%' align='center'>(2.1.1)</td>
+</tr>
+</table></font>&nbsp;</p>
+<p align="left"><font color="#000000" size="3" face="Times New Roman"><em>Rotation matrix around y-axis</em></font>&nbsp;</p>
+<p align="left"><table>
+<tr>
+<td valign="top" align="center"><font color="#2f48a8" size="3" face="DejaVu Sans Mono"><strong>&gt; </strong></font></td>
+<td valign="top"><font color="#2f48a8" size="3" face="DejaVu Sans Mono"><strong>Ry := theta -&gt; &lt;&lt;cos(theta),0,-sin(theta)&gt;|&lt;0,1,0&gt;|&lt;sin(theta),0,cos(theta)&gt;&gt;:
+<br>Ry(beta);</td>
+</tr>
+</table></strong></font>&nbsp;</p>
+<p align="center"><table width='100%'>
+<tr>
+<td valign="top" align="center"><font color="#0000ff" size="3" face="Times New Roman"><img src="images/Homework2_StefanoTonini248413_5.gif" width="182" height="87" alt="rtable(1 .. 3, 1 .. 3, [[cos(beta), 0, sin(beta)], [0, 1, 0], [`+`(`-`(sin(beta))), 0, cos(beta)]], subtype = Matrix); "_noterminate" align="center" border="0"></td>
+<td width='5%' align='center'>(2.1.2)</td>
+</tr>
+</table></font>&nbsp;</p>
+<p align="left"><font color="#000000" size="3" face="Times New Roman"><em>Rotation matrix around the z-axis</em></font>&nbsp;</p>
+<p align="left"><table>
+<tr>
+<td valign="top" align="center"><font color="#2f48a8" size="3" face="DejaVu Sans Mono"><strong>&gt; </strong></font></td>
+<td valign="top"><font color="#2f48a8" size="3" face="DejaVu Sans Mono"><strong>Rz := theta -&gt; &lt;&lt;cos(theta),sin(theta),0&gt;|&lt;-sin(theta),cos(theta),0&gt;|&lt;0,0,1&gt;&gt;:
+<br>Rz(gamma);</td>
+</tr>
+</table></strong></font>&nbsp;</p>
+<p align="center"><table width='100%'>
+<tr>
+<td valign="top" align="center"><font color="#0000ff" size="3" face="Times New Roman"><img src="images/Homework2_StefanoTonini248413_6.gif" width="177" height="87" alt="rtable(1 .. 3, 1 .. 3, [[cos(gamma), `+`(`-`(sin(gamma))), 0], [sin(gamma), cos(gamma), 0], [0, 0, 1]], subtype = Matrix); "_noterminate" align="center" border="0"></td>
+<td width='5%' align='center'>(2.1.3)</td>
+</tr>
+</table></font>&nbsp;</p>
+<p align="left"><font color="#000000" size="3" face="Times New Roman"><em>Transformation matrix</em></font>&nbsp;</p>
+<p align="left"><font color="#000000" size="3" face="DejaVu Sans">Create the transformation matrix given the rotation matrix and tre origin of the frame</font>&nbsp;</p>
+<p align="left"><table>
+<tr>
+<td valign="top" align="center"><font color="#2f48a8" size="3" face="DejaVu Sans Mono"><strong>&gt; </strong></font></td>
+<td valign="top"><font color="#2f48a8" size="3" face="DejaVu Sans Mono"><strong>TM := proc(R::Matrix(3,3),P::{Vector(3),list},$)
+<br> &nbsp;local tmp;
+<br> &nbsp;if type(P,'list') then 
+<br> &nbsp;&nbsp;&nbsp;if nops(P) &lt;&gt; 3 then 
+<br> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;error "Error: expected dimension for %1 is 3", P;
+<br> &nbsp;&nbsp;&nbsp;end ;
+<br> &nbsp;end;
+<br> &nbsp;tmp := &lt;R|convert(P,Vector)&gt;;
+<br> &nbsp;&lt;tmp,Transpose(&lt;0,0,0,1&gt;)&gt;;
+<br>
+<br>end:
+<br></td>
+</tr>
+</table></strong></font>&nbsp;</p>
+<p align="left"><table>
+<tr>
+<td valign="top" align="center"><font color="#2f48a8" size="3" face="DejaVu Sans Mono"><strong>&gt; </strong></font></td>
+<td valign="top"><font color="#2f48a8" size="3" face="DejaVu Sans Mono"><strong>TM(Rx(alpha),[x,y,z]),
+<br>TM(Rx(alpha),&lt;x,y,z&gt;);</td>
+</tr>
+</table></strong></font>&nbsp;</p>
+<p align="center"><table width='100%'>
+<tr>
+<td valign="top" align="center"><font color="#0000ff" size="3" face="Times New Roman"><img src="images/Homework2_StefanoTonini248413_7.gif" width="406" height="113" alt="Typesetting:-mprintslash([Matrix(4, 4, {(1, 1) = Typesetting:-mn("1"), (1, 2) = Typesetting:-mn("0"), (1, 3) = Typesetting:-mn("0"), (1, 4) = Typesetting:-mi("x"), (2, 1) = Typesetting:-mn("0"), (2, 2..." align="center" border="0"></td>
+<td width='5%' align='center'>(2.1.4)</td>
+</tr>
+</table></font>&nbsp;</p>
+<p align="left"><font color="#000000" size="3" face="DejaVu Sans">Compute the inverse of the Transformation Matrix</font>&nbsp;</p>
+<p align="left"><table>
+<tr>
+<td valign="top" align="center"><font color="#2f48a8" size="3" face="DejaVu Sans Mono"><strong>&gt; </strong></font></td>
+<td valign="top"><font color="#2f48a8" size="3" face="DejaVu Sans Mono"><strong>invTM := proc(TM::Matrix(4,4),$)
+<br> &nbsp;local R,P,tmp;
+<br>
+<br> &nbsp;R := TM[1..3,1..3];
+<br> &nbsp;P := TM[1..3,4];
+<br> &nbsp;tmp := &lt;Transpose(R)|-R.P&gt;;
+<br> &nbsp;&lt;tmp,Transpose(&lt;0,0,0,1&gt;)&gt;;
+<br>
+<br>end proc:</td>
+</tr>
+</table></strong></font>&nbsp;</p>
+<p align="left"><font color="#ff9900" size="3" face="DejaVu Sans"><strong><em>Compute derivative of vector or of a list w.r.t. to a symbol or a function</em></strong></font>&nbsp;</p>
+<p align="left"><table>
+<tr>
+<td valign="top" align="center"><font color="#2f48a8" size="3" face="DejaVu Sans Mono"><strong>&gt; </strong></font></td>
+<td valign="top"><font color="#2f48a8" size="3" face="DejaVu Sans Mono"><strong>diffF := proc(v::{algebraic,list,Vector,Matrix},x::{symbol,function},$)
+<br> &nbsp;&nbsp;local ss,xx, tmp;
+<br> &nbsp;&nbsp;if type(x,function) then 
+<br> &nbsp;&nbsp;&nbsp;&nbsp;ss := x = xx ;
+<br> &nbsp;&nbsp;&nbsp;&nbsp;tmp := subs( ss, v):
+<br> &nbsp;&nbsp;&nbsp;&nbsp;subs( xx = x, map(e-&gt;diff(e,xx),tmp));
+<br> &nbsp;&nbsp;else
+<br> &nbsp;&nbsp;&nbsp;&nbsp;map(e-&gt;diff(e,x),v);
+<br> &nbsp;&nbsp;end;
+<br>
+<br>end proc:
+<br></td>
+</tr>
+</table></strong></font>&nbsp;</p>
+<p align="left"><table>
+<tr>
+<td valign="top" align="center"><font color="#2f48a8" size="3" face="DejaVu Sans Mono"><strong>&gt; </strong></font></td>
+<td valign="top"><font color="#2f48a8" size="3" face="DejaVu Sans Mono"><strong>diffF([x(t)^2+1],x(t))</td>
+</tr>
+</table></strong></font>&nbsp;</p>
+<p align="center"><table width='100%'>
+<tr>
+<td valign="top" align="center"><font color="#0000ff" size="3" face="Times New Roman"><img src="images/Homework2_StefanoTonini248413_8.gif" width="65" height="18" alt="[`+`(`*`(2, `*`(x(t))))]" align="center" border="0"></td>
+<td width='5%' align='center'>(2.1.5)</td>
+</tr>
+</table></font>&nbsp;</p>
+<p align="left"><table>
+<tr>
+<td valign="top" align="center"><font color="#2f48a8" size="3" face="DejaVu Sans Mono"><strong>&gt; </strong></font></td>
+<td valign="top"><font color="#2f48a8" size="3" face="DejaVu Sans Mono"><strong>jacobianF := proc(L::{list,Vector},x::list,$)
+<br> &nbsp;local i,j;
+<br> &nbsp;convert([seq([seq(diffF(L[i],x[j]),j=1..nops(x))],i=1..nops(L))],Matrix);
+<br>
+<br>end proc:</td>
+</tr>
+</table></strong></font>&nbsp;</p>
+<p align="left"><table>
+<tr>
+<td valign="top" align="center"><font color="#2f48a8" size="3" face="DejaVu Sans Mono"><strong>&gt; </strong></font></td>
+<td valign="top"><font color="#2f48a8" size="3" face="DejaVu Sans Mono"><strong>velocity := proc(v::{Vector},$)
+<br>
+<br> &nbsp;diffF(v,t);
+<br>
+<br>end:</td>
+</tr>
+</table></strong></font>&nbsp;</p>
+<p align="left"><font color="#ff9900" size="3" face="DejaVu Sans"><strong><em>Extract components of a vector</em></strong></font>&nbsp;</p>
+<p align="left"><table>
+<tr>
+<td valign="top" align="center"><font color="#2f48a8" size="3" face="DejaVu Sans Mono"><strong>&gt; </strong></font></td>
+<td valign="top"><font color="#2f48a8" size="3" face="DejaVu Sans Mono"><strong>comps_XYZ := proc(v::{Vector(3),list(3)})
+<br>
+<br> &nbsp;local i;
+<br>
+<br> &nbsp;seq(v[i],i=1..3);
+<br> 
+<br>
+<br>end proc:
+<br>
+<br>comps_XY := proc(v::{Vector(3),list(3)})
+<br>
+<br> &nbsp;local i;
+<br>
+<br> &nbsp;seq(v[i],i=1..2);
+<br> 
+<br>
+<br>end proc:</td>
+</tr>
+</table></strong></font>&nbsp;</p>
+<p align="left"><font color="#ff9900" size="3" face="DejaVu Sans"><strong><em>
+<br>Angular velocity</em></strong></font>&nbsp;</p>
+<p align="left"><table>
+<tr>
+<td valign="top" align="center"><font color="#2f48a8" size="3" face="DejaVu Sans Mono"><strong>&gt; </strong></font></td>
+<td valign="top"><font color="#2f48a8" size="3" face="DejaVu Sans Mono"><strong>angularVelocity := proc(R::Matrix(3,3),$)
+<br> &nbsp;local skew_ang,ang_vel;
+<br>
+<br> &nbsp;skew_ang := simplify(Transpose(R).map(diff,R,t)):
+<br> &nbsp;ang_vel := &lt;skew_ang[3,2],skew_ang[1,3],skew_ang[2,1]&gt;;
+<br> &nbsp;</strong></font><font color="#c0c0c0" size="3" face="DejaVu Sans Mono"><strong># skew_ang,ang_vel;</strong></font><font color="#2f48a8" size="3" face="DejaVu Sans Mono"><strong>
+<br> &nbsp;ang_vel;
+<br>
+<br>end:</td>
+</tr>
+</table></strong></font>&nbsp;</p>
+<p align="left"><font color="#000000" size="3" face="DejaVu Sans">
+<br>Skew matrix of rotation axis</font>&nbsp;</p>
+<p align="left"><table>
+<tr>
+<td valign="top" align="center"><font color="#2f48a8" size="3" face="DejaVu Sans Mono"><strong>&gt; </strong></font></td>
+<td valign="top"><font color="#2f48a8" size="3" face="DejaVu Sans Mono"><strong>SkewMat := proc(v::{Vector,list},$)
+<br>
+<br>local vv,f;
+<br>
+<br>f := (x,y,z)-&gt;&lt;&lt;0,z,-y&gt;|&lt;-z,0,x&gt;|&lt;y,-x,0&gt;&gt;;
+<br>
+<br> f(v[1],v[2],v[3]);
+<br>
+<br>end:</td>
+</tr>
+</table></strong></font>&nbsp;</p>
+<p align="left"><table>
+<tr>
+<td valign="top" align="center"><font color="#2f48a8" size="3" face="DejaVu Sans Mono"><strong>&gt; </strong></font></td>
+<td valign="top"><font color="#2f48a8" size="3" face="DejaVu Sans Mono"><strong>Skew := SkewMat(&lt;n__x,n__y,n__z&gt;);</td>
+</tr>
+</table></strong></font>&nbsp;</p>
+<p align="center"><table width='100%'>
+<tr>
+<td valign="top" align="center"><font color="#0000ff" size="3" face="Times New Roman"><img src="images/Homework2_StefanoTonini248413_9.gif" width="208" height="94" alt="rtable(1 .. 3, 1 .. 3, [[0, `+`(`-`(n__z)), n__y], [n__z, 0, `+`(`-`(n__x))], [`+`(`-`(n__y)), n__x, 0]], subtype = Matrix); "_noterminate" align="center" border="0"></td>
+<td width='5%' align='center'>(2.1.6)</td>
+</tr>
+</table></font>&nbsp;</p>
+<p align="left"><table>
+<tr>
+<td valign="top" align="center"><font color="#2f48a8" size="3" face="DejaVu Sans Mono"><strong>&gt; </strong></font></td>
+<td valign="top"><font color="#2f48a8" size="3" face="DejaVu Sans Mono"><strong>angularVelocity(Rz(theta(t)).Rx(alpha(t)))</td>
+</tr>
+</table></strong></font>&nbsp;</p>
+<p align="center"><table width='100%'>
+<tr>
+<td valign="top" align="center"><font color="#0000ff" size="3" face="Times New Roman"><img src="images/Homework2_StefanoTonini248413_10.gif" width="188" height="144" alt="rtable(1 .. 3, [diff(alpha(t), t), `*`(diff(theta(t), t), `*`(sin(alpha(t)))), `*`(diff(theta(t), t), `*`(cos(alpha(t))))], subtype = Vector[column]); "_noterminate" align="center" border="0"></td>
+<td width='5%' align='center'>(2.1.7)</td>
+</tr>
+</table></font>&nbsp;</p>
+<p align="left"><font color="#ff9900" size="3" face="DejaVu Sans"><strong><em>Cross product</em></strong></font>&nbsp;</p>
+<p align="left"><table>
+<tr>
+<td valign="top" align="center"><font color="#2f48a8" size="3" face="DejaVu Sans Mono"><strong>&gt; </strong></font></td>
+<td valign="top"><font color="#2f48a8" size="3" face="DejaVu Sans Mono"><strong>crossProduct := proc(v1::{Vector,list},v2::{Vector,list},$)
+<br>
+<br> &nbsp;SkewMat(v1).convert(v2,Vector);
+<br>
+<br>end;</td>
+</tr>
+</table></strong></font>&nbsp;</p>
+<p align="center"><table width='100%'>
+<tr>
+<td valign="top" align="center"><font color="#0000ff" size="3" face="Times New Roman"><img src="images/Homework2_StefanoTonini248413_11.gif" width="688" height="17" alt="Typesetting:-mprintslash([crossProduct := proc (v1::{Vector, list}, v2::{Vector, list}, ` $`) `.`(SkewMat(v1), convert(v2, Vector)) end proc], [proc (v1::{Vector, list}, v2::{Vector, list}, ` $`) `.`(..." align="center" border="0"></td>
+<td width='5%' align='center'>(2.1.8)</td>
+</tr>
+</table></font>&nbsp;</p>
+<p align="left"><font color="#000000" size="3" face="DejaVu Sans">Dot product</font>&nbsp;</p>
+<p align="left"><table>
+<tr>
+<td valign="top" align="center"><font color="#2f48a8" size="3" face="DejaVu Sans Mono"><strong>&gt; </strong></font></td>
+<td valign="top"><font color="#2f48a8" size="3" face="DejaVu Sans Mono"><strong>dotProduct := proc(v1::{Vector},v2::{Vector},$)
+<br>
+<br> &nbsp;Transpose(v1).v2;
+<br>
+<br>end;</td>
+</tr>
+</table></strong></font>&nbsp;</p>
+<p align="center"><table width='100%'>
+<tr>
+<td valign="top" align="center"><font color="#0000ff" size="3" face="Times New Roman"><img src="images/Homework2_StefanoTonini248413_12.gif" width="656" height="18" alt="Typesetting:-mprintslash([dotProduct := proc (v1::{Vector}, v2::{Vector}, ` $`) `.`(LinearAlgebra:-Transpose(v1), v2) end proc], [proc (v1::{Vector}, v2::{Vector}, ` $`) `.`(LinearAlgebra:-Transpose(v..." align="center" border="0"></td>
+<td width='5%' align='center'>(2.1.9)</td>
+</tr>
+</table></font>&nbsp;</p>
+</dl>
+<dl style="margin-left:40px"><a name="MapleAutoBookmark5" />
+<p align="left"><font color="#ff6600" size="4" face="DejaVu Sans"><strong>Procedures to visualise 3D objects</strong></font>&nbsp;</p>
+<p align="left"><font color="#000000" size="3" face="DejaVu Sans">Procedure to display a frame as three cylindrical arrows</font>&nbsp;</p>
+<p align="left"><table>
+<tr>
+<td valign="top" align="center"><font color="#2f48a8" size="3" face="DejaVu Sans Mono"><strong>&gt; </strong></font></td>
+<td valign="top"><font color="#2f48a8" size="3" face="DejaVu Sans Mono"><strong>draw_vec := proc(p::Vector(3),v::Vector(3),sf::scalar:=1,col::string:="DeepPink",$)
+<br>
+<br> &nbsp;&nbsp;#local ;
+<br> &nbsp;&nbsp;</strong></font><font color="#993366" size="3" face="DejaVu Sans Mono"><strong># </strong></font><font color="#2f48a8" size="3" face="DejaVu Sans Mono"><strong>
+<br> &nbsp;&nbsp;display(plots:-arrow(p,sf*v,color=col, shape=cylindrical_arrow),
+<br> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;scaling=constrained); &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+<br>
+<br>
+<br>end:</td>
+</tr>
+</table></strong></font>&nbsp;</p>
+<p align="left"><font color="#000000" size="3" face="DejaVu Sans">
+<br>Procedure to display a frame as three cylindrical arrows</font>&nbsp;</p>
+<p align="left"><table>
+<tr>
+<td valign="top" align="center"><font color="#2f48a8" size="3" face="DejaVu Sans Mono"><strong>&gt; </strong></font></td>
+<td valign="top"><font color="#2f48a8" size="3" face="DejaVu Sans Mono"><strong>draw_frame := proc(R::Matrix(4,4),sf::scalar:=1,$)
+<br>
+<br> &nbsp;&nbsp;local p0,i1, j1, k1;
+<br> &nbsp;&nbsp;</strong></font><font color="#993366" size="3" face="DejaVu Sans Mono"><strong># extract unit vectors from rotatin matrix
+<br> &nbsp;&nbsp;</strong></font><font color="#2f48a8" size="3" face="DejaVu Sans Mono"><strong>
+<br> &nbsp;&nbsp;p0 := convert(R[1..-2,4],list);
+<br> &nbsp;&nbsp;i1 := R[1..-2,1];
+<br> &nbsp;&nbsp;j1 := R[1..-2,2];
+<br> &nbsp;&nbsp;k1 := R[1..-2,3];
+<br>
+<br> &nbsp;&nbsp;display(plots:-arrow(p0,sf*i1,color="Red", &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;shape=cylindrical_arrow),
+<br> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;plots:-arrow(p0,sf*j1,color="LimeGreen",shape=cylindrical_arrow),
+<br> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;plots:-arrow(p0,sf*k1,color="Blue", &nbsp;&nbsp;&nbsp;&nbsp;shape=cylindrical_arrow),
+<br> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;plottools:-sphere(p0,0.05*sf,color="Goldenrod"),
+<br> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;scaling=constrained); &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+<br>
+<br>
+<br>end:</td>
+</tr>
+</table></strong></font>&nbsp;</p>
+<p align="left"><font color="#000000" size="3" face="DejaVu Sans">
+<br>Procedure to rotate a body given a rotation matrix</font>&nbsp;</p>
+<p align="left"><table>
+<tr>
+<td valign="top" align="center"><font color="#2f48a8" size="3" face="DejaVu Sans Mono"><strong>&gt; </strong></font></td>
+<td valign="top"><font color="#2f48a8" size="3" face="DejaVu Sans Mono"><strong>rotate_translate_body := proc(obj, R::Matrix(4,4),sf::scalar:=1,$)
+<br>
+<br> &nbsp;&nbsp;local f, ff, FF,obj_new,FONT_TYPE,FONT_SIZE_LAB,FONT_SIZE_TIT;
+<br>
+<br> &nbsp;&nbsp;FONT_TYPE := "Helvetica"; FONT_SIZE_LAB := 16; FONT_SIZE_TIT := 18;
+<br> &nbsp;&nbsp;</strong></font><font color="#993366" size="3" face="DejaVu Sans Mono"><strong># ccompute the projection of the coordinates of a point &lt;x,y,z&gt;, 
+<br> &nbsp;&nbsp;# or rotate the coordinates of a point of a body &nbsp;&nbsp;</strong></font><font color="#2f48a8" size="3" face="DejaVu Sans Mono"><strong>
+<br> &nbsp;&nbsp;FF := evalf(convert(R.&lt;x,y,z,1&gt;,list)):
+<br> &nbsp;&nbsp;</strong></font><font color="#993366" size="3" face="DejaVu Sans Mono"><strong># create a function to apply rotation to a point &lt;x,y,z&gt; &nbsp;</strong></font><font color="#2f48a8" size="3" face="DejaVu Sans Mono"><strong>
+<br> &nbsp;&nbsp;ff := unapply(FF[1..3],[x,y,z]): 
+<br> &nbsp;&nbsp;</strong></font><font color="#993366" size="3" face="DejaVu Sans Mono"><strong># create a transformation rule to apply to points of an Maple graphical object
+<br></strong></font><font color="#2f48a8" size="3" face="DejaVu Sans Mono"><strong> &nbsp;&nbsp;f:= plottools[transform]((x,y,z)-&gt;ff(x,y,z)):
+<br> &nbsp;&nbsp;
+<br> &nbsp;&nbsp;obj_new := f(obj); </strong></font><font color="#993366" size="3" face="DejaVu Sans Mono"><strong>#apply transformation to graphical object
+<br> &nbsp;&nbsp;
+<br> &nbsp;&nbsp;# show the object</strong></font><font color="#2f48a8" size="3" face="DejaVu Sans Mono"><strong>
+<br> &nbsp;&nbsp;display(obj_new,scaling=constrained,
+<br> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;labelfont &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;= [FONT_TYPE,FONT_SIZE_LAB], 
+<br> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;axesfont &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;= [FONT_TYPE,FONT_SIZE_LAB], 
+<br> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;titlefont &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;= [FONT_TYPE,</strong></font><font color="#1352ba" size="3" face="Menlo"><strong>bold</strong></font><font color="#2f48a8" size="3" face="DejaVu Sans Mono"><strong>,FONT_SIZE_TIT]); &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+<br>
+<br>
+<br>end:</td>
+</tr>
+</table></strong></font>&nbsp;</p>
+</dl>
+<dl style="margin-left:40px"><a name="MapleAutoBookmark6" />
+<p align="left"><font color="#ff6600" size="4" face="DejaVu Sans"><strong>Lagrange Equations</strong></font>&nbsp;</p>
+<p align="left"><font color="#ff9900" size="3" face="DejaVu Sans"><strong><em>Kinetic energy</em></strong></font>&nbsp;</p>
+<p align="left"><font color="#000000" size="3" face="DejaVu Sans">Input:</font>&nbsp;</p>
+<p align="left"><ul><li><font color="#000000" size="3" face="DejaVu Sans">G is the position of CoM in absolute reference frame</font></li></ul>&nbsp;</p>
+<p align="left"><ul><li><font color="#000000" size="3" face="DejaVu Sans">T is the body rotation matrix of reference frame</font></li></ul>&nbsp;</p>
+<p align="left"><ul><li><font color="#000000" size="3" face="DejaVu Sans">Ix, Iy, etc: are inertia tensor element in body fixed frame</font></li></ul>&nbsp;</p>
+<p align="left"><font color="#000000" size="3" face="DejaVu Sans"></font>&nbsp;</p>
+<p align="left"><table>
+<tr>
+<td valign="top" align="center"><font color="#2f48a8" size="3" face="DejaVu Sans Mono"><strong>&gt; </strong></font></td>
+<td valign="top"><font color="#2f48a8" size="3" face="DejaVu Sans Mono"><strong>kineticEnergy := proc(m::scalar, G::Vector(3), T::Matrix(3,3), Ix::scalar,Iy::scalar,Iz::scalar, Ixy::scalar,Ixz::scalar,Iyz::scalar, $)
+<br> &nbsp;&nbsp;local &nbsp;VG,KET, gx,gy,gz,KER, Itensor, omega;
+<br> &nbsp;&nbsp;Itensor := &lt;&lt;Ix,-Ixy,-Ixz&gt;|&lt;-Ixy,Iy,-Iyz&gt;|&lt;-Ixz,-Iyz,Iz&gt;&gt;; print(%);
+<br> &nbsp;&nbsp;</strong></font><font color="#993366" size="3" face="DejaVu Sans Mono"><strong># kinetic energy due to translation motion - - - - - </strong></font><font color="#2f48a8" size="3" face="DejaVu Sans Mono"><strong>
+<br> &nbsp;&nbsp;VG &nbsp;:= velocity(G); 
+<br> &nbsp;&nbsp;KET := 1/2*m*dotProduct(VG,VG): </strong></font><font color="#993366" size="3" face="DejaVu Sans Mono"><strong>#when VG is linear, KET is quadratic &nbsp;</strong></font><font color="#2f48a8" size="3" face="DejaVu Sans Mono"><strong>
+<br> &nbsp;&nbsp;</strong></font><font color="#993366" size="3" face="DejaVu Sans Mono"><strong>#kinetic energy due to rotation motion - - - - - - - 
+<br></strong></font><font color="#2f48a8" size="3" face="DejaVu Sans Mono"><strong> &nbsp;&nbsp;omega := angularVelocity(T); &nbsp;</strong></font><font color="#993366" size="3" face="DejaVu Sans Mono"><strong>#angular velocity with respect to the moving frame
+<br> &nbsp;&nbsp;</strong></font><font color="#2f48a8" size="3" face="DejaVu Sans Mono"><strong>KER := 1/2 *Transpose(omega).Itensor.omega;
+<br> &nbsp;&nbsp;if has(KER,{sin,cos}) then KER := simplify(KER,trig): end if:
+<br> &nbsp;&nbsp;</strong></font><font color="#993366" size="3" face="DejaVu Sans Mono"><strong># total energy - - - - - - - - - - - - - - - - - - -
+<br></strong></font><font color="#2f48a8" size="3" face="DejaVu Sans Mono"><strong> &nbsp;&nbsp;KET + KER;
+<br>end proc:</td>
+</tr>
+</table></strong></font>&nbsp;</p>
+<p align="left"><font color="#ff6600" size="4" face="DejaVu Sans"><strong>
+<br>Potential energy</strong></font>&nbsp;</p>
+<p align="left"><font color="#000000" size="3" face="DejaVu Sans">Compute the gravitational energy of a multibody system by evaluating the force field associated to the &lt;_gravity&gt; acceleration. "</font>&nbsp;</p>
+<p align="left"><table>
+<tr>
+<td valign="top" align="center"><font color="#2f48a8" size="3" face="DejaVu Sans Mono"><strong>&gt; </strong></font></td>
+<td valign="top"><font color="#2f48a8" size="3" face="DejaVu Sans Mono"><strong>gravitationalEnergy := proc(m::scalar, G::Vector(3), gravityVec::Vector(3), $)
+<br> &nbsp;&nbsp;local &nbsp;VG,KET, gx,gy,gz,KER, Itensor, omega;
+<br> &nbsp;&nbsp;-m*dotProduct(G,gravityVec);
+<br> &nbsp;&nbsp;end proc:</td>
+</tr>
+</table></strong></font>&nbsp;</p>
+<p align="left"><font color="#ff6600" size="4" face="DejaVu Sans"><strong>
+<br>Generalised forces and torques</strong></font>&nbsp;</p>
+<p align="left"><table>
+<tr>
+<td valign="top" align="center"><font color="#2f48a8" size="3" face="DejaVu Sans Mono"><strong>&gt; </strong></font></td>
+<td valign="top"><font color="#2f48a8" size="3" face="DejaVu Sans Mono"><strong>generalisedTorques := proc(R::Matrix(3,3),T::Vector(3), q::list,$)
+<br>
+<br> &nbsp;&nbsp;local i, Q_gen, dRdq,dOmega, &nbsp;Tb;
+<br>
+<br> &nbsp;&nbsp;&nbsp;Q_gen := Vector(1..nops(q),[]);
+<br> &nbsp;&nbsp;&nbsp;Tb := Transpose(R).T; </strong></font><font color="#993366" size="3" face="DejaVu Sans Mono"><strong># torque in moving frame</strong></font><font color="#2f48a8" size="3" face="DejaVu Sans Mono"><strong>
+<br>
+<br> &nbsp;&nbsp;&nbsp;for i from 1 to nops(q) do 
+<br> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;dRdq &nbsp;&nbsp;&nbsp;&nbsp;:= simplify(Transpose(R).diffF(R,q[i])):
+<br> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;dOmega &nbsp;&nbsp;:= &lt;dRdq[3,2],dRdq[1,3],dRdq[2,1]&gt;:
+<br> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Q_gen[i] := dotProduct(Tb,dOmega);
+<br> &nbsp;&nbsp;&nbsp;end do:
+<br>
+<br> &nbsp;&nbsp;&nbsp;Q_gen;
+<br>
+<br>end proc:</td>
+</tr>
+</table></strong></font>&nbsp;</p>
+<p align="left"><table>
+<tr>
+<td valign="top" align="center"><font color="#c0c0c0" size="3" face="DejaVu Sans Mono"><strong>&gt; </strong></font></td>
+<td valign="top"><font color="#c0c0c0" size="3" face="DejaVu Sans Mono"><strong>(*
+<br>RR := Rx(theta__x(t)).Ry(theta__y(t)).Rz(theta__z(t));
+<br>
+<br># virtual rotation matrix in moving frame
+<br>simplify(Transpose(RR).diffF(RR,theta__y(t)));[%[3,2],%[1,3],%[2,1]];
+<br>
+<br># virtual rotation matrix
+<br>simplify(Transpose(RR).diffF(RR,t),trig);
+<br>AA,bb := GenerateMatrix([%[1,3],%[1,2],%[2,1]],diff([theta__x(t),theta__y(t),theta__z(t)],t));
+<br>
+<br># Virtual displacement w.r.t. theta__y:
+<br>
+<br>
+<br>AA.&lt;0,1,0&gt;;
+<br>AA.&lt;0,1,0&gt;;
+<br>*)</td>
+</tr>
+</table></strong></font>&nbsp;</p>
+<p align="left"><table>
+<tr>
+<td valign="top" align="center"><font color="#2f48a8" size="3" face="DejaVu Sans Mono"><strong>&gt; </strong></font></td>
+<td valign="top"><font color="#2f48a8" size="3" face="DejaVu Sans Mono"><strong>generalisedForces := proc(P::Vector(3),F::Vector(3), q::list,$)
+<br>
+<br> &nbsp;&nbsp;local i, Q_gen, dPdq;
+<br>
+<br> &nbsp;&nbsp;Q_gen := Vector(1..nops(q),[]);
+<br> &nbsp;&nbsp;&nbsp;&nbsp;
+<br> &nbsp;&nbsp;&nbsp;for i from 1 to nops(q) do 
+<br> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;dPdq &nbsp;&nbsp;&nbsp;&nbsp;:= diffF(P,q[i]):
+<br> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Q_gen[i] := dotProduct(F,dPdq);
+<br> &nbsp;&nbsp;&nbsp;end do:
+<br> &nbsp;&nbsp;&nbsp;Q_gen;
+<br>
+<br>end proc:</td>
+</tr>
+</table></strong></font>&nbsp;</p>
+<p align="left"><table>
+<tr>
+<td valign="top" align="center"><font color="#2f48a8" size="3" face="DejaVu Sans Mono"><strong>&gt; </strong></font></td>
+<td valign="top"><font color="#2f48a8" size="3" face="DejaVu Sans Mono"><strong>#generalisedForces(&lt;x(t),y(t),0&gt;+Rz(theta(t)).&lt;Lx,Ly,0&gt;,&lt;Fx,Fy,0&gt;,[x(t),y(t),theta(t)]);</td>
+</tr>
+</table></strong></font>&nbsp;</p>
+<p align="left"><table>
+<tr>
+<td valign="top" align="center"><font color="#2f48a8" size="3" face="DejaVu Sans Mono"><strong>&gt; </strong></font></td>
+<td valign="top"><font color="#2f48a8" size="3" face="DejaVu Sans Mono"><strong>#generalisedTorques(Rz(theta(t)),&lt;Tx,Ty,Tz&gt;,[x(t),y(t),theta(t)]);</td>
+</tr>
+</table></strong></font>&nbsp;</p>
+<p align="left"><font color="#ff6600" size="4" face="DejaVu Sans"><strong>Lagrange equations</strong></font>&nbsp;</p>
+<p align="left"><table>
+<tr>
+<td valign="top" align="center"><font color="#2f48a8" size="3" face="DejaVu Sans Mono"><strong>&gt; </strong></font></td>
+<td valign="top"><font color="#2f48a8" size="3" face="DejaVu Sans Mono"><strong>lagrangeEquations := proc(L::scalar,Phi::list(algebraic),q::list(function))
+<br> &nbsp;&nbsp;#description "Lagrange equations d/dt(dL/dqdot)- dL/dq":
+<br>
+<br> &nbsp;&nbsp;local qdot, Leqns,i, JqL: &nbsp;
+<br> &nbsp;&nbsp;# - Qforce[i];
+<br> &nbsp;&nbsp;
+<br> &nbsp;&nbsp;if nops(Phi) &lt;&gt; 0 then 
+<br> &nbsp;&nbsp;&nbsp;&nbsp;JqL := Transpose(jacobianF(Phi,q)).&lt;seq(lambda__||i(t),i=1..nops(Phi))&gt;;
+<br> &nbsp;&nbsp;else
+<br> &nbsp;&nbsp;&nbsp;JqL := Vector(1..nops(q),fill=0);
+<br> &nbsp;&nbsp;&nbsp;end;
+<br> 
+<br> &nbsp;&nbsp;Leqns := Vector(1..nops(q),[]);
+<br> &nbsp;&nbsp;&nbsp;&nbsp;
+<br> &nbsp;&nbsp;&nbsp;for i from 1 to nops(q) do 
+<br> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;qdot := diff(q[i],t):
+<br> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Leqns[i]:= diff ( diffF(L,qdot), t) - diffF(L,q[i]);
+<br> &nbsp;&nbsp;&nbsp;end do:
+<br> &nbsp;&nbsp;&nbsp;Leqns-JqL;
+<br>end:</td>
+</tr>
+</table></strong></font>&nbsp;</p>
+<p align="left"><table>
+<tr>
+<td valign="top" align="center"><font color="#2f48a8" size="3" face="DejaVu Sans Mono"><strong>&gt; </strong></font></td>
+<td valign="top"><font color="#2f48a8" size="3" face="DejaVu Sans Mono"><strong>KE := kineticEnergy(m, &lt;x(t),y(t),z(t)&gt;,Rz(theta(t)),Ix,Iy,Iz, Ixy,Ixz,Iyz);
+<br>PE := gravitationalEnergy(m, &lt;x(t),y(t),z(t)&gt;,&lt;0,-g,0&gt;);</td>
+</tr>
+</table></strong></font>&nbsp;</p>
+<p align="center"><table width='100%'>
+<tr>
+<td valign="top" align="center"><font color="#0000ff" size="3" face="Times New Roman"><img src="images/Homework2_StefanoTonini248413_13.gif" width="169" height="82" alt="rtable(1 .. 3, 1 .. 3, [[Ix, `+`(`-`(Ixy)), `+`(`-`(Ixz))], [`+`(`-`(Ixy)), Iy, `+`(`-`(Iyz))], [`+`(`-`(Ixz)), `+`(`-`(Iyz)), Iz]], subtype = Matrix); "_noterminate" align="center" border="0"></td>
+</tr></font>&nbsp;</p>
+<p align="center"><tr>
+<td valign="top" align="center"><font color="#0000ff" size="3" face="Times New Roman"><img src="images/Homework2_StefanoTonini248413_14.gif" width="508" height="62" alt="Typesetting:-mprintslash([KE := `+`(`*`(`/`(1, 2), `*`(m, `*`(`+`(`*`(`^`(diff(x(t), t), 2)), `*`(`^`(diff(y(t), t), 2)), `*`(`^`(diff(z(t), t), 2)))))), `*`(`/`(1, 2), `*`(`^`(diff(theta(t), t), 2), ..." align="center" border="0"></td>
+</tr></font>&nbsp;</p>
+<p align="center"><tr>
+<td valign="top" align="center"><font color="#0000ff" size="3" face="Times New Roman"><img src="images/Homework2_StefanoTonini248413_15.gif" width="109" height="18" alt="Typesetting:-mprintslash([PE := `*`(m, `*`(y(t), `*`(g)))], [`*`(m, `*`(y(t), `*`(g)))])" align="center" border="0"></td>
+<td width='5%' align='center'>(2.3.1)</td>
+</tr>
+</table></font>&nbsp;</p>
+<p align="left"><table>
+<tr>
+<td valign="top" align="center"><font color="#2f48a8" size="3" face="DejaVu Sans Mono"><strong>&gt; </strong></font></td>
+<td valign="top"><font color="#2f48a8" size="3" face="DejaVu Sans Mono"><strong>lagrangeEquations(KE-PE,[],[x(t),y(t),z(t),theta(t)])</td>
+</tr>
+</table></strong></font>&nbsp;</p>
+<p align="center"><table width='100%'>
+<tr>
+<td valign="top" align="center"><font color="#0000ff" size="3" face="Times New Roman"><img src="images/Homework2_StefanoTonini248413_16.gif" width="179" height="212" alt="rtable(1 .. 4, [`*`(m, `*`(diff(diff(x(t), t), t))), `+`(`*`(m, `*`(diff(diff(y(t), t), t))), `*`(m, `*`(g))), `*`(m, `*`(diff(diff(z(t), t), t))), `*`(diff(diff(theta(t), t), t), `*`(Iz))], subtype =..." align="center" border="0"></td>
+<td width='5%' align='center'>(2.3.2)</td>
+</tr>
+</table></font>&nbsp;</p>
+</dl>
+</dl>
+
+</html>

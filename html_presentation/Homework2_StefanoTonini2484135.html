@@ -1,0 +1,124 @@
+<html>
+<head>
+<meta http-equiv="content-type" content="text/html; charset=utf-8">
+<title>Homework2_StefanoTonini2484135.html</title>
+<!-- Created by Maple 2024.0, Mac OS X -->
+</head>
+<dl style="margin-left:40px"><a name="MapleAutoBookmark8" />
+<p align="left"><font color="#ff6600" size="4" face="DejaVu Sans"><strong>Position and velocity analysis</strong></font>&nbsp;</p>
+<p align="left"><font color="#000000" size="3" face="DejaVu Sans">The mechanical system there has 5 generalized coordinates and 3 DOF. In this analysis theta2 and theta3 are chosen as dipendent variables while s2,s3 and theta1 are the independent.</font>&nbsp;</p>
+<p align="left"><table>
+<tr>
+<td valign="top" align="center"><font color="#2f48a8" size="3" face="DejaVu Sans Mono"><strong>&gt; </strong></font></td>
+<td valign="top"><font color="#2f48a8" size="3" face="DejaVu Sans Mono"><strong>Phi &nbsp;&nbsp;&nbsp;&nbsp;:= [Phi1,Phi2]: &lt;%&gt;;
+<br>q_vars &nbsp;:= [s__2(t),theta__1(t),s__3(t),theta__2(t),theta__3(t)];
+<br>qI_vars := [theta__1(t),s__2(t),s__3(t)];
+<br>qD_vars := [theta__2(t),theta__3(t)];
+<br></td>
+</tr>
+</table></strong></font>&nbsp;</p>
+<p align="center"><table width='100%'>
+<tr>
+<td valign="top" align="center"><font color="#0000ff" size="3" face="Times New Roman"><img src="images/Homework2_StefanoTonini248413_38.gif" width="728" height="63" alt="rtable(1 .. 2, [`+`(`*`(`^`(`+`(`-`(L), `-`(`*`(cos(theta__3(t)), `*`(L__s0))), `-`(`*`(cos(theta__3(t)), `*`(s__3(t)))), `*`(cos(theta__1(t)), `*`(L__s0))), 2)), `*`(`^`(`+`(`-`(`*`(sin(theta__3(t)),..." align="center" border="0"></td>
+</tr></font>&nbsp;</p>
+<p align="center"><tr>
+<td valign="top" align="center"><font color="#0000ff" size="3" face="Times New Roman"><img src="images/Homework2_StefanoTonini248413_39.gif" width="283" height="25" alt="Typesetting:-mprintslash([q_vars := [s__2(t), theta__1(t), s__3(t), theta__2(t), theta__3(t)]], [[s__2(t), theta__1(t), s__3(t), theta__2(t), theta__3(t)]])" align="center" border="0"></td>
+</tr></font>&nbsp;</p>
+<p align="center"><tr>
+<td valign="top" align="center"><font color="#0000ff" size="3" face="Times New Roman"><img src="images/Homework2_StefanoTonini248413_40.gif" width="208" height="25" alt="Typesetting:-mprintslash([qI_vars := [theta__1(t), s__2(t), s__3(t)]], [[theta__1(t), s__2(t), s__3(t)]])" align="center" border="0"></td>
+</tr></font>&nbsp;</p>
+<p align="center"><tr>
+<td valign="top" align="center"><font color="#0000ff" size="3" face="Times New Roman"><img src="images/Homework2_StefanoTonini248413_41.gif" width="179" height="25" alt="Typesetting:-mprintslash([qD_vars := [theta__2(t), theta__3(t)]], [[theta__2(t), theta__3(t)]])" align="center" border="0"></td>
+<td width='5%' align='center'>(3.1.1)</td>
+</tr>
+</table></font>&nbsp;</p>
+<p align="left"><font color="#ff9900" size="3" face="DejaVu Sans"><strong><em>Position analysis: analytical</em></strong></font>&nbsp;</p>
+<p align="left"><font color="#000000" size="3" face="DejaVu Sans">In this case the solution can be found analitically. The two solutions found correspond to the two mechanical system configurations.</font>&nbsp;</p>
+<p align="left"><table>
+<tr>
+<td valign="top" align="center"><font color="#2f48a8" size="3" face="DejaVu Sans Mono"><strong>&gt; </strong></font></td>
+<td valign="top"><font color="#2f48a8" size="3" face="DejaVu Sans Mono"><strong>sol_kine_all := solve(Phi,qD_vars,explicit=true):
+<br>nops(%);
+<br>
+<br>&lt;sol_kine_all[1]&gt;, &lt;sol_kine_all[2]&gt;;
+<br>
+<br></td>
+</tr>
+</table></strong></font>&nbsp;</p>
+<p align="center"><table width='100%'>
+<tr>
+<td valign="top" align="center"><font color="#0000ff" size="3" face="Times New Roman"><img src="images/Homework2_StefanoTonini248413_42.gif" width="21" height="18" alt="4" align="center" border="0"></td>
+</tr></font>&nbsp;</p>
+<p align="center"><tr>
+<td valign="top" align="center"><font color="#0000ff" size="3" face="Times New Roman"><img src="images/Homework2_StefanoTonini248413_43.gif" width="728" height="149" alt="Typesetting:-mprintslash([Vector(2, {(1) = Typesetting:-mrow(Typesetting:-mrow(Typesetting:-mi("theta__2"), Typesetting:-mo("&ApplyFunction;"), Typesetting:-mfenced(Typesetting:-mi("t"))), Typesetting..." align="center" border="0"></td>
+<td width='5%' align='center'>(3.1.2)</td>
+</tr>
+</table></font>&nbsp;</p>
+<p align="left"><font color="#ff9900" size="3" face="DejaVu Sans"><strong><em>Compute velocity ratios:</em></strong></font>&nbsp;</p>
+<p align="left"><font color="#000000" size="3" face="DejaVu Sans">Here we compute velocity ratios that are necessary for the virtual displacements</font>&nbsp;</p>
+<p align="left"><table>
+<tr>
+<td valign="top" align="center"><font color="#2f48a8" size="3" face="DejaVu Sans Mono"><strong>&gt; </strong></font></td>
+<td valign="top"><font color="#2f48a8" size="3" face="DejaVu Sans Mono"><strong>JPhi_qD := jacobianF(Phi,qD_vars);
+<br>JPhi_qI := jacobianF(Phi,qI_vars);
+<br>
+<br>taus := simplify( -MatrixInverse(JPhi_qD).JPhi_qI );
+<br>
+<br></strong></font><font color="#000000" size="3" face="DejaVu Sans">Velocities of dependent coordinates</font><font color="#2f48a8" size="3" face="DejaVu Sans Mono"><strong>
+<br>taus.&lt;diff(qI_vars,t)&gt;;
+<br>vel_qD_vars := [seq(diff(qD_vars[i],t)=%[i],i=1..nops(qD_vars))]:</td>
+</tr>
+</table></strong></font>&nbsp;</p>
+<p align="center"><table width='100%'>
+<tr>
+<td valign="top" align="center"><font color="#0000ff" size="3" face="Times New Roman"><img src="images/Homework2_StefanoTonini248413_44.gif" width="728" height="14" alt="rtable(1 .. 2, 1 .. 2, [[0, `+`(`*`(`+`(`-`(`*`(2, `*`(L))), `-`(`*`(2, `*`(cos(theta__3(t)), `*`(L__s0)))), `-`(`*`(2, `*`(cos(theta__3(t)), `*`(s__3(t))))), `*`(2, `*`(cos(theta__1(t)), `*`(L__s0)))..." align="center" border="0"><br><img src="images/Homework2_StefanoTonini248413_45.gif" width="728" height="53" alt="rtable(1 .. 2, 1 .. 2, [[0, `+`(`*`(`+`(`-`(`*`(2, `*`(L))), `-`(`*`(2, `*`(cos(theta__3(t)), `*`(L__s0)))), `-`(`*`(2, `*`(cos(theta__3(t)), `*`(s__3(t))))), `*`(2, `*`(cos(theta__1(t)), `*`(L__s0)))..." align="center" border="0"></td>
+</tr></font>&nbsp;</p>
+<p align="center"><tr>
+<td valign="top" align="center"><font color="#0000ff" size="3" face="Times New Roman"><img src="images/Homework2_StefanoTonini248413_46.gif" width="728" height="14" alt="rtable(1 .. 2, 1 .. 3, [[`+`(`-`(`*`(`+`(`-`(`*`(2, `*`(L))), `-`(`*`(2, `*`(cos(theta__3(t)), `*`(L__s0)))), `-`(`*`(2, `*`(cos(theta__3(t)), `*`(s__3(t))))), `*`(2, `*`(cos(theta__1(t)), `*`(L__s0))..." align="center" border="0"><br><img src="images/Homework2_StefanoTonini248413_47.gif" width="728" height="53" alt="rtable(1 .. 2, 1 .. 3, [[`+`(`-`(`*`(`+`(`-`(`*`(2, `*`(L))), `-`(`*`(2, `*`(cos(theta__3(t)), `*`(L__s0)))), `-`(`*`(2, `*`(cos(theta__3(t)), `*`(s__3(t))))), `*`(2, `*`(cos(theta__1(t)), `*`(L__s0))..." align="center" border="0"></td>
+</tr></font>&nbsp;</p>
+<p align="center"><tr>
+<td valign="top" align="center"><font color="#0000ff" size="3" face="Times New Roman"><img src="images/Homework2_StefanoTonini248413_48.gif" width="728" height="14" alt="rtable(1 .. 2, 1 .. 3, [[`/`(`*`(`+`(`*`(`+`(`*`(`+`(`-`(L__s0), `-`(s__2(t))), `*`(cos(theta__2(t)))), L), `*`(sin(theta__1(t)))), `*`(sin(theta__2(t)), `*`(cos(theta__1(t)), `*`(`+`(L__s0, s__2(t)))..." align="center" border="0"><br><img src="images/Homework2_StefanoTonini248413_49.gif" width="728" height="95" alt="rtable(1 .. 2, 1 .. 3, [[`/`(`*`(`+`(`*`(`+`(`*`(`+`(`-`(L__s0), `-`(s__2(t))), `*`(cos(theta__2(t)))), L), `*`(sin(theta__1(t)))), `*`(sin(theta__2(t)), `*`(cos(theta__1(t)), `*`(`+`(L__s0, s__2(t)))..." align="center" border="0"></td>
+</tr></font>&nbsp;</p>
+<p align="center"><tr>
+<td valign="top" align="center"><font color="#0000ff" size="3" face="Times New Roman"><img src="images/Homework2_StefanoTonini248413_50.gif" width="728" height="117" alt="Typesetting:-mfenced(Typesetting:-mrow(Typesetting:-mtable(Typesetting:-mtr(Typesetting:-mtd(Typesetting:-mrow(Typesetting:-mfrac(Typesetting:-mrow(Typesetting:-mfenced(Typesetting:-mrow(Typesetting:-..." align="center" border="0"></td>
+<td width='5%' align='center'>(3.1.3)</td>
+</tr>
+</table></font>&nbsp;</p>
+<p align="left"><font color="#000000" size="3" face="DejaVu Sans">Kinematics of points where weights, external forces are applied</font>&nbsp;</p>
+<p align="left"><table>
+<tr>
+<td valign="top" align="center"><font color="#2f48a8" size="3" face="DejaVu Sans Mono"><strong>&gt; </strong></font></td>
+<td valign="top"><font color="#2f48a8" size="3" face="DejaVu Sans Mono"><strong>G1 := -r1:
+<br>G2 := rL__1-r2+hp2:
+<br>G3 := rL__2-r3+hp3:
+<br>
+<br>P0 := hR:
+<br>P2 := rL__1:
+<br>P3 := rL__2:
+<br>G1,G2,G3,P0,P2,P3;
+<br></td>
+</tr>
+</table></strong></font>&nbsp;</p>
+<p align="center"><table width='100%'>
+<tr>
+<td valign="top" align="center"><font color="#0000ff" size="3" face="Times New Roman"><img src="images/Homework2_StefanoTonini248413_51.gif" width="728" height="80" alt="Typesetting:-mprintslash([Vector(3, {(1) = Typesetting:-mrow(Typesetting:-mrow(Typesetting:-mi("cos", fontstyle = "normal"), Typesetting:-mo("&ApplyFunction;"), Typesetting:-mfenced(Typesetting:-mrow(..." align="center" border="0"></td>
+<td width='5%' align='center'>(3.1.4)</td>
+</tr>
+</table></font>&nbsp;</p>
+<p align="left"><font color="#ff9900" size="3" face="DejaVu Sans"><strong><em>Virtual displacements occur at frozen time. </em></strong></font>&nbsp;</p>
+<p align="left"><font color="#000000" size="3" face="DejaVu Sans">Formally the virtual displacements should be computed via the velocity ratios. 
+<br>Here we compute the velocities which are then used as virtual velocities. </font>&nbsp;</p>
+<p align="left"><table>
+<tr>
+<td valign="top" align="center"><font color="#2f48a8" size="3" face="DejaVu Sans Mono"><strong>&gt; </strong></font></td>
+<td valign="top"><font color="#2f48a8" size="3" face="DejaVu Sans Mono"><strong>VG1:= diffF(G1,t):
+<br>VG2:= diffF(G2,t):
+<br>VG3:= diffF(G3,t):
+<br>VP0:= diffF(P0,t):
+<br>VP2:= diffF(P2,t):
+<br>VP3:= diffF(P3,t):</td>
+</tr>
+</table></strong></font>&nbsp;</p>
+</dl>
+
+</html>
